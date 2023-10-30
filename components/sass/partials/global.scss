@@ -1,0 +1,50 @@
+@import "https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap";
+
+@import "./animations/@keyframes.css";
+
+:root {
+	--background-max: #fdf9ff;
+	--background-middle: #f2f2fc;
+	--background-min: #e8dfec;
+	--text-main: #302e4d;
+	--text-sub: #504e70;
+	// --skin-color: #2e8832;
+	// --skin-color: #708090;
+	--skin-color: #ec1839;
+}
+
+button {
+	cursor: pointer;
+
+	* {
+		cursor: pointer;
+	}
+
+	i {
+		color: var(--skin-color);
+		font-size: 25px;
+		transition: transform 500ms ease-in-out;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	list-style: none;
+	font-family: "poppins", sans-serif;
+	transition: 300ms;
+	// outline: 1px dotted var(--text-main);
+}
+
+body{
+	width: 100hw;
+	overflow-x: hidden;
+}
+main{
+	min-height: 100vh;
+}

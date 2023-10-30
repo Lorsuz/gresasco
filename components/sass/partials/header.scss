@@ -1,0 +1,97 @@
+header {
+	* {
+		color: rgb(218, 218, 218);
+	}
+
+	.nav-info {
+		background: #252B42;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 40px;
+		padding: 0 2%;
+
+		>p {
+			cursor: pointer;
+
+			&:hover {
+				color: white;
+			}
+		}
+
+		section {
+			display: flex;
+
+			&.contact {
+				div {
+					display: flex;
+					align-items: center;
+					margin-right: 30px;
+					cursor: pointer;
+
+					i {
+						margin-right: 5px;
+					}
+
+					span {
+						font-size: 0.8rem;
+					}
+
+					&:hover {
+
+						i,
+						span {
+							color: white;
+						}
+					}
+				}
+			}
+
+			&.social-network {
+				span {
+					margin-right: 10px;
+				}
+
+				a {
+					margin: 0 3px;
+
+					i {
+						font-size: 1.2rem;
+					}
+
+					&:hover {
+						i {
+							color: white;
+			cursor: pointer;
+
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.nav-bar {
+		display: flex;
+		section{
+			.logo{}
+			.session{}
+		}
+		nav{
+			display: flex;
+			> ul{
+				display: flex;
+				background: #000;
+				li{
+					a{
+
+					}
+					ul{
+						display: none;
+					}
+				}
+			}
+			
+		}
+	}
+}

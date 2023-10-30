@@ -1,0 +1,64 @@
+header * {
+  color: rgb(218, 218, 218);
+}
+header .nav-info {
+  background: #252B42;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 0 2%;
+}
+header .nav-info > p {
+  cursor: pointer;
+}
+header .nav-info > p:hover {
+  color: white;
+}
+header .nav-info section {
+  display: flex;
+}
+header .nav-info section.contact div {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  cursor: pointer;
+}
+header .nav-info section.contact div i {
+  margin-right: 5px;
+}
+header .nav-info section.contact div span {
+  font-size: 0.8rem;
+}
+header .nav-info section.contact div:hover i,
+header .nav-info section.contact div:hover span {
+  color: white;
+}
+header .nav-info section.social-network span {
+  margin-right: 10px;
+}
+header .nav-info section.social-network a {
+  margin: 0 3px;
+}
+header .nav-info section.social-network a i {
+  font-size: 1.2rem;
+}
+header .nav-info section.social-network a:hover i {
+  color: white;
+  cursor: pointer;
+}
+header .nav-bar {
+  display: flex;
+}
+header .nav-bar nav {
+  display: flex;
+}
+header .nav-bar nav > ul {
+  display: flex;
+  background: #000;
+}
+header .nav-bar nav > ul li ul {
+  display: none;
+}
+
+/*# sourceMappingURL=header.css.map */
