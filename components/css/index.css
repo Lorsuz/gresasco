@@ -22,7 +22,7 @@ main .cover > div > div.left .container h1 {
   font-family: wedding;
 }
 main .cover > div > div.left .container p {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   font-size: 1.1rem;
   color: var(--color-text-soft);
 }
@@ -45,10 +45,10 @@ main .cover > div > div.right .img {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 main .cover > div > div.right .img img {
-  width: 400px;
+  width: 450px;
 }
 main .cover > div > div.right .social-links {
   display: flex;
@@ -70,7 +70,7 @@ main .cover > div > div.right .social-links li:hover a i {
   color: var(--color-primary-soft);
 }
 main .nav-info {
-  background: #252B42;
+  background: var(--color-primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -125,6 +125,131 @@ main .nav-info section.social-network a i {
 main .nav-info section.social-network a:hover i {
   color: white;
   cursor: pointer;
+}
+main .plot {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: 2rem;
+}
+main .plot .description {
+  color: #008025;
+}
+main .plot #enredo-text {
+  margin: 0 50px;
+}
+main .plot #enredo-text .bruxas {
+  text-transform: uppercase;
+}
+main .plot #enredo-text p {
+  display: flex;
+  width: 400px;
+  line-height: 20px;
+  margin-top: 1rem;
+}
+main .plot .btn1 {
+  display: flex;
+  margin-left: 0.5rem;
+  background-color: #008025;
+  color: white;
+  text-decoration: none;
+  padding: 0.1rem 0.5rem;
+  align-items: center;
+  border-radius: 6px;
+  font-weight: 600;
+  border: 1px solid white;
+}
+main .plot .btn1:hover {
+  display: flex;
+  margin-left: 0.5rem;
+  background-color: white;
+  color: #008025;
+  transition: 300ms;
+  padding: 0.1rem 0.4rem;
+  align-items: center;
+  border: 1px solid #008025;
+  border-radius: 6px;
+  font-weight: 600;
+}
+main .plot .disc-cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 500px;
+  height: 375px;
+}
+main .plot .disc-cover:hover .icons {
+  opacity: 1;
+}
+main .plot .disc-cover .icons {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 300ms;
+}
+main .plot .disc-cover .icons i {
+  color: white;
+  font-size: 4rem;
+  cursor: pointer;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms;
+}
+main .plot .disc-cover .icons i:hover {
+  border: 3px solid white;
+}
+main .plot .logo-enredo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  height: 375px;
+  object-fit: cover;
+}
+main .plot .bi-pause {
+  display: none !important;
+}
+main .sponsors {
+  padding: 50px 0;
+}
+main .sponsors h1 {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Poppins, sans-serif;
+  color: var(--color-text);
+}
+main .sponsors .swiper .swiper-wrapper {
+  height: 300px;
+}
+main .sponsors .swiper .swiper-wrapper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 5px;
+}
+main .sponsors .swiper .swiper-wrapper .swiper-slide img {
+  width: 350px;
+  height: 200px;
+  object-fit: scale-down;
+}
+main .sponsors .swiper .swiper-pagination .swiper-pagination-bullet {
+  background: var(--color-primary);
 }
 
 /*# sourceMappingURL=index.css.map */
