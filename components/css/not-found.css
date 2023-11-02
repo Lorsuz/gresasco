@@ -10,7 +10,7 @@
   min-height: 100vh;
   background-image: url("../assets/gifs/funny-404-error-page-design.gif");
   background-repeat: no-repeat;
-  background-position: center 50%;
+  background-position: center 40%;
 }
 .frem h1 {
   color: var(--color-gray);
