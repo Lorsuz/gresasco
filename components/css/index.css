@@ -3,36 +3,36 @@ main .cover {
   height: 85vh;
 }
 main .cover > div {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 main .cover > div > div.left {
   width: 50%;
 }
 main .cover > div > div.left .container h2 {
-  font-size: 2.5rem;
   color: var(--color-primary-soft);
   font-family: wedding;
+  font-size: 2.5rem;
 }
 main .cover > div > div.left .container h1 {
-  font-size: 3.9rem;
-  margin-bottom: 20px;
   color: var(--color-primary-soft);
   font-family: wedding;
+  font-size: 3.9rem;
+  margin-bottom: 20px;
 }
 main .cover > div > div.left .container p {
-  margin-bottom: 50px;
-  font-size: 1.1rem;
   color: var(--color-text-soft);
+  font-size: 1.1rem;
+  margin-bottom: 50px;
 }
 main .cover > div > div.left .container a {
-  display: inline-block;
-  padding: 10px 50px;
   background: var(--color-primary-soft);
-  color: var(--color-white);
-  font-weight: bold;
   border-radius: 10px 0;
+  color: var(--color-white);
+  display: inline-block;
+  font-weight: bold;
+  padding: 10px 50px;
 }
 main .cover > div > div.left .container a:hover {
   background: var(--color-primary);
@@ -42,8 +42,8 @@ main .cover > div > div.right {
   width: 40%;
 }
 main .cover > div > div.right .img {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
   margin-bottom: 0px;
 }
@@ -126,93 +126,94 @@ main .nav-info section.social-network a:hover i {
   color: white;
   cursor: pointer;
 }
-main .plot .container {
-  display: flex;
-  justify-content: center;
-}
-main .plot .container .description {
-  color: #008025;
-}
-main .plot .container .description h1 {
-  text-transform: uppercase;
-}
-main .plot .container .description p {
-  display: flex;
-  width: 400px;
-  line-height: 20px;
-  margin-top: 1rem;
-}
-main .plot .container .description button {
-  display: flex;
-  margin-left: 0.5rem;
-  background-color: #008025;
-  color: white;
-  text-decoration: none;
-  padding: 0.1rem 0.5rem;
+main .plot {
   align-items: center;
-  border-radius: 6px;
-  font-weight: 600;
-  border: 1px solid white;
-  transition: 300ms;
 }
-main .plot .container .description button:hover {
-  background-color: white;
-  color: #008025;
-  padding: 0.1rem 0.4rem;
-  border: 1px solid #008025;
+main .plot .description {
+  grid-column: 2/7;
 }
-main .plot .container .disc-cover {
+main .plot .description h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+main .plot .description h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: var(--color-text);
+}
+main .plot .description p {
+  color: var(--color-text-soft);
+  text-align: justify;
+  margin-bottom: 10px;
+}
+main .plot .description span {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  display: block;
+  color: var(--color-text);
+}
+main .plot .description button {
+  display: block;
+}
+main .plot .disc-cover {
+  grid-column: 8/13;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   width: 500px;
-  height: 375px;
+  box-shadow: -10px -10px 10px 0 #fff, 10px 10px 10px 0 rgba(0, 0, 0, 0.6);
+  height: 400px;
+  overflow: hidden;
+  border-radius: 6px;
 }
-main .plot .container .disc-cover img {
+main .plot .disc-cover img {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 6px;
-  height: 375px;
-  object-fit: cover;
-}
-main .plot .container .disc-cover .icons {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+main .plot .disc-cover .icons {
+  align-items: center;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 6px;
-  top: 0;
+  display: flex;
+  height: 100%;
+  justify-content: center;
   left: 0;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   opacity: 0;
+  position: absolute;
+  top: 0;
   transition: 300ms;
+  width: 100%;
 }
-main .plot .container .disc-cover .icons button {
-  display: flex;
+main .plot .disc-cover .icons button {
   align-items: center;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  display: flex;
+  height: 80px;
   justify-content: center;
   transition: 300ms;
-  cursor: pointer;
-  border: 3px solid transparent;
+  width: 80px;
 }
-main .plot .container .disc-cover .icons button i {
+main .plot .disc-cover .icons button i {
   color: white;
   font-size: 4rem;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
 }
-main .plot .container .disc-cover .icons button#pause-song {
+main .plot .disc-cover .icons button#play-song {
+  padding-left: 8px;
+}
+main .plot .disc-cover .icons button#pause-song {
   display: none;
 }
-main .plot .container .disc-cover .icons button:hover {
+main .plot .disc-cover .icons button:hover {
   border: 3px solid white;
 }
-main .plot .container .disc-cover:hover .icons {
+main .plot .disc-cover:hover .icons {
   opacity: 1;
 }
 main .sponsors {

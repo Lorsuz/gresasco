@@ -5,7 +5,6 @@ const container = document.querySelector( '.sponsors .swiper-wrapper' );
 fetch( "components/json/data.json" ).then( ( response ) => {
 	response.json().then( ( data ) => {
 		data.sponsors.map( ( obj ) => {
-			console.log( obj );
 			container.innerHTML +=
 				`
 				<div class="swiper-slide">

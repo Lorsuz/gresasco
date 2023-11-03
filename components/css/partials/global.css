@@ -44,6 +44,7 @@ button i {
   font-family: "Poppins", sans-serif;
   transition: 300ms ease-in-out;
   color: var(--color-black-soft);
+  background: transparent;
 }
 
 body {
