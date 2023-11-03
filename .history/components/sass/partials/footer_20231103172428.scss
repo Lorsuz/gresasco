@@ -1,0 +1,35 @@
+@import url('./global.css');
+
+footer {
+	background: #000;
+	padding: 20px;
+	
+	*{
+		color: #fff;
+	}
+	
+	h1 {
+		text-align: center;
+	}
+
+	.container {
+		display: flex;
+
+		article {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			h2{
+
+			}
+			&.structure {
+				
+			}
+
+			&.dev {}
+
+			&.address {}
+		}
+	}
+}

@@ -245,5 +245,9 @@ main .sponsors .swiper .swiper-wrapper .swiper-slide img {
 main .sponsors .swiper .swiper-pagination .swiper-pagination-bullet {
   background: var(--color-primary);
 }
+main .map iframe {
+  width: 100%;
+  height: 500px;
+}
 
 /*# sourceMappingURL=index.css.map */

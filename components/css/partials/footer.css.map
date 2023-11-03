@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"footer.css"}
+{"version":3,"sourceRoot":"","sources":["../../sass/partials/footer.scss"],"names":[],"mappings":"AAAQ;AAER;EACC;EACA;;AAEA;EACC;;AAGD;EACC;EACA;;AAGD;EACC;EACA;;AAGA;EACC;EACA;EACA;;AAEA;EACC;EACA;;AAGD;EACC;;AAGD;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;;AAMD;EACC;;AAEA;EACC;EACA;EACA;EACA;;AAEA;EACC;EACA;;AASP;EACC;;AAKD;EACC;;AACA;EACC;EACA;EACA","file":"footer.css"}
