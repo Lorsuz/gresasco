@@ -199,6 +199,7 @@ main .plot .disc-cover .icons button {
   justify-content: center;
   transition: 300ms;
   width: 80px;
+  background: #000;
 }
 main .plot .disc-cover .icons button i {
   color: white;
