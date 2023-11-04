@@ -1,14 +1,14 @@
 @import url("./global.css");
 footer {
   background: #000;
-  padding: 50px 20px;
+  padding: 70px 20px;
 }
 footer * {
   color: #fff;
 }
 footer h1 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 footer .container {
   grid-template-columns: repeat(3, 1fr);
@@ -24,7 +24,7 @@ footer .container article h2 {
   margin-bottom: 10px;
 }
 footer .container article img {
-  margin-bottom: 25px;
+  width: 250px;
 }
 footer .container article.structure {
   grid-column: 1fr;
@@ -44,6 +44,7 @@ footer .container article.structure > ul > li > a {
   font-size: 1rem;
   display: block;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 footer .container article.structure > ul > li > a:hover {
   color: var(--color-primary);
@@ -65,8 +66,28 @@ footer .container article.structure > ul > li > ul > li > a:hover {
 footer .container article.dev {
   grid-column: 1fr;
 }
+footer .container article.dev .img {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 305px;
+  height: 100px;
+  position: relative;
+  margin-bottom: 25px;
+}
+footer .container article.dev .img img {
+  width: 500px;
+  position: absolute;
+}
 footer .container article.address {
   grid-column: 1fr;
+}
+footer .container article.address img {
+  margin-bottom: 30px;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  background: #fff;
 }
 footer .container article.address address {
   text-align: center;
