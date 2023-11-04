@@ -23,9 +23,6 @@ footer .container article h2 {
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
-footer .container article img {
-  width: 250px;
-}
 footer .container article.structure {
   grid-column: 1fr;
 }
@@ -84,6 +81,7 @@ footer .container article.address {
   grid-column: 1fr;
 }
 footer .container article.address img {
+  width: 150px;
   margin-bottom: 30px;
   border-radius: 50%;
   margin-bottom: 25px;
