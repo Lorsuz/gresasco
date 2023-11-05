@@ -128,6 +128,7 @@ main .nav-info section.social-network a:hover i {
 }
 main .plot {
   align-items: center;
+  min-height: 100vh;
 }
 main .plot .description {
   grid-column: 2/7;
@@ -219,6 +220,7 @@ main .plot .disc-cover:hover .icons {
 }
 main .sponsors {
   padding: 50px 0;
+  height: 500px;
 }
 main .sponsors h1 {
   font-size: 2rem;
@@ -244,6 +246,27 @@ main .sponsors .swiper .swiper-wrapper .swiper-slide img {
 }
 main .sponsors .swiper .swiper-pagination .swiper-pagination-bullet {
   background: var(--color-primary);
+}
+main .details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+main .details ul {
+  display: flex;
+}
+main .details ul li {
+  padding: 40px;
+}
+main .details ul li h2 {
+  font-size: 5rem;
+  color: var(--color-text);
+  text-align: center;
+}
+main .details ul li h3 {
+  color: var(--color-text-soft);
+  text-align: center;
 }
 main .map iframe {
   width: 100%;
