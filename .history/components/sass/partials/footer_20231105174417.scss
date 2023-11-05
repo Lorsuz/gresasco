@@ -10,13 +10,9 @@ footer {
 
 	h1 {
 		text-align: center;
-		margin-bottom: 20px;
-	} 
-	>p{
-		text-align: center;
 		margin-bottom: 50px;
-		color: var(--color-gray);
 	}
+	>p
 
 	.container {
 		grid-template-columns: repeat(3, 1fr);
@@ -123,8 +119,6 @@ footer {
 					text-align: center;
 					width: 80%;
 					line-height: 25px;
-		color: var(--color-gray);
-
 				}
 
 			}
