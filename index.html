@@ -93,12 +93,27 @@
 				</section>
 			</article>
 			<section class="banner">
-				<div class="slides">
-				</div>
-				<div class="prev"></div>
-				<div class="next"></div>
-				<div class="pagination"></div>
-				<div class="img"><img src="https://placehold.co/1350x700" alt=""></div>
+					<ul class="slides">
+						<li>
+							<div class="img">
+								<img src="components/assets/carnaval-banner.png" alt="">
+							</div>
+							<div class="text">
+								<h2>Evento Academicos</h2>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique deleniti maxime neque, laudantium architecto incidunt placeat labore quaerat atque dolorum?</p>
+								<a href="" class="button">Comece agora</a>
+							</div>
+						</li>
+					</ul>
+						<button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+						<button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+					<ul class="pagination">
+						<li class="dot active"></li>
+						<li class="dot"></li>
+						<li class="dot"></li>
+						<li class="dot"></li>
+						<li class="dot"></li>
+					</ul>
 			</section>
 			<section class="plot wrapper">
 				<div class="description">
@@ -128,9 +143,57 @@
 						<button id="pause-song">
 							<i class="bi bi-pause"></i>
 						</button>
-						<audio src="components/assets/audio/plot-song.mpeg"></audio>
+						<div class="player-bars">
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+							<div class="bar"></div>
+						</div>
 					</div>
 				</div>
+				<script>
+					var playSong = document.getElementById('play-song');
+					var pauseSong = document.getElementById('pause-song');
+					var bars = document.querySelectorAll('.bar');
+					var audio = new Audio('/components/assets/audio/plot-2024.mp3');
+					playSong.addEventListener('click', function() {
+						audio.play();
+						playSong.style.display = 'none';
+						pauseSong.style.display = 'block';
+						bars.forEach(function(bar) {
+							bar.classList.add('active');
+						});
+					});
+					pauseSong.addEventListener('click', function() {
+						audio.pause();
+						playSong.style.display = 'block';
+						pauseSong.style.display = 'none';
+						bars.forEach(function(bar) {
+							bar.classList.remove('active');
+						});
+					});
+					 
+				</script>
 			</section>
 			<section class="sponsors">
 				<h1>Patrocinadores e Apoiadores</h1>
@@ -159,12 +222,52 @@
 					</li>
 				</ul>
 			</section>
+			<section class="contact wrapper">
+				<div class="text">
+					<h3>Formulário de contato</h3>
+					<h2>Fale com nossa Agremiação!</h2>
+					<p>Tire suas duvidas com nosso time. Deixe suas informaçoes de contato e será um prazer lhe retonar!</p>
+					<ul class="info">
+						<li><i class="fa-solid fa-phone"></i><span></span> +55 (43) 9 2573-7455</li>
+						<li><i class="fa-solid fa-envelope"></i><span></span> academicos@gmail.com</li>
+						<li><i class="fa-solid fa-map-location-dot"></i>
+							<address>Rua do Império, nº 573; Santa Cruz, Rio de Janeiro - RJ; CEP 44.353-353</address>
+						</li>
+					</ul>
+					<div class="terms">
+						<h3>Termos de contato:</h3>
+						<p>Ao entrar em contato com a agremiaçao, seus dados pessoais fornecidos e o conteudo e historico da sua mensagem serao armazenados e poderao ser tratados e ultilizados pela agramiaçao. Ao enviar sua mensagem, voce estar ciente e de acordo com estas condiçoes, conforme nossos <a href="">Termos de Uso</a> e <a href="">Politica de Privacidade</a>.</p>
+					</div>
+				</div>
+				<div class="form">
+					<form action="">
+						<div>
+							<label for="">Nome:</label>
+							<input type="text" name="" id="" placeholder="Seu nome">
+						</div>
+						<div>
+							<label for="">E-mail:</label>
+							<input type="text" name="" id="" placeholder="Seu e-mail">
+						</div>
+						<div>
+							<label for="">Telefone:</label>
+							<input type="text" name="" id="" placeholder="Seu telefone">
+						</div>
+						<div>
+							<label for="">Descrição:</label>
+							<textarea name="" id=cols="30" rows="10" placeholder="Como podemos te ajudar?"></textarea>
+						</div>
+						<button type="submit">Enviar mensagem</button>
+					</form>
+				</div>
+			</section>
 			<section class="map">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.902216920123!2d-43.69324992558163!3d-22.916977238233624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bf7524c69eb5b%3A0xc5d324fb7fbbd336!2sR.%20do%20Imp%C3%A9rio%2C%20573%20-%20Santa%20Cruz%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2023555-024!5e0!3m2!1spt-BR!2sbr!4v1698871972883!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</section>
 		</main>
 		<footer>
 			<h1>Grêmio Recreativo Escola de Samba Acadêmicos de Santa Cruz</h1>
+			<p>Obrigado por nos visitar, esperamos ter lhe proporcionado uma experiencia incrivel</p>
 			<section class="container wrapper">
 				<article class="structure">
 					<h2>O Site</h2>
@@ -196,17 +299,24 @@
 								<li><a href="">Premiações</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Socio Torcedor</a></li>
-						<li><a href="#">Créditos</a></li>
+						<li><a href="#">Créditos</a>
+							<ul>
+								<li><a href="">Fotografias</a></li>
+								<li><a href="">Dados de Desfiles</a></li>
+								<li><a href="">Dev Team</a></li>
+								<li><a href="">Termos de Uso</a></li>
+								<li><a href="">Política de Privacidade</a></li>
+							</ul>
+						</li>
 				</article>
 				<article class="dev">
 					<h2>Desenvolvido e realizado por:</h2>
-					<img src="https://placehold.co/250x150" alt="Logo do Desenvolvedor">
+					<div class="img"><img src="/components/assets/images/Logo/webpulse sem bg.png" alt="Logo do Desenvolvedor"></div>
 					<h2>Cordenação:</h2>
 					<img src="https://placehold.co/250x150" alt="Logo da Cordenação">
 				</article>
 				<article class="address">
-					<img src="https://placehold.co/250x150" alt="Logo da escola">
+					<img src="/components/assets/images/Logo/santa-cruz-logo-removebg-preview.png" alt="Logo da escola">
 					<h2>QUADRA ACADÊMICOS</h2>
 					<address>Rua do Império, nº 573; Santa Cruz, Rio de Janeiro - RJ; CEP 44.353-353</address>
 				</article>
