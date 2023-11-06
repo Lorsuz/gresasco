@@ -268,9 +268,110 @@ main .details ul li h3 {
   color: var(--color-text-soft);
   text-align: center;
 }
+main > .contact {
+  background: #0b1127;
+  background: linear-gradient(90deg, #0b1127 0%, #1f2a4b 100%);
+  min-height: 100vh;
+  height: auto;
+}
+main > .contact * {
+  color: #fff;
+}
+main > .contact > div {
+  display: flex;
+  justify-content: center;
+}
+main > .contact .text {
+  grid-column: 2/7;
+  flex-direction: column;
+  max-width: 600px;
+}
+main > .contact .text > h3 {
+  font-size: 1.2rem;
+  color: var(--color-gray);
+}
+main > .contact .text h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+main > .contact .text > p {
+  margin-bottom: 50px;
+}
+main > .contact .text ul {
+  margin-bottom: 50px;
+}
+main > .contact .text ul li {
+  margin-bottom: 10px;
+  display: flex;
+}
+main > .contact .text ul li span,
+main > .contact .text ul li address {
+  margin-left: 10px;
+  display: block;
+}
+main > .contact .text div h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+main > .contact .text div p {
+  font-size: 0.8rem;
+  text-align: justify;
+  color: var(--color-gray);
+}
+main > .contact .form {
+  align-items: center;
+  grid-column: 8/12;
+}
+main > .contact .form form {
+  min-width: 450px;
+}
+main > .contact .form form div {
+  width: 100%;
+  margin-bottom: 20px;
+}
+main > .contact .form form div label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+main > .contact .form form div input,
+main > .contact .form form div textarea {
+  background: #fff;
+  width: 100%;
+  height: 50px;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  color: var(--color-text-soft);
+  border: 3px solid var(--color-gray);
+  border-radius: 10px 0;
+}
+main > .contact .form form div input:focus,
+main > .contact .form form div textarea:focus {
+  border: 3px solid var(--color-primary);
+  border-radius: 0px 10px;
+}
+main > .contact .form form div textarea {
+  padding: 10px;
+  height: 200px;
+}
+main > .contact .form form button {
+  width: 100%;
+  height: 50px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: bold;
+  border-radius: 10px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+main > .contact .form form button:hover {
+  background: var(--color-primary-soft);
+  border-radius: 0px 10px;
+}
 main .map iframe {
   width: 100%;
-  height: 500px;
+  height: 600px;
 }
 
 /*# sourceMappingURL=index.css.map */
