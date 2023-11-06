@@ -126,8 +126,107 @@ main .nav-info section.social-network a:hover i {
   color: white;
   cursor: pointer;
 }
+main .banner {
+  position: relative;
+  height: 100vh;
+}
+main .banner .slides {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+main .banner .slides li {
+  width: 100%;
+  height: 100%;
+}
+main .banner .slides li .img {
+  width: 100%;
+  height: 100%;
+}
+main .banner .slides li .img img {
+  width: 100%;
+  height: 100%;
+}
+main .banner .slides li .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: hsla(0, 0%, 0%, 0.6);
+  height: 100%;
+  width: 100%;
+}
+main .banner .slides li .text * {
+  color: var(--color-white);
+}
+main .banner .slides li .text h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+main .banner .slides li .text p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  width: 50%;
+}
+main .banner .slides li .text a {
+  background: var(--color-primary);
+  border-radius: 10px 0;
+  color: var(--color-white);
+  display: inline-block;
+  font-weight: bold;
+  padding: 15px 50px;
+  border: 3px solid var(--color-white);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+main .banner .slides li .text a:hover {
+  background: var(--color-primary-soft);
+  border-radius: 0px 10px;
+}
+main .banner > button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  padding: 15px 15px;
+  border-radius: 10px;
+  border: 3px solid var(--color-gray);
+}
+main .banner > button.prev {
+  left: 30px;
+}
+main .banner > button.next {
+  right: 30px;
+}
+main .banner > button i {
+  font-size: 3.5rem;
+}
+main .banner .pagination {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  left: 50%;
+  transform: translateX(-50%);
+}
+main .banner .pagination .dot {
+  width: 50px;
+  height: 5px;
+  margin: 0 5px;
+  background: var(--color-gray);
+  border-radius: 10px;
+}
+main .banner .pagination .dot.active {
+  background: var(--color-primary);
+}
 main .plot {
   align-items: center;
+  min-height: 100vh;
 }
 main .plot .description {
   grid-column: 2/7;
@@ -214,11 +313,37 @@ main .plot .disc-cover .icons button#pause-song {
 main .plot .disc-cover .icons button:hover {
   border: 3px solid white;
 }
+main .plot .disc-cover .icons .player-bars {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+}
+main .plot .disc-cover .icons .player-bars .bar {
+  margin: 0 2px;
+  background: #000;
+  border-radius: 10px 10px 0px 0px;
+  width: 10px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-bottom: none;
+}
+main .plot .disc-cover .icons .player-bars .bar.active {
+  animation: ocilation 1s infinite alternate;
+}
+@keyframes ocilation {
+  from {
+    height: 20px;
+  }
+  to {
+    height: 70px;
+  }
+}
 main .plot .disc-cover:hover .icons {
   opacity: 1;
 }
 main .sponsors {
   padding: 50px 0;
+  height: 500px;
 }
 main .sponsors h1 {
   font-size: 2rem;
@@ -245,9 +370,131 @@ main .sponsors .swiper .swiper-wrapper .swiper-slide img {
 main .sponsors .swiper .swiper-pagination .swiper-pagination-bullet {
   background: var(--color-primary);
 }
+main .details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+main .details ul {
+  display: flex;
+}
+main .details ul li {
+  padding: 40px;
+}
+main .details ul li h2 {
+  font-size: 5rem;
+  color: var(--color-text);
+  text-align: center;
+}
+main .details ul li h3 {
+  color: var(--color-text-soft);
+  text-align: center;
+}
+main > .contact {
+  background: #0b1127;
+  background: linear-gradient(90deg, #0b1127 0%, #1f2a4b 100%);
+  min-height: 100vh;
+  height: auto;
+}
+main > .contact * {
+  color: #fff;
+}
+main > .contact > div {
+  display: flex;
+  justify-content: center;
+}
+main > .contact .text {
+  grid-column: 2/7;
+  flex-direction: column;
+  max-width: 600px;
+}
+main > .contact .text > h3 {
+  font-size: 1.2rem;
+  color: var(--color-gray);
+}
+main > .contact .text h2 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+main > .contact .text > p {
+  margin-bottom: 50px;
+}
+main > .contact .text ul {
+  margin-bottom: 50px;
+}
+main > .contact .text ul li {
+  margin-bottom: 10px;
+  display: flex;
+}
+main > .contact .text ul li span,
+main > .contact .text ul li address {
+  margin-left: 10px;
+  display: block;
+}
+main > .contact .text div h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+main > .contact .text div p {
+  font-size: 0.8rem;
+  text-align: justify;
+  color: var(--color-gray);
+}
+main > .contact .form {
+  align-items: center;
+  grid-column: 8/12;
+}
+main > .contact .form form {
+  min-width: 450px;
+}
+main > .contact .form form div {
+  width: 100%;
+  margin-bottom: 20px;
+}
+main > .contact .form form div label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+main > .contact .form form div input,
+main > .contact .form form div textarea {
+  background: #fff;
+  width: 100%;
+  height: 50px;
+  font-size: 1.2rem;
+  padding: 0 10px;
+  color: var(--color-text-soft);
+  border: 3px solid var(--color-gray);
+  border-radius: 10px 0;
+}
+main > .contact .form form div input:focus,
+main > .contact .form form div textarea:focus {
+  border: 3px solid var(--color-primary);
+  border-radius: 0px 10px;
+}
+main > .contact .form form div textarea {
+  padding: 10px;
+  height: 180px;
+}
+main > .contact .form form button {
+  width: 100%;
+  height: 50px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: bold;
+  border-radius: 10px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+main > .contact .form form button:hover {
+  background: var(--color-primary-soft);
+  border-radius: 0px 10px;
+}
 main .map iframe {
   width: 100%;
-  height: 500px;
+  height: 600px;
 }
 
 /*# sourceMappingURL=index.css.map */
