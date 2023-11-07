@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("./partials/global.css");
 main .cover {
   height: 85vh;
@@ -62,6 +63,18 @@ main .cover > div > div.right .social-links li {
 main .cover > div > div.right .social-links li a i {
   font-size: 2.4rem;
   color: var(--color-text-soft);
+}
+main .cover > div > div.right .social-links li a i.fa-facebook {
+  color: #3b5998;
+}
+main .cover > div > div.right .social-links li a i.fa-instagram {
+  color: #e4405f;
+}
+main .cover > div > div.right .social-links li a i.fa-x-twitter {
+  color: #000000;
+}
+main .cover > div > div.right .social-links li a i.fa-youtube {
+  color: #cd201f;
 }
 main .cover > div > div.right .social-links li:hover {
   top: -5px;
@@ -193,10 +206,8 @@ main .banner > button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #fff;
   padding: 15px 15px;
   border-radius: 10px;
-  border: 3px solid var(--color-gray);
 }
 main .banner > button.prev {
   left: 30px;
@@ -206,6 +217,7 @@ main .banner > button.next {
 }
 main .banner > button i {
   font-size: 3.5rem;
+  color: var(--color-primary-soft);
 }
 main .banner .pagination {
   position: absolute;
@@ -316,26 +328,24 @@ main .plot .disc-cover .icons button:hover {
 main .plot .disc-cover .icons .player-bars {
   display: flex;
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
 }
 main .plot .disc-cover .icons .player-bars .bar {
   margin: 0 2px;
   background: #000;
   border-radius: 10px 10px 0px 0px;
-  width: 10px;
-  height: 20px;
+  width: 1px;
+  height: 50px;
   border: 2px solid #fff;
   border-bottom: none;
-}
-main .plot .disc-cover .icons .player-bars .bar.active {
-  animation: ocilation 1s infinite alternate;
+  transform: translateY(45px);
 }
 @keyframes ocilation {
   from {
-    height: 20px;
+    transform: translateY(45px);
   }
   to {
-    height: 70px;
+    transform: translateY(0px);
   }
 }
 main .plot .disc-cover:hover .icons {
@@ -396,6 +406,7 @@ main > .contact {
   background: linear-gradient(90deg, #0b1127 0%, #1f2a4b 100%);
   min-height: 100vh;
   height: auto;
+  padding: 70px 0;
 }
 main > .contact * {
   color: #fff;
@@ -422,9 +433,11 @@ main > .contact .text > p {
 }
 main > .contact .text ul {
   margin-bottom: 50px;
+  border-left: 3px solid var(--color-white);
+  padding-left: 20px;
 }
 main > .contact .text ul li {
-  margin-bottom: 10px;
+  margin: 10px 0;
   display: flex;
 }
 main > .contact .text ul li span,
@@ -432,14 +445,35 @@ main > .contact .text ul li address {
   margin-left: 10px;
   display: block;
 }
-main > .contact .text div h3 {
-  font-size: 1rem;
-  margin-bottom: 10px;
+main > .contact .text .map {
+  width: 100%;
+  height: 400px;
+  position: relative;
 }
-main > .contact .text div p {
-  font-size: 0.8rem;
-  text-align: justify;
-  color: var(--color-gray);
+main > .contact .text .map iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0px;
+}
+main > .contact .text .map::before, main > .contact .text .map::after {
+  content: "";
+  width: 100px;
+  color: #fff;
+  height: 100px;
+  position: absolute;
+  border: 10px solid var(--color-primary);
+}
+main > .contact .text .map::before {
+  top: -30px;
+  right: -30px;
+  border-left: none;
+  border-bottom: none;
+}
+main > .contact .text .map::after {
+  bottom: -30px;
+  left: -30px;
+  border-right: none;
+  border-top: none;
 }
 main > .contact .form {
   align-items: center;
@@ -458,7 +492,7 @@ main > .contact .form form div label {
   font-size: 1.2rem;
   font-weight: bold;
 }
-main > .contact .form form div input,
+main > .contact .form form div input[type=text],
 main > .contact .form form div textarea {
   background: #fff;
   width: 100%;
@@ -469,7 +503,7 @@ main > .contact .form form div textarea {
   border: 3px solid var(--color-gray);
   border-radius: 10px 0;
 }
-main > .contact .form form div input:focus,
+main > .contact .form form div input[type=text]:focus,
 main > .contact .form form div textarea:focus {
   border: 3px solid var(--color-primary);
   border-radius: 0px 10px;
@@ -477,6 +511,43 @@ main > .contact .form form div textarea:focus {
 main > .contact .form form div textarea {
   padding: 10px;
   height: 180px;
+  resize: none;
+}
+main > .contact .form form div.agree-terms {
+  display: flex;
+}
+main > .contact .form form div.agree-terms input[type=checkbox] {
+  display: none;
+}
+main > .contact .form form div.agree-terms input[type=checkbox] + label::before {
+  content: "✔";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border: 2px solid #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  position: absolute;
+  left: 0;
+}
+main > .contact .form form div.agree-terms input[type=checkbox]:checked + label::before {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 2px solid #fff;
+}
+main > .contact .form form div.agree-terms label {
+  font-size: 0.8rem;
+  text-align: justify;
+  color: var(--color-gray-soft);
+  font-weight: normal;
+  position: relative;
+  padding-left: 30px;
+}
+main > .contact .form form div.agree-terms label a {
+  text-decoration: underline;
 }
 main > .contact .form form button {
   width: 100%;
@@ -491,10 +562,6 @@ main > .contact .form form button {
 main > .contact .form form button:hover {
   background: var(--color-primary-soft);
   border-radius: 0px 10px;
-}
-main .map iframe {
-  width: 100%;
-  height: 600px;
 }
 
 /*# sourceMappingURL=index.css.map */

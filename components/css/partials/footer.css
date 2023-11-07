@@ -8,16 +8,12 @@ footer * {
 }
 footer h1 {
   text-align: center;
-  margin-bottom: 20px;
-}
-footer > p {
-  text-align: center;
   margin-bottom: 50px;
-  color: var(--color-gray);
 }
 footer .container {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   gap: 20px;
+  margin-bottom: 30px;
 }
 footer .container article {
   display: flex;
@@ -26,14 +22,14 @@ footer .container article {
 }
 footer .container article h2 {
   font-size: 1.3rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 footer .container article.structure {
-  grid-column: 1fr;
+  grid-column: 2/8;
 }
 footer .container article.structure > ul {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
   gap: 20px;
 }
@@ -65,25 +61,8 @@ footer .container article.structure > ul > li > ul > li > a:hover {
   color: var(--color-white);
   text-decoration: underline;
 }
-footer .container article.dev {
-  grid-column: 1fr;
-}
-footer .container article.dev .img {
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 305px;
-  height: 100px;
-  position: relative;
-  margin-bottom: 25px;
-}
-footer .container article.dev .img img {
-  width: 500px;
-  position: absolute;
-}
 footer .container article.address {
-  grid-column: 1fr;
+  grid-column: 9/12;
 }
 footer .container article.address img {
   width: 150px;
@@ -98,6 +77,12 @@ footer .container article.address address {
   width: 80%;
   line-height: 25px;
   color: var(--color-gray);
+}
+footer > p {
+  text-align: center;
+}
+footer > p a {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=footer.css.map */
