@@ -4,7 +4,7 @@
 
 @font-face {
 	font-family: wedding;
-	src: url("../../assets/fonts/Wedding\ Text\ Std\ Regular.otf");
+	src: url("/components/assets/fonts/Wedding\ Text\ Std\ Regular.otf");
 }
 
 @font-face {
@@ -54,7 +54,7 @@ button {
 	font-family: "Poppins", sans-serif;
 	font-family: Arial, Helvetica, sans-serif;
 	transition: 300ms ease-in-out;
-	// outline: 1px dotted;
+	outline: 1px dotted;
 	color: var(--color-black-soft);
 	background: transparent;
 }
