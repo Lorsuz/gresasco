@@ -246,6 +246,7 @@ main .plot .description {
 main .plot .description h2 {
   font-size: 2rem;
   color: var(--color-primary);
+  font-family: Playpen Sans;
 }
 main .plot .description h1 {
   margin-bottom: 20px;
@@ -259,7 +260,7 @@ main .plot .description p {
 }
 main .plot .description span {
   margin-top: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   display: block;
   color: var(--color-text);
 }
@@ -396,17 +397,19 @@ main .details ul li h2 {
   font-size: 5rem;
   color: var(--color-text);
   text-align: center;
+  font-family: Playpen Sans;
 }
 main .details ul li h3 {
   color: var(--color-text-soft);
   text-align: center;
+  font-family: Playpen Sans;
 }
 main > .contact {
   background: #0b1127;
-  background: linear-gradient(90deg, #0b1127 0%, #1f2a4b 100%);
+  background: linear-gradient(0deg, #0b1127 0%, #1f2a4b 100%);
   min-height: 100vh;
   height: auto;
-  padding: 70px 0;
+  padding: 70px 0 20px;
 }
 main > .contact * {
   color: #fff;
@@ -423,6 +426,7 @@ main > .contact .text {
 main > .contact .text > h3 {
   font-size: 1.2rem;
   color: var(--color-gray);
+  font-family: Playpen Sans;
 }
 main > .contact .text h2 {
   margin-bottom: 20px;
@@ -491,6 +495,7 @@ main > .contact .form form div label {
   margin-bottom: 10px;
   font-size: 1.2rem;
   font-weight: bold;
+  font-family: Playpen Sans;
 }
 main > .contact .form form div input[type=text],
 main > .contact .form form div textarea {

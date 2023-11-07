@@ -1,0 +1,77 @@
+@import url('./global.css');
+
+footer {
+	background: #1C3B35;
+	padding: 70px 20px;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 400px 100px;
+
+	* {
+		color: #fff;
+	}
+
+	section {
+		&.structure {
+			display: flex;
+			grid-column: 2/6;
+
+			div {
+				h3 {
+					font-size: 20px;
+					font-weight: 600;
+					margin-bottom: 20px;
+					text-transform: uppercase;
+				}
+
+				ul {
+					li {
+						a {}
+					}
+
+					.social-links {
+						display: flex;
+
+						li {
+							margin-right: 10px;
+
+							a {
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								width: 40px;
+								height: 40px;
+								border-radius: 50%;
+								background: var(--color-primary);
+								transition: 300ms ease-in-out;
+
+								&:hover {
+									background: var(--color-primary-soft);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&.newsletter {
+			h3 {}
+
+			form {
+				input {
+					color: #1C3B35;
+				}
+
+				button {
+					background: #E9BB3B;
+					color: #1C3B35;
+				}
+			}
+		}
+
+		&.copyriht {}
+
+		&.terms {}
+	}
+}

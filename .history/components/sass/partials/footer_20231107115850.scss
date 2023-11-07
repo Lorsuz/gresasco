@@ -1,0 +1,17 @@
+@import url('./global.css');
+
+footer {
+	background: #000;
+	padding: 70px 20px;
+
+	* {
+		color: #fff;
+	}
+
+	section{
+		&.structure{}
+		&.structure{}
+		&.structure{}
+		&.terms{}
+	}
+}

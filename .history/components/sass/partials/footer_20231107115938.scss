@@ -1,0 +1,26 @@
+@import url('./global.css');
+
+footer {
+	background: #000;
+	padding: 70px 20px;
+
+	* {
+		color: #fff;
+	}
+
+	section{
+		&.structure{
+			div{
+				h3{
+					font-size: 20px;
+					font-weight: 600;
+					margin-bottom: 20px;
+					text-transform: ;
+				}
+			}
+		}
+		&.newsletter{}
+		&.copyriht{}
+		&.terms{}
+	}
+}

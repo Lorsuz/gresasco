@@ -37,6 +37,7 @@ header .nav-bar nav ul li a {
   color: var(--color-text-soft);
   font-weight: bold;
   position: relative;
+  font-family: Playpen Sans;
 }
 header .nav-bar nav ul li a::after {
   content: "";
