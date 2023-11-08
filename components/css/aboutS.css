@@ -1,0 +1,50 @@
+:root {
+  --color-primary: #008025;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray: #a0a0a0;
+  --color-text: #302e4d;
+  --color-primary-soft: #1a9d40;
+  --color-black-soft: #252525;
+  --color-white-soft: #f2f2fc;
+  --color-gray-soft: #e8dfec;
+  --color-text-soft: #504e70;
+}
+
+.sobre-a-escola {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border-top: var(--color-primary) solid 4px;
+  border-bottom: var(--color-primary) solid 4px;
+  margin-bottom: 6rem;
+  margin-top: -2rem;
+}
+
+.sobre-a-escola h1, p {
+  padding: 1rem;
+}
+
+.sobre-a-escola h1 {
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.sobre-a-escola .pAS {
+  color: var(--color-text-soft);
+  line-height: 1.5rem;
+  text-indent: 1rem;
+}
+
+.sobre-a-escola a {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.sobre-a-escola a:hover {
+  color: var(--color-primary);
+  font-weight: bold;
+  text-decoration: underline;
+}
