@@ -404,6 +404,63 @@ main .details ul li h3 {
   text-align: center;
   font-family: Playpen Sans;
 }
+main .about-school {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  min-height: 100vh;
+}
+main .about-school .text-container {
+  grid-column: 2/7;
+}
+main .about-school .text-container h1 {
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+main .about-school .text-container .wiki {
+  line-height: 1.5rem;
+  text-indent: 1rem;
+}
+main .about-school .text-container .wiki p {
+  color: var(--color-text-soft);
+  line-height: 1.5rem;
+  text-indent: 1rem;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+main .about-school .text-container .wiki .read-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+main .about-school .text-container .wiki .read-more a {
+  background: var(--color-primary-soft);
+  padding: 10px 25px;
+}
+main .about-school .text-container .wiki .read-more a i {
+  color: var(--color-white);
+}
+main .about-school .text-container .wiki .read-more a span {
+  color: var(--color-white);
+}
+main .about-school .img-container {
+  grid-column: 8/12;
+}
+main .about-school .img-container .img img {
+  display: flex;
+  height: 570px;
+  border-radius: 1rem 0;
+  margin-top: 2.2rem;
+}
+main .about-school .img-container .img img:hover {
+  display: flex;
+  height: 570px;
+  border-radius: 0 1rem;
+  margin-top: 2.2rem;
+  transition: 300ms;
+}
 main > .contact {
   background: #0b1127;
   background: linear-gradient(0deg, #0b1127 0%, #1f2a4b 100%);
