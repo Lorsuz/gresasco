@@ -68,7 +68,7 @@
 							</li>
 						</ul>
 					</div>
-				</div>
+				</div> 
 			</section>
 			<article class="nav-info">
 				<section class="contact">
@@ -134,7 +134,7 @@
 					<span>Iae, gostou? Para ter acesso a nossa sinopse completa basta baixar o PDF a baixo:</span>
 					<button class="custom-button">Baixar Sinopse</button>
 				</div>
-				<di class="disc-cover">
+				<div class="disc-cover">
 					<img src="./components/assets/images/Plot/plot-2024.jpeg" alt="Logo Enredo-2024">
 					<div class="icons">
 						<button id="play-song">
@@ -145,46 +145,45 @@
 						</button>
 						<div class="player-bars"></div>
 					</div>
-					<script>
+				</div>
+				<script>
+					var playSong = document.getElementById( 'play-song' );
+					var pauseSong = document.getElementById( 'pause-song' );
+					var barsContainer = document.querySelector( '.player-bars' );
+console.log("ariel") 
+					var audio = new Audio( './components/assets/audio/plot-song.mpeg' );
 
-						var playSong = document.getElementById( 'play-song' );
-						var pauseSong = document.getElementById( 'pause-song' );
-						var barsContainer = document.querySelector( '.player-bars' );
+					for ( var i = 0; i < 100; i++ ) {
+						var bar = document.createElement( 'div' );
+						bar.classList.add( 'bar' );
+						barsContainer.appendChild( bar );
+					}
 
-						var audio = new Audio( './components/assets/audio/plot-song.mpeg' );
+					var bars = document.querySelectorAll( '.bar' );
 
-						for ( var i = 0; i < 100; i++ ) {
-							var bar = document.createElement( 'div' );
-							bar.classList.add( 'bar' );
-							barsContainer.appendChild( bar );
-						}
-						
-						var bars = document.querySelectorAll( '.bar' ); 
-
+					playSong.addEventListener( 'click', function () {
+						audio.play();
+						playSong.style.display = 'none';
+						pauseSong.style.display = 'block';
 						bars.forEach( function ( bar, index ) {
-							bar.style.animation = `ocilation 1s infinite alternate ${ index * ( Math.random() * 0.05 ) }s`;
-							bar.style.animationPlayState = 'paused';
+							<!-- bar.style.animation = `ocilation 1s infinite alternate ${index * (Math.random() * 0.05)}s`; -->
+							bar.style.animation = `ocilation 1s forwards`;
 						} );
+					} );
 
-						
-						playSong.addEventListener( 'click', function () {
-							audio.play();
-							playSong.style.display = 'none';
-							pauseSong.style.display = 'block';
-							bars.forEach( function ( bar, index ) {
-								bar.style.animationPlayState = 'running';
-							} );
-						} );
+					pauseSong.addEventListener( 'click', function () {
+						audio.pause();
 
-						pauseSong.addEventListener( 'click', function () {
-							audio.pause();
-							playSong.style.display = 'block';
-							pauseSong.style.display = 'none';
-							bars.forEach( function ( bar ) {
-								bar.style.animationPlayState = 'paused';
-							} );
+						playSong.style.display = 'block';
+						pauseSong.style.display = 'none';
+
+						bars.forEach( function ( bar ) {
+							< !--bar.style.animationPlayState = 'paused'; -->
+								bar.style.animation = `ocilation 1s backwards`;
 						} );
-					</script>
+					} );
+
+				</script>
 			</section>
 			<section class="sponsors">
 				<h1>Patrocinadores e Apoiadores</h1>

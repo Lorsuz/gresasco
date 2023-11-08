@@ -24,7 +24,7 @@ footer {
   padding: 60px 20px 70px;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 280px 30px;
+  grid-template-rows: 250px 30px;
   gap: 15px;
 }
 footer * {
@@ -73,7 +73,7 @@ footer section.newsletter form {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 footer section.newsletter form input {
   color: #1C3B35;
@@ -96,6 +96,7 @@ footer section.newsletter form button {
 footer section.newsletter .social-links {
   display: flex;
   margin-bottom: 20px;
+  align-items: center;
 }
 footer section.newsletter .social-links a {
   display: flex;
