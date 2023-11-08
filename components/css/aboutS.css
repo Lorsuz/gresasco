@@ -13,18 +13,24 @@
 
 .sobre-a-escola {
   display: flex;
-  flex-direction: column;
-  width: 600px;
+  width: 1100px;
   margin-left: auto;
   margin-right: auto;
   border-top: var(--color-primary) solid 4px;
   border-bottom: var(--color-primary) solid 4px;
   margin-bottom: 6rem;
   margin-top: -2rem;
+  padding: .5rem;
+}
+
+.as-title-p {
+  display: flex;
+  flex-direction: column;
 }
 
 .sobre-a-escola h1, p {
   padding: 1rem;
+  margin-right: 1.5rem;
 }
 
 .sobre-a-escola h1 {
@@ -39,12 +45,44 @@
 }
 
 .sobre-a-escola a {
-  color: var(--color-primary);
+  color: var(--color-white-soft);
   font-weight: bold;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
+  background-color: var(--color-primary);
+  width: 160px;
+  text-align: center;
+  padding: .5rem 1rem;
+  border-radius: 7px;
 }
 
 .sobre-a-escola a:hover {
-  color: var(--color-primary);
+  color: var(--color-white-soft);
   font-weight: bold;
-  text-decoration: underline;
+  margin-top: 2rem;
+  background-color: var(--color-primary-soft);
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+
+.bi-box-arrow-up-right {
+  margin-left: .5rem;
+  font-size: 1rem;
+  color: var(--color-white-soft);
+}
+
+.pavilhao {
+  display: flex;
+  height: 570px;
+  border-radius: 1rem 0;
+  margin-top: 2.2rem;
+}
+
+.pavilhao:hover {
+  display: flex;
+  height: 570px;
+  border-radius: 0 1rem;
+  margin-top: 2.2rem;
+  transition: 300ms;
 }
