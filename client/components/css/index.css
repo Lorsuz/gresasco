@@ -210,16 +210,17 @@ main .banner .slides li.toRightOld {
   animation: toRightOld 500ms ease-in-out;
 }
 main .banner .slides li.toRightNew {
-  animation: toRightNew 500ms ease-in-out;
+  animation: toRightNew 500ms ease-in-out forwards;
+  left: 0;
 }
 main .banner .slides li.toLeftOld {
   animation: toLeftOld 500ms ease-in-out;
 }
 main .banner .slides li.toLeftNew {
-  animation: toLeftNew 500ms ease-in-out;
+  animation: toLeftNew 500ms ease-in-out forwards;
+  left: 0;
 }
 main .banner .slides li.active {
-  opacity: 1;
   left: 0;
 }
 main .banner > button {

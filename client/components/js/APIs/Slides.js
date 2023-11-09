@@ -7,13 +7,13 @@ async function fetchData () {
 	try {
 		const response = await fetch( "components/json/data.json" );
 		const data = await response.json();
-		
+
 		data.banner.forEach( ( card, index ) => {
 			Slides.innerHTML +=
 				` 
 				<li class="slide ${ index == 0 ? "active" : "" }">
 				<div class="img">
-					<img src="./components/assets/images/Carrossel/${card.image}" alt="${card.alt}">
+					<img src="./components/assets/images/Carrossel/${ card.image }" alt="${ card.alt }">
 				</div>
 				<div class="text">
 					<h2>Evento Academicos</h2>
@@ -31,9 +31,8 @@ async function fetchData () {
 			"main .banner .next",
 			"main .banner .pagination .dot"
 		);
-		console.log(a);
 	} catch ( error ) {
-		console.error( "Error fetching data:", error );
+		console.error( error );
 	}
 }
 
