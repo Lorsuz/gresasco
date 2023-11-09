@@ -7,7 +7,7 @@ export default class Slide {
 	totalSlides;
 	interval;
 
-	constructor ( slides, prev, next, dots ) {
+	constructor ( slides, prev, next, pagination ) {
 		this.slides = document.querySelectorAll( slides );
 		this.prev = document.querySelector( prev ).addEventListener( "click", () => {
 			this.calculateSlideCurrent( -1 );
@@ -15,7 +15,7 @@ export default class Slide {
 		this.next = document.querySelector( next ).addEventListener( "click", () => {
 			this.calculateSlideCurrent( 1 );
 		} );
-		this.pagination = document.querySelectorAll( dots );
+		this.pagination = document.querySelectorAll( pagination );
 		for ( let index = 0; index < this.pagination.length; index++ ) {
 			this.pagination[ index ].addEventListener( "click", () => {
 				this.removeAnimation();
