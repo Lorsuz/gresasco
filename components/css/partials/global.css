@@ -46,7 +46,6 @@ button i {
   font-family: "Poppins", sans-serif;
   font-family: Arial, Helvetica, sans-serif;
   transition: 300ms ease-in-out;
-  outline: 1px dotted;
   color: var(--color-black-soft);
   background: transparent;
 }
