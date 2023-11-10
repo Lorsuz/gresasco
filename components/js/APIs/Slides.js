@@ -17,7 +17,7 @@ async function fetchData () {
 				</div>
 				<div class="text">  
 
-				${ index == 0 ? `
+				${ index == 9 ? `
 				<h2>Evento Academicos</h2>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique deleniti maxime neque, laudantium architecto incidunt placeat labore quaerat atque dolorum?</p>
 					<a href="" class="button">Comece agora</a>` : "" }
