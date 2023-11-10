@@ -15,10 +15,13 @@ async function fetchData () {
 				<div class="img">
 					<img src="./components/assets/images/Carrossel/${ card.image }" alt="${ card.alt }">
 				</div>
-				<div class="text">
-					<h2>Evento Academicos</h2>
+				<div class="text">  
+
+				${ index == 0 ? `
+				<h2>Evento Academicos</h2>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique deleniti maxime neque, laudantium architecto incidunt placeat labore quaerat atque dolorum?</p>
-					<a href="" class="button">Comece agora</a>
+					<a href="" class="button">Comece agora</a>` : "" }
+				
 				</div>
 			</li>
         `;
