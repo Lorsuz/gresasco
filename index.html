@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./components/assets/images/logo - gresasc.jpg" type="image/x-icon">
+		<title>Home</title>
+		<link rel="stylesheet" href="./components/css/partials/header.css">
+		<link rel="stylesheet" href="./components/css/index.css">
+		<link rel="stylesheet" href="./components/css/partials/footer.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="components/css/responsiveMenuHeader.css">
+	</head>
+	<body onresize="mudouTamanho()">
+		<div id="back-to-top"><i class="fa-solid fa-chevron-up"></i></div>
+		<header class="">
+			<article class="nav-bar">
+				<section class="logo">
+					<img src="./components/assets/images/logo - gresasc.jpg" alt="">
+				</section>
+				<nav id="itens">
+					<ul>
+						<li><a href="#">Página Inicial</a></li>
+						<li><a href="#">A Escola</a></li>
+						<li><a href="#">Nossa História</a></li>
+						<li><a href="#">Sócio Torcedor</a></li>
+						<li><a href="#">Créditos</a></li>
+					</ul>
+					<i class="bi bi-list" id="menuToggle" onclick="clickMenu()"></i>
+					<i class="bi bi-x-lg" id="xMenuToggle"></i>
+				</nav>
+				<script>
+
+					// function mudouTamanho() {
+					// 	if (window.innerWidth >= 1000) {
+					// 		itens.style.display = 'block'
+					// 	} else {
+					// 		itens.style.display = 'none'
+					// 	}
+					// }
+
+					function clickMenu() {
+						if (itens.style.display == 'block') {
+							itens.style.display = 'none'
+						} else {
+							itens.style.display = 'block'
+						}
+					}
+				</script>
+			</article>
+		</header>
+		<main class="">
+			<section class="cover">
+				<div class="left">
+					<div class="container">
+						<h2>Grêmio Recreativo Escola de Samba</h2>
+						<h1>Acadêmicos de Santa Cruz</h1>
+						<p>Bem-vindos! Aqui o samba é vida, a cultura é paixão e a alegria é eterna. No coração de Santa Cruz,
+							encontre a felicidade em cada batida de tambor. Feliz da vida é quem tem a Santa Cruz no coração.</p>
+						<a href="./components/pages/not-found.html">Ir para Loja</a>
+					</div>
+				</div>
+				<div class="right">
+					<div class="img">
+						<img src="./components/assets/images/logo - gresasc.jpg" alt="">
+					</div>
+					<ul class="social-links">
+						<li>
+							<a href="">
+								<i class="fa-brands fa-instagram"></i>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<i class="fa-brands fa-facebook"></i>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<i class="fa-brands fa-youtube"></i>
+							</a>
+						</li>
+						<li>
+							<a href="">
+								<i class="fa-brands fa-x-twitter"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<article class="nav-info">
+				<section class="contact">
+					<div>
+						<i class="fa-solid fa-phone"></i>
+						<span>+55 (43) 9 3421-7348</span>
+					</div>
+					<div>
+						<i class="fa-solid fa-envelope"></i>
+						<span>gresasc@academicos.com</span>
+					</div>
+				</section>
+				<p>Siga-nos para ficar por dentro das novidades!</p>
+				<section class="social-network">
+					<span>Redes Sociais:</span>
+					<div>
+						<a href=""><i class="fa-brands fa-x-twitter"></i></a>
+						<a href=""><i class="fa-brands fa-instagram"></i></a>
+						<a href=""><i class="fa-brands fa-youtube"></i></a>
+						<a href=""><i class="fa-brands fa-facebook"></i></a>
+					</div>
+				</section>
+			</article>
+			<section class="banner">
+				<ul class="slides"></ul>
+				<button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+				<button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+				<ul class="pagination"></ul>
+			</section>
+			<section class="plot">
+				<div class="description">
+					<h2>Enredo 2024</h2>
+					<h1>As bruxas estão soltas!</h1>
+					<p>O enredo "As Bruxas Estão Soltas!" celebra o poder feminino, explorando a manifestação das energias
+						ancestrais através da Deusa Terra e dos quatro elementos da criação.
+					</p>
+					<p> A narrativa aborda a conexão entre passado e presente, destacando as mulheres que, ao longo da
+						história,
+						detinham conhecimentos medicinais e
+						espirituais, mas foram perseguidas sob a acusação de bruxaria.
+					</p>
+					<p>O enredo também aborda a resistência dessas
+						mulheres e sua contínua luta contra o machismo e a intolerância, honrando a força do sagrado feminino e
+						a
+						capacidade de voar além dos limites impostos, como estrelas brilhantes no céu.</p>
+					<span>Iae, gostou? Para ter acesso a nossa sinopse completa basta baixar o PDF a baixo:</span>
+					<button class="custom-button">Baixar Sinopse</button>
+				</div>
+				<di class="disc-cover">
+					<img src="./components/assets/images/Plot/plot-2024.jpeg" alt="Logo Enredo-2024">
+					<div class="icons">
+						<button id="play-song">
+							<i class="bi bi-play"></i>
+						</button>
+						<button id="pause-song">
+							<i class="bi bi-pause"></i>
+						</button>
+						<div class="player-bars"></div>
+					</div>
+			</section>
+			<section class="sponsors">
+				<h1>Patrocinadores e Apoiadores</h1>
+				<div class="swiper">
+					<div class="swiper-wrapper"></div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</section>
+			<section class="details">
+				<ul>
+					<li>
+						<h2>64</h2>
+						<h3>Anos</h3>
+					</li>
+					<li>
+						<h2>150K</h2>
+						<h3>Sócios</h3>
+					</li>
+					<li>
+						<h2>15</h2>
+						<h3>Troféus</h3>
+					</li>
+					<li>
+						<h2>10+</h2>
+						<h3>Patrocínios</h3>
+					</li>
+				</ul>
+			</section>
+			<article class="about-school">
+				<div class="text-container">
+					<h1>Sobre a Escola</h1>
+					<div class="wiki">
+						<p>Grêmio Recreativo Escola de Samba Acadêmicos de Santa Cruz (ou simplesmente Santa Cruz) é uma escola de samba brasileira da cidade do Rio de Janeiro, com sede no bairro de Santa Cruz, na zona oeste da cidade. Dentre as escolas de samba do carnaval carioca que já desfilaram na Marquês de Sapucaí, é a que se situa mais distante do sambódromo, localizada na Rua do Império em Santa Cruz. Atualmente é filiada a LIGA RJ, entidade criada juntamente com outras oito escolas em 2019, e participa da Série Ouro, grupo de acesso à elite do carnaval carioca.</p>
+						<p>Desde a sua estreia no carnaval carioca sempre foi tida como a escola de samba representante da zona rural do Rio, fato este que, por vezes implicava em preconceito por parte da mídia e de sambistas de outras escolas. Já no seu quarto ano de desfiles no Rio de Janeiro figurava entre as grandes do carnaval carioca. Fato este que se repetiria por mais oito vezes. A Acadêmicos de Santa Cruz porém, nunca permaneceu neste grupo.</p>
+						<p>A Santa Cruz sempre esteve atrelada às manifestações culturais do seu bairro e ligada aos projetos sociais. Estes já beneficiaram crianças e jovens, adultos e idosos ao longo dos anos. Acordos com a iniciativa privada, principalmente empresários e comerciantes locais, sempre foram fundamentais para a realização dos seus desfiles e a manutenção destes projetos.</p>
+						<div class="read-more">
+							<a href="https://pt.wikipedia.org/wiki/Acad%C3%AAmicos_de_Santa_Cruz" target="_blank">
+								<i class="fa-solid fa-arrow-up-right-from-square"></i>
+								<span>Continuar Lendo</span></a>
+						</div>
+					</div>
+				</div>
+				<div class="img-container">
+					<div class="img">
+						<img src="./components/assets/images/pavillion.jpeg" alt="Pavilhão">
+					</div>
+				</div>
+			</article>
+			<section class="contact">
+				<div class="text">
+					<h3>Formulário de contato</h3>
+					<h2>Fale Com Nossa Agremiação!</h2>
+					<p>Tire suas dúvidas com nosso time. Deixe suas informações de contato e será um prazer lhe retonar!</p>
+					<ul class="info">
+						<li><i class="fa-solid fa-phone"></i><span></span> +55 (00) 0 0000-0000</li>
+						<li><i class="fa-solid fa-envelope"></i><span></span> exemplo@academicos.com.br</li>
+						<li><i class="fa-solid fa-map-location-dot"></i>
+							<address>Rua do Império, nº 573; Santa Cruz, Rio de Janeiro - RJ; CEP 23.555-024</address>
+						</li>
+					</ul>
+					<div class="map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3674.902216920123!2d-43.69324992558163!3d-22.916977238233624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bf7524c69eb5b%3A0xc5d324fb7fbbd336!2sR.%20do%20Imp%C3%A9rio%2C%20573%20-%20Santa%20Cruz%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2023555-024!5e0!3m2!1spt-BR!2sbr!4v1698871972883!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+				</div>
+				<div class="form">
+					<form action="">
+						<div>
+							<label for="">Nome:</label>
+							<input type="text" name="" id="" placeholder="Seu nome">
+						</div>
+						<div>
+							<label for="">E-mail:</label>
+							<input type="text" name="" id="" placeholder="exemplo@gmail.com">
+						</div>
+						<div>
+							<label for="">Telefone:</label>
+							<input type="text" name="" id="" placeholder="+00 (00) 0 0000-0000">
+						</div>
+						<div>
+							<label for="">Assunto:</label>
+							<input type="text" name="" id="" placeholder="Assunto da mensagem">
+						</div>
+						<div>
+							<label for="">Descrição:</label>
+							<textarea name="" id=cols="30" rows="10" placeholder="Como podemos te ajudar?"></textarea>
+						</div>
+						<div class="agree-terms">
+							<input type="checkbox" name="" id="terms">
+							<label for="terms">Ao entrar em contato com a agremiação, seus dados pessoais fornecidos e o conteúdo e histórico da sua mensagem serão armazenados e poderão ser tratados e ultilizados pela agremiação. Ao enviar sua mensagem, você esta ciente e de acordo com estas condições, conforme nossos <a href="">Termos de Uso</a> e <a href="">Política de Privacidade</a>.</label>
+						</div>
+						<button type="submit">Enviar mensagem</button>
+					</form>
+				</div>
+			</section>
+		</main>
+		<div class="custom-shape-divider-bottom-1683068753">
+			<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+				<path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+			</svg>
+		</div>
+		<footer>
+			<section class="structure">
+				<div class="">
+					<h3>Página Inicial</h3>
+					<ul>
+						<li><a href="">Capa</a></li>
+						<li><a href="">Notícias</a></li>
+						<li><a href="">Enredo</a></li>
+						<li><a href="">Status</a></li>
+						<li><a href="">Apoiadores</a></li>
+						<li><a href="">Localização</a></li>
+						<li><a href="">Contato</a></li>
+					</ul>
+				</div>
+				<div class="">
+					<h3>A Escola</h3>
+					<ul>
+						<li><a href="">Diretoria</a></li>
+						<li><a href="">O Parvilhão</a></li>
+						<li><a href="">A Torcida</a></li>
+						<li><a href="">Desfile Conosco</a></li>
+					</ul>
+				</div>
+				<div class="">
+					<h3>Nossa Historia</h3>
+					<ul>
+						<li><a href="">A Fundação</a></li>
+						<li><a href="">Colocações</a></li>
+						<li><a href="">Presidentes</a></li>
+						<li><a href="">Premiações</a></li>
+					</ul>
+				</div>
+				<div class="">
+					<h3>Créditos</h3>
+					<ul>
+						<li><a href="">Fotografias</a></li>
+						<li><a href="">Dados de Desfiles</a></li>
+						<li><a href="">Dev Team</a></li>
+						<li><a href="">Termos de Uso</a></li>
+						<li><a href="">Política de Privacidade</a></li>
+					</ul>
+				</div>
+			</section>
+			<section class="newsletter">
+				<h3>Inscreva-se para receber nossas novidades!</h3>
+				<form action="">
+					<input type="text" name="" id="" placeholder="Digite seu e-mail">
+					<button type="submit">Inscrever-se</button>
+				</form>
+				<div class="social-links">
+					<a href=""><i class="fa-brands fa-instagram"></i></a>
+					<a href=""><i class="fa-brands fa-facebook"></i></a>
+					<a href=""><i class="fa-brands fa-youtube"></i></a>
+					<a href=""><i class="fa-brands fa-x-twitter"></i></a>
+				</div>
+			</section>
+			<section class="copyriht">
+				<p>Desenvolvido e realizado por <a href="">@WebPulse</a> - &copy; 2023 Todos os direitos reservedos.</p>
+			</section>
+			<section class="terms">
+				<a href="">Termos de Uso</a>
+				<a href="">Politica de Privacidade</a>
+				<a href="">Não Venda Minhas Informações</a>
+			</section>
+		</footer>
+		<script type="module" src="./components/js/index.js" deffer></script>
+		<script type="module" src="./components/js/imports/home.js" deffer></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" deffer></script>
+	</body>
+</html>
