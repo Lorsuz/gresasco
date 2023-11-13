@@ -15,6 +15,9 @@ main .cover {
 }
 main .cover > div.left {
   grid-column: 2/7;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 main .cover > div.left .container h2 {
   color: var(--color-primary-soft);
@@ -24,7 +27,7 @@ main .cover > div.left .container h2 {
 main .cover > div.left .container h1 {
   color: var(--color-primary-soft);
   font-family: wedding;
-  font-size: 3.9rem;
+  font-size: 4rem;
   margin-bottom: 20px;
 }
 main .cover > div.left .container p {
@@ -32,17 +35,37 @@ main .cover > div.left .container p {
   font-size: 1.1rem;
   margin-bottom: 50px;
 }
-main .cover > div.left .container a {
+main .cover > div.left .container > a {
   background: var(--color-primary-soft);
   border-radius: 10px 0;
   color: var(--color-white);
   display: inline-block;
   font-weight: bold;
   padding: 10px 50px;
+  margin-bottom: 25px;
 }
-main .cover > div.left .container a:hover {
+main .cover > div.left .container > a:hover {
   background: var(--color-primary);
   border-radius: 0px 10px;
+}
+main .cover > div.left .container .social-links {
+  gap: 25px;
+  display: none;
+}
+main .cover > div.left .container .social-links li a i {
+  font-size: 2rem;
+}
+main .cover > div.left .container .social-links li a i.fa-facebook {
+  color: #3b5998;
+}
+main .cover > div.left .container .social-links li a i.fa-instagram {
+  color: #e4405f;
+}
+main .cover > div.left .container .social-links li a i.fa-x-twitter {
+  color: #000000;
+}
+main .cover > div.left .container .social-links li a i.fa-youtube {
+  color: #cd201f;
 }
 main .cover > div.right {
   grid-column: 8/12;
@@ -110,10 +133,12 @@ main .nav-info > p:hover {
 main .nav-info section {
   display: flex;
 }
+main .nav-info section.contact {
+  gap: 30px;
+}
 main .nav-info section.contact div {
   display: flex;
   align-items: center;
-  margin-right: 30px;
   cursor: pointer;
 }
 main .nav-info section.contact div i {
@@ -148,9 +173,10 @@ main .nav-info section.social-network a:hover i {
 main .banner {
   position: relative;
   height: 100vh;
-  min-height: 700px;
+  min-height: 200px;
   width: 100%;
   overflow: hidden;
+  margin-bottom: 100px;
 }
 main .banner .slides {
   width: 100%;
@@ -258,22 +284,26 @@ main .banner .pagination .dot {
   width: 50px;
   height: 5px;
   margin: 0 5px;
-  background: var(--color-gray);
+  background: var(--color-white);
   border-radius: 10px;
+  cursor: pointer;
+  transition: 300ms ease-in-out;
 }
 main .banner .pagination .dot.active {
   background: var(--color-primary);
   top: 0;
   left: 0;
+  cursor: default;
 }
 main .plot {
   align-items: center;
   min-height: 100vh;
   display: grid;
+  height: auto;
   grid-template-columns: repeat(12, 1fr);
 }
 main .plot .description {
-  grid-column: 2/7;
+  grid-column: 2/6;
 }
 main .plot .description h2 {
   font-size: 2rem;
@@ -300,15 +330,16 @@ main .plot .description button {
   display: block;
 }
 main .plot .disc-cover {
-  grid-column: 8/13;
+  grid-column: 7/12;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 500px;
+  width: 100%;
   box-shadow: -10px -10px 10px 0 #fff, 10px 10px 10px 0 rgba(0, 0, 0, 0.6);
-  height: 400px;
+  height: auto;
   overflow: hidden;
+  margin: auto;
   border-radius: 6px;
 }
 main .plot .disc-cover img {
@@ -316,7 +347,6 @@ main .plot .disc-cover img {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 main .plot .disc-cover .icons {
@@ -387,6 +417,7 @@ main .plot .disc-cover:hover .icons {
 main .sponsors {
   padding: 50px 0;
   height: 500px;
+  max-width: 1500px;
 }
 main .sponsors h1 {
   font-size: 2rem;
@@ -420,10 +451,14 @@ main .details {
   margin-bottom: 50px;
 }
 main .details ul {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 50px 100px;
 }
 main .details ul li {
-  padding: 40px;
+  grid-column: 1fr;
 }
 main .details ul li h2 {
   font-size: 5rem;
@@ -494,6 +529,9 @@ main .about-school .text-container .wiki .read-more a:hover {
 }
 main .about-school .img-container {
   grid-column: 8/12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 main .about-school .img-container .img {
   position: relative;
@@ -537,8 +575,10 @@ main > .contact {
   background: linear-gradient(0deg, #0b1127 0%, #1f2a4b 100%);
   min-height: 100vh;
   height: auto;
-  padding: 70px 0 20px;
+  padding: 70px 0 80px;
   display: grid;
+  justify-content: center;
+  align-items: center;
   grid-template-columns: repeat(12, 1fr);
 }
 main > .contact * {
@@ -547,11 +587,11 @@ main > .contact * {
 main > .contact > div {
   display: flex;
   justify-content: center;
+  max-width: 1000px;
 }
 main > .contact .text {
   grid-column: 2/7;
   flex-direction: column;
-  max-width: 600px;
 }
 main > .contact .text > h3 {
   font-size: 1.2rem;
@@ -614,7 +654,8 @@ main > .contact .form {
   grid-column: 8/12;
 }
 main > .contact .form form {
-  min-width: 450px;
+  min-width: 400px;
+  width: 100%;
 }
 main > .contact .form form div {
   width: 100%;
@@ -725,6 +766,13 @@ main > .contact .form form button:hover {
   main .cover > div.right .img img {
     width: 150%;
   }
+  main .about-school .img-container .img {
+    width: 350px;
+    height: 480px;
+  }
+  main .about-school .img-container .img img {
+    width: 90%;
+  }
 }
 @media screen and (max-width: 1000px) {
   main .cover > div.left {
@@ -745,15 +793,50 @@ main > .contact .form form button:hover {
   main .cover > div.right .img img {
     width: 150%;
   }
+  main .details ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px 150px;
+  }
+  main .banner {
+    height: 600px;
+  }
+  main .about-school .text-container {
+    grid-column: 2/12;
+    margin-bottom: 150px;
+  }
+  main .about-school .img-container {
+    grid-column: 2/12;
+  }
+  main .about-school .img-container .img {
+    height: 580px;
+    width: 450px;
+  }
+  main > .contact > .text {
+    grid-column: 2/12;
+    margin-bottom: 100px;
+  }
+  main > .contact > .form {
+    grid-column: 2/12;
+  }
+}
+@media screen and (max-width: 1100px) {
+  main .plot {
+    margin-bottom: 50px;
+  }
+  main .plot .description {
+    grid-column: 2/12;
+    margin-bottom: 70px;
+  }
+  main .plot .disc-cover {
+    grid-column: 2/12;
+  }
 }
 @media screen and (max-width: 880px) {
   main .cover {
-    grid-template-rows: 500px 600px;
+    grid-template-rows: 500px;
   }
   main .cover > div.left {
     grid-column: 2/12;
-    align-items: end;
-    justify-content: end;
   }
   main .cover > div.left .container h2 {
     font-size: 2rem;
@@ -764,16 +847,48 @@ main > .contact .form form button:hover {
   main .cover > div.left .container p {
     width: 100%;
   }
+  main .cover > div.left .container > a {
+    padding: 15px 50px;
+    font-size: 1.1rem;
+  }
+  main .cover > div.left .container .social-links {
+    display: flex;
+  }
   main .cover > div.right {
-    grid-column: 2/12;
-    justify-content: start;
-    align-items: start;
+    display: none;
   }
-  main .cover > div.right .img {
+  main .nav-info {
+    justify-content: space-evenly;
+  }
+  main .nav-info p {
+    display: none;
+  }
+}
+@media screen and (max-width: 650px) {
+  main .nav-info section.contact {
     width: 100%;
+    justify-content: space-evenly;
   }
-  main .cover > div.right .img img {
-    width: 450px;
+  main .nav-info section.contact div span {
+    font-size: 1rem;
+  }
+  main .nav-info section.contact div i {
+    font-size: 1.3rem;
+    margin-right: 9px;
+  }
+  main .nav-info section.social-network {
+    display: none;
+  }
+  main .banner {
+    height: 400px;
+    margin-bottom: 80px;
+  }
+  main .sponsors h1 {
+    font-size: 1.5rem;
+  }
+  main .details ul {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 100px 0;
   }
 }
 

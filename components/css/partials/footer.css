@@ -6,8 +6,11 @@
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
+  display: flex;
+  justify-content: center;
 }
 .custom-shape-divider-bottom-1683068753 svg {
+  min-width: 1000px;
   float: left;
   display: block;
   width: calc(148% + 1.3px);

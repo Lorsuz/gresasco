@@ -22,12 +22,12 @@ const SwiperConfigSponsors = {
 		forceToAxis: true,
 	},
 	breakpoints: {
-		740: {
+		800: {
 			slidesPerView: 2,
 		},
-		1024: {
+		1200: {
 			slidesPerView: 3,
-		},
+		}
 	},
 };
 

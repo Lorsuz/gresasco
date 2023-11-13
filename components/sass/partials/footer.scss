@@ -7,9 +7,11 @@
 	overflow: hidden;
 	line-height: 0;
 	transform: rotate(180deg);
+	display: flex;
+	justify-content: center;
 
 	svg {
-
+		min-width: 1000px;
 		float: left;
 		display: block;
 		width: calc(148% + 1.3px);
@@ -117,11 +119,11 @@ footer {
 			}
 
 			.social-links {
-				display: flex; 
+				display: flex;
 				margin-bottom: 20px;
 				align-items: center;
-				
-				a { 
+
+				a {
 					display: flex;
 					align-items: center;
 					justify-content: center;
@@ -202,5 +204,12 @@ footer {
 				}
 			}
 		}
+	}
+}
+
+
+@media screen {
+	@media (max-width: 4px) {
+		
 	}
 }
