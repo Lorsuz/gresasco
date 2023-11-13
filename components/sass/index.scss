@@ -15,8 +15,12 @@ main {
 
 		> div {
 
+
 			&.left {
 				grid-column: 2/7;
+				align-items: center;
+				display: flex;
+				justify-content: center;
 
 				.container {
 					h2 {
@@ -28,7 +32,7 @@ main {
 					h1 {
 						color: var(--color-primary-soft);
 						font-family: wedding;
-						font-size: 3.9rem;
+						font-size: 4rem;
 						margin-bottom: 20px;
 					}
 
@@ -38,11 +42,32 @@ main {
 						margin-bottom: 50px;
 					}
 
-<<<<<<< HEAD:client/components/sass/index.scss
+					> a {
+						background: var(--color-primary-soft);
+						border-radius: 10px 0;
+						color: var(--color-white);
+						display: inline-block;
+						font-weight: bold;
+						padding: 10px 50px;
+						margin-bottom: 25px;
+
+						&:hover {
+							background: var(--color-primary);
+							border-radius: 0px 10px;
+
+						}
+					}
+
+					.social-links {
+						gap: 25px;
+						display: none;
+
+						li {
 							a {
+
+
 								i {
-									font-size: 2.4rem;
-									color: var(--color-text-soft);
+									font-size: 2rem;
 
 									&.fa-facebook {
 										color: #3b5998;
@@ -61,32 +86,6 @@ main {
 									}
 								}
 							}
-
-							&:hover {
-								top: -5px;
-
-								a {
-									i {
-										color: var(--color-primary-soft);
-
-									}
-
-
-								}
-							}
-=======
-					a {
-						background: var(--color-primary-soft);
-						border-radius: 10px 0;
-						color: var(--color-white);
-						display: inline-block;
-						font-weight: bold;
-						padding: 10px 50px;
-
-						&:hover {
-							background: var(--color-primary);
-							border-radius: 0px 10px;
->>>>>>> 0e1744abfb011565bf96e17c53c458c082c58693:components/sass/index.scss
 						}
 					}
 				}
@@ -160,7 +159,6 @@ main {
 
 	}
 
-
 	.nav-info {
 		background: var(--color-primary);
 		display: flex;
@@ -172,7 +170,6 @@ main {
 		width: 100%;
 
 		* {
-
 			color: #fff;
 		}
 
@@ -191,10 +188,11 @@ main {
 			display: flex;
 
 			&.contact {
+				gap: 30px;
+
 				div {
 					display: flex;
 					align-items: center;
-					margin-right: 30px;
 					cursor: pointer;
 
 					i {
@@ -249,9 +247,10 @@ main {
 	.banner {
 		position: relative;
 		height: 100vh;
-		min-height: 700px;
+		min-height: 200px;
 		width: 100%;
 		overflow: hidden;
+		margin-bottom: 100px;
 
 		.slides {
 			width: 100%;
@@ -382,13 +381,18 @@ main {
 				width: 50px;
 				height: 5px;
 				margin: 0 5px;
-				background: var(--color-gray);
+				background: var(--color-white);
 				border-radius: 10px;
+				cursor: pointer;
+				transition: 300ms ease-in-out;
+
 
 				&.active {
 					background: var(--color-primary);
 					top: 0;
 					left: 0;
+					cursor: default;
+
 				}
 			}
 		}
@@ -398,11 +402,13 @@ main {
 		align-items: center;
 		min-height: 100vh;
 		display: grid;
+		height: auto;
+
 		grid-template-columns: repeat(12, 1fr);
 
 
 		.description {
-			grid-column: 2/7;
+			grid-column: 2/6;
 
 			h2 {
 				font-size: 2rem;
@@ -436,15 +442,16 @@ main {
 		}
 
 		.disc-cover {
-			grid-column: 8/13;
+			grid-column: 7/12;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			position: relative;
-			width: 500px;
+			width: 100%;
 			box-shadow: -10px -10px 10px 0 #fff, 10px 10px 10px 0 rgba(0, 0, 0, 0.600);
-			height: 400px;
+			height: auto;
 			overflow: hidden;
+			margin: auto;
 			border-radius: 6px;
 
 
@@ -453,7 +460,6 @@ main {
 				justify-content: center;
 				align-items: center;
 				width: 100%;
-				height: 100%;
 				object-fit: cover;
 			}
 
@@ -545,6 +551,7 @@ main {
 	.sponsors {
 		padding: 50px 0;
 		height: 500px;
+		max-width: 1500px;
 
 		h1 {
 			font-size: 2rem;
@@ -574,9 +581,9 @@ main {
 				}
 			}
 
-			.swiper-button-prev {}
+			// .swiper-button-prev {}
 
-			.swiper-button-next {}
+			// .swiper-button-next {}
 
 			.swiper-pagination {
 				.swiper-pagination-bullet {
@@ -584,7 +591,7 @@ main {
 				}
 			}
 
-			.scrollbar {}
+			// .scrollbar {}
 
 		}
 	}
@@ -593,14 +600,17 @@ main {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		// min-height: 100px;
 		margin-bottom: 50px;
 
 		ul {
-			display: flex;
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			justify-content: center;
+			align-items: center;
+			gap: 50px 100px;
 
 			li {
-				padding: 40px;
+				grid-column: 1fr;
 
 				h2 {
 					font-size: 5rem;
@@ -689,6 +699,9 @@ main {
 
 		.img-container {
 			grid-column: 8/12;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 
 			.img {
 				position: relative;
@@ -741,8 +754,10 @@ main {
 		background: linear-gradient(0deg, #0b1127 0%, #1f2a4b 100%);
 		min-height: 100vh;
 		height: auto;
-		padding: 70px 0 20px;
+		padding: 70px 0 80px;
 		display: grid;
+		justify-content: center;
+		align-items: center;
 		grid-template-columns: repeat(12, 1fr);
 
 		* {
@@ -754,13 +769,12 @@ main {
 		> div {
 			display: flex;
 			justify-content: center;
-
+			max-width: 1000px;
 		}
 
 		.text {
 			grid-column: 2/7;
 			flex-direction: column;
-			max-width: 600px;
 
 			> h3 {
 				font-size: 1.2rem;
@@ -787,7 +801,7 @@ main {
 					margin: 10px 0;
 					display: flex;
 
-					i {}
+					// i {}
 
 					span,
 					address {
@@ -842,7 +856,8 @@ main {
 			grid-column: 8/12;
 
 			form {
-				min-width: 450px;
+				min-width: 400px;
+				width: 100%;
 
 				div {
 					width: 100%;
@@ -977,7 +992,6 @@ main {
 	@media (max-width:1200px) {
 		main {
 			.cover {
-
 				> div {
 					&.left {
 						grid-column: 2/8;
@@ -1002,7 +1016,18 @@ main {
 					}
 				}
 			}
+
 		}
+
+		main .about-school .img-container .img {
+			width: 350px;
+			height: 480px;
+		}
+
+		main .about-school .img-container .img img {
+			width: 90%;
+		}
+
 	}
 
 	@media (max-width:1000px) {
@@ -1036,19 +1061,73 @@ main {
 					}
 				}
 			}
+
+			.details {
+				ul {
+					grid-template-columns: repeat(2, 1fr);
+					gap: 100px 150px;
+				}
+			}
+		}
+
+		main .banner {
+			height: 600px;
+
+		}
+
+		main .about-school .text-container {
+			grid-column: 2/12;
+			margin-bottom: 150px;
+		}
+
+		main .about-school .img-container {
+			grid-column: 2/12;
+
+		}
+
+		main .about-school .img-container .img {
+			height: 580px;
+			width: 450px;
+		}
+
+		main > .contact > .text {
+			grid-column: 2/12;
+			margin-bottom: 100px;
+		}
+
+		main > .contact > .form {
+			grid-column: 2/12;
+
+		}
+	}
+
+	@media (max-width:1100px) {
+		main {
+			.plot {
+				margin-bottom: 50px;
+
+				.description {
+					grid-column: 2/12;
+					margin-bottom: 70px;
+
+				}
+
+				.disc-cover {
+					grid-column: 2/12;
+
+				}
+
+			}
 		}
 	}
 
 	@media (max-width:880px) {
 		main {
 			.cover {
-				grid-template-rows: 500px 600px;
 
 				> div {
 					&.left {
 						grid-column: 2/12;
-						align-items: end;
-						justify-content: end;
 
 						.container {
 							h2 {
@@ -1056,28 +1135,81 @@ main {
 							}
 
 							h1 {
-								font-size: 3rem;
+								font-size: 2.8rem;
 							}
 
 							p {
 								width: 100%;
 							}
+
+							> a {
+								padding: 15px 50px;
+								font-size: 1.1rem;
+							}
+
+							.social-links {
+								display: flex;
+							}
 						}
 					}
 
 					&.right {
-						grid-column: 2/12;
-						justify-content: start;
-						align-items: start;
+						display: none;
+					}
+				}
+			}
 
-						.img {
-							width: 100%;
+			.nav-info {
+				justify-content: space-evenly;
 
-							img {
-								width: 450px;
-							}
+				p {
+					display: none;
+				}
+			}
+
+		}
+	}
+
+
+	@media (max-width: 650px) {
+		main {
+			.nav-info {
+				section {
+					&.contact {
+						width: 100%;
+						justify-content: space-evenly;
+
+						div span {
+							font-size: 1rem;
+						}
+
+						div i {
+							font-size: 1.3rem;
+							margin-right: 9px;
 						}
 					}
+
+					&.social-network {
+						display: none;
+					}
+				}
+			}
+
+			.banner {
+				height: 400px;
+				margin-bottom: 80px;
+			}
+
+			.sponsors {
+				h1 {
+					font-size: 1.5rem;
+				}
+			}
+
+			.details {
+				ul {
+					grid-template-columns: repeat(1, 1fr);
+					gap: 100px 0;
 				}
 			}
 		}

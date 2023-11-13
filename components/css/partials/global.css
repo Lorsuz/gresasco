@@ -52,6 +52,7 @@ button i {
 
 body {
   width: 100vw;
+  min-width: 500px;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -70,7 +71,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 main {
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 .custom-button {
