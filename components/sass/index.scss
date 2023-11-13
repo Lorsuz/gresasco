@@ -54,6 +54,7 @@ main {
 						&:hover {
 							background: var(--color-primary);
 							border-radius: 0px 10px;
+
 						}
 					}
 
@@ -580,9 +581,9 @@ main {
 				}
 			}
 
-			.swiper-button-prev {}
+			// .swiper-button-prev {}
 
-			.swiper-button-next {}
+			// .swiper-button-next {}
 
 			.swiper-pagination {
 				.swiper-pagination-bullet {
@@ -590,7 +591,7 @@ main {
 				}
 			}
 
-			.scrollbar {}
+			// .scrollbar {}
 
 		}
 	}
@@ -800,7 +801,7 @@ main {
 					margin: 10px 0;
 					display: flex;
 
-					i {}
+					// i {}
 
 					span,
 					address {
