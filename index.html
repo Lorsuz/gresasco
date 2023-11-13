@@ -72,14 +72,18 @@
 			var menuMobile = document.querySelector( 'header .menu-mobile' );
 			var button = document.querySelector( 'header button' );
 			var navBarIsOpen = false;
+			var sizeScreen
 
-			button.addEventListener( 'click', () => {
-				console.log( menuMobile );
+
+			button.addEventListener( 'click', toggleState);
+
+			function toggleState() {
+				sizeScreen =
 				menuMobile.classList.toggle( 'active' );
 				navBarIsOpen = !navBarIsOpen;
-
 				button.querySelector( 'i' ).style.color = navBarIsOpen ? "#fff" : "var(--color-primary)";
-			} );
+			}
+
 
 		</script>
 		<main class="">
