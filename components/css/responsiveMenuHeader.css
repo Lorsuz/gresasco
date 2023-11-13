@@ -1,0 +1,33 @@
+.bi-list {
+  display: none;
+}
+
+.bi-x-lg {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  header nav {
+    position: absolute;
+    width: 100%;
+  }
+
+  header nav ul li {
+    width: 100%;
+    display: none;
+  }
+
+  .bi-list {
+    display: block;
+    color: #008025;
+    margin-left: 60dvw;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  .bi-x-lg {
+    color: #008025;
+    font-size: 2rem;
+    display: none;
+  }
+}
