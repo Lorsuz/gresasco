@@ -832,9 +832,6 @@ main > .contact .form form button:hover {
   }
 }
 @media screen and (max-width: 880px) {
-  main .cover {
-    grid-template-rows: 500px;
-  }
   main .cover > div.left {
     grid-column: 2/12;
   }
@@ -842,7 +839,7 @@ main > .contact .form form button:hover {
     font-size: 2rem;
   }
   main .cover > div.left .container h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
   main .cover > div.left .container p {
     width: 100%;

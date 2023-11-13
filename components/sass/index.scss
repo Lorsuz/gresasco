@@ -1123,7 +1123,6 @@ main {
 	@media (max-width:880px) {
 		main {
 			.cover {
-				grid-template-rows: 500px;
 
 				> div {
 					&.left {
@@ -1135,7 +1134,7 @@ main {
 							}
 
 							h1 {
-								font-size: 3rem;
+								font-size: 2.8rem;
 							}
 
 							p {
