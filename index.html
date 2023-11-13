@@ -20,7 +20,7 @@
 				<section class="logo">
 					<img src="./components/assets/images/logo - gresasc.jpg" alt="">
 				</section>
-				<nav>
+				<nav class="menu-desk">
 					<ul>
 						<li><a href="#">Página Inicial</a></li>
 						<li><a href="#">A Escola</a></li>
@@ -29,8 +29,59 @@
 						<li><a href="#">Créditos</a></li>
 					</ul>
 				</nav>
+				<button id="menu-drop">
+					<i class="fa-solid fa-bars"></i>
+				</button>
+				<nav class="menu-mobile">
+					<ul>
+						<li>
+							<a href="./components/pages/not-found.html">
+								<i class="fa-solid fa-house"></i>
+								<span>Página Inicial</span>
+							</a>
+						</li>
+						<li>
+							<a href="./components/pages/not-found.html">
+								<i class="fa-solid fa-school"></i>
+								<span>A Escola</span>
+							</a>
+						</li>
+						<li>
+							<a href="./components/pages/not-found.html">
+								<i class="fa-solid fa-clock-rotate-left"></i>
+								<span>Nossa História</span>
+							</a>
+						</li>
+						<li>
+							<a href="./components/pages/not-found.html">
+								<i class="fa-solid fa-users"></i>
+								<span>Sócio Torcedor</span>
+							</a>
+						</li>
+						<li>
+							<a href="./components/pages/not-found.html">
+								<i class="fa-solid fa-circle-info"></i>
+								<span>Créditos</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
 			</article>
 		</header>
+		<script>
+			var menuMobile = document.querySelector( 'header .menu-mobile' );
+			var button = document.querySelector( 'header button' );
+			var navBarIsOpen = false;
+
+			button.addEventListener( 'click', () => {
+				console.log( menuMobile );
+				menuMobile.classList.toggle( 'active' );
+				navBarIsOpen = !navBarIsOpen;
+
+				button.querySelector( 'i' ).style.color = navBarIsOpen ? "#fff" : "var(--color-primary)";
+			} );
+
+		</script>
 		<main class="">
 			<section class="cover">
 				<div class="left">
