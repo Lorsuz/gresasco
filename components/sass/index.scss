@@ -174,9 +174,7 @@ main {
 
 
 		> p {
-			cursor: pointer;
 			font-size: 0.8rem;
-
 
 			&:hover {
 				color: white;
@@ -192,7 +190,7 @@ main {
 				div {
 					display: flex;
 					align-items: center;
-					cursor: pointer;
+					// cursor: pointer;
 
 					i {
 						margin-right: 5px;
