@@ -8,8 +8,10 @@ header {
 	position: fixed;
 	top: 0;
 	left: 0;
-	background: #fff;
+	background: rgba(255, 255, 255, 0.95);
 	z-index: 100;
+	
+	
 
 	* {
 		color: rgb(218, 218, 218);
@@ -98,13 +100,13 @@ header {
 			position: fixed;
 			left: 100%;
 			top: 0;
-			background: var(--color-primary-soft);
+			background: #fff;
 			width: 100%;
 			min-width: 300px;
 			max-width: 400px;
 			height: 100%;
-			z-index: 5;
 			opacity: 0;
+			box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.614);
 
 			&.active {
 				opacity: 1;
@@ -119,12 +121,12 @@ header {
 					align-items: center;
 					margin-left: 0;
 					opacity: 1;
+					border-bottom: 1px solic var(--color-primary-soft);	
 
 					a {
 						display: inline-block;
 						width: 100%;
 						height: 100%;
-						color: #fff;
 						padding: 15px 40px;
 						transition: 200ms;
 						font-size: 1.1rem;
@@ -132,19 +134,30 @@ header {
 						cursor: pointer;
 
 						&:hover {
-							color: white;
-							background: var(--color-primary);
-							letter-spacing: 3px;
+							background: var(--color-primary-soft);
+
+							* {
+								color: #fff;
+
+							}
+						}
+
+						&:last-child {
+							border: none;
 						}
 
 						i {
 							cursor: pointer;
 							transition: 300ms ease-in-out;
+							color: var(--color-primary);
+
 						}
 
 						span {
 							margin-left: 10px;
 							cursor: pointer;
+							color: var(--color-primary);
+
 						}
 					}
 				}

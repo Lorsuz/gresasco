@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="./components/assets/images/logo - gresasc.jpg" type="image/x-icon">
+		<link rel="shortcut icon" href="./components/assets/images/Logo/santa-cruz-logo-removebg-preview.png" type="image/x-icon">
 		<title>Página Inicial</title>
 		<link rel="stylesheet" href="./components/css/partials/header.css">
 		<link rel="stylesheet" href="./components/css/index.css">
@@ -18,7 +18,7 @@
 		<header class="">
 			<article class="nav-bar">
 				<section class="logo">
-					<img src="./components/assets/images/logo - gresasc.jpg" alt="">
+					<img src="./components/assets/images/Logo/santa-cruz-logo-removebg-preview.png" alt="">
 				</section>
 				<nav class="menu-desk">
 					<ul>
@@ -81,7 +81,6 @@
 				sizeScreen =
 				menuMobile.classList.toggle( 'active' );
 				navBarIsOpen = !navBarIsOpen;
-				button.querySelector( 'i' ).style.color = navBarIsOpen ? "#fff" : "var(--color-primary)";
 			}
 
 
@@ -349,10 +348,14 @@
 				</div>
 			</section>
 			<section class="newsletter">
+				<p>Desenvolvido e realizado por <a href="#">@WebPulse</a> </p>
 				<h3>Inscreva-se para receber nossas novidades!</h3>
 				<form action="">
 					<input type="text" name="" id="" placeholder="Digite seu e-mail">
-					<button type="submit">Inscrever-se</button>
+					<button type="submit">
+						<span>Inscrever-se</span>
+						<i class="fa-solid fa-envelope"></i>
+					</button>
 				</form>
 				<div class="social-links">
 					<a target="_blank" href="https://www.instagram.com/academicosdesantacruzrj/"><i class="fa-brands fa-instagram"></i></a>
@@ -362,7 +365,8 @@
 				</div>
 			</section>
 			<section class="copyriht">
-				<p>Desenvolvido e realizado por <a href="">@WebPulse</a> - &copy; 2023 Todos os direitos reservedos.</p>
+				<p>&copy; Copyright 2023 - Todos os direitos reservados.</p>
+
 			</section>
 			<section class="terms">
 				<a href="">Termos de Uso</a>

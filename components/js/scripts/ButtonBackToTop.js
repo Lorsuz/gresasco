@@ -1,10 +1,10 @@
 $( document ).ready( function () {
-	$( "#back-to-top" ).css( "display", "none" );
+	$( "#back-to-top" ).css( "opacity", "0" );
 	$( window ).scroll( function () {
 		if ( $( this ).scrollTop() === 0 ) {
-			$( "#back-to-top" ).css( "display", "none" );
+			$( "#back-to-top" ).css( "opacity", "0" );
 		} else {
-			$( "#back-to-top" ).css( "display", "flex" );
+			$( "#back-to-top" ).css( "opacity", "1" );
 		}
 	} );
 

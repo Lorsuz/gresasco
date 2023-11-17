@@ -7,7 +7,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
   z-index: 100;
 }
 header * {
@@ -80,13 +80,13 @@ header .nav-bar nav.menu-mobile {
   position: fixed;
   left: 100%;
   top: 0;
-  background: var(--color-primary-soft);
+  background: #fff;
   width: 100%;
   min-width: 300px;
   max-width: 400px;
   height: 100%;
-  z-index: 5;
   opacity: 0;
+  box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.614);
 }
 header .nav-bar nav.menu-mobile.active {
   opacity: 1;
@@ -100,12 +100,12 @@ header .nav-bar nav.menu-mobile ul li {
   align-items: center;
   margin-left: 0;
   opacity: 1;
+  border-bottom: 1px solic var(--color-primary-soft);
 }
 header .nav-bar nav.menu-mobile ul li a {
   display: inline-block;
   width: 100%;
   height: 100%;
-  color: #fff;
   padding: 15px 40px;
   transition: 200ms;
   font-size: 1.1rem;
@@ -113,17 +113,23 @@ header .nav-bar nav.menu-mobile ul li a {
   cursor: pointer;
 }
 header .nav-bar nav.menu-mobile ul li a:hover {
-  color: white;
-  background: var(--color-primary);
-  letter-spacing: 3px;
+  background: var(--color-primary-soft);
+}
+header .nav-bar nav.menu-mobile ul li a:hover * {
+  color: #fff;
+}
+header .nav-bar nav.menu-mobile ul li a:last-child {
+  border: none;
 }
 header .nav-bar nav.menu-mobile ul li a i {
   cursor: pointer;
   transition: 300ms ease-in-out;
+  color: var(--color-primary);
 }
 header .nav-bar nav.menu-mobile ul li a span {
   margin-left: 10px;
   cursor: pointer;
+  color: var(--color-primary);
 }
 
 @media screen and (max-width: 950px) {

@@ -2,16 +2,16 @@
 @import url("./partials/global.css");
 @import "./i.css";
 main {
-  max-width: 1700px;
   width: 100%;
 }
 main .cover {
-  min-height: 85vh;
+  height: 98dvh;
+  min-height: 700px;
   align-items: center;
   display: flex;
   justify-content: space-between;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(0px, 200px));
 }
 main .cover > div.left {
   grid-column: 2/7;
@@ -124,7 +124,6 @@ main .nav-info * {
   color: #fff;
 }
 main .nav-info > p {
-  cursor: pointer;
   font-size: 0.8rem;
 }
 main .nav-info > p:hover {
@@ -418,6 +417,7 @@ main .sponsors {
   padding: 50px 0;
   height: 500px;
   max-width: 1500px;
+  margin: 0 auto;
 }
 main .sponsors h1 {
   font-size: 2rem;
@@ -654,7 +654,6 @@ main > .contact .form {
   grid-column: 8/12;
 }
 main > .contact .form form {
-  min-width: 400px;
   width: 100%;
 }
 main > .contact .form form div {
