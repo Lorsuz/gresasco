@@ -7,35 +7,31 @@ main {
 main .cover {
   height: 98dvh;
   min-height: 700px;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0px, 200px));
+  max-height: 1200px;
 }
-main .cover > div.left {
+main .cover .wrapper > div.left {
   grid-column: 2/7;
   align-items: center;
   display: flex;
   justify-content: center;
 }
-main .cover > div.left .container h2 {
+main .cover .wrapper > div.left .container h2 {
   color: var(--color-primary-soft);
   font-family: wedding;
   font-size: 2.5rem;
 }
-main .cover > div.left .container h1 {
+main .cover .wrapper > div.left .container h1 {
   color: var(--color-primary-soft);
   font-family: wedding;
   font-size: 4rem;
   margin-bottom: 20px;
 }
-main .cover > div.left .container p {
+main .cover .wrapper > div.left .container p {
   color: var(--color-text-soft);
   font-size: 1.1rem;
   margin-bottom: 50px;
 }
-main .cover > div.left .container > a {
+main .cover .wrapper > div.left .container > a {
   background: var(--color-primary-soft);
   border-radius: 10px 0;
   color: var(--color-white);
@@ -44,128 +40,129 @@ main .cover > div.left .container > a {
   padding: 10px 50px;
   margin-bottom: 25px;
 }
-main .cover > div.left .container > a:hover {
+main .cover .wrapper > div.left .container > a:hover {
   background: var(--color-primary);
   border-radius: 0px 10px;
 }
-main .cover > div.left .container .social-links {
+main .cover .wrapper > div.left .container .social-links {
   gap: 25px;
   display: none;
 }
-main .cover > div.left .container .social-links li a i {
+main .cover .wrapper > div.left .container .social-links li a i {
   font-size: 2rem;
 }
-main .cover > div.left .container .social-links li a i.fa-facebook {
+main .cover .wrapper > div.left .container .social-links li a i.fa-facebook {
   color: #3b5998;
 }
-main .cover > div.left .container .social-links li a i.fa-instagram {
+main .cover .wrapper > div.left .container .social-links li a i.fa-instagram {
   color: #e4405f;
 }
-main .cover > div.left .container .social-links li a i.fa-x-twitter {
+main .cover .wrapper > div.left .container .social-links li a i.fa-x-twitter {
   color: #000000;
 }
-main .cover > div.left .container .social-links li a i.fa-youtube {
+main .cover .wrapper > div.left .container .social-links li a i.fa-youtube {
   color: #cd201f;
 }
-main .cover > div.right {
+main .cover .wrapper > div.right {
   grid-column: 8/12;
 }
-main .cover > div.right .img {
+main .cover .wrapper > div.right .img {
   align-items: center;
   display: flex;
   justify-content: center;
   margin-bottom: 0px;
 }
-main .cover > div.right .img img {
+main .cover .wrapper > div.right .img img {
   width: 450px;
 }
-main .cover > div.right .social-links {
+main .cover .wrapper > div.right .social-links {
   display: flex;
   justify-content: center;
 }
-main .cover > div.right .social-links li {
+main .cover .wrapper > div.right .social-links li {
   margin: 0 10px;
   position: relative;
   top: 0;
 }
-main .cover > div.right .social-links li a i {
+main .cover .wrapper > div.right .social-links li a i {
   font-size: 2.4rem;
   color: var(--color-text-soft);
 }
-main .cover > div.right .social-links li a i.fa-facebook {
+main .cover .wrapper > div.right .social-links li a i.fa-facebook {
   color: #3b5998;
 }
-main .cover > div.right .social-links li a i.fa-instagram {
+main .cover .wrapper > div.right .social-links li a i.fa-instagram {
   color: #e4405f;
 }
-main .cover > div.right .social-links li a i.fa-x-twitter {
+main .cover .wrapper > div.right .social-links li a i.fa-x-twitter {
   color: #000000;
 }
-main .cover > div.right .social-links li a i.fa-youtube {
+main .cover .wrapper > div.right .social-links li a i.fa-youtube {
   color: #cd201f;
 }
-main .cover > div.right .social-links li:hover {
+main .cover .wrapper > div.right .social-links li:hover {
   top: -5px;
 }
-main .cover > div.right .social-links li:hover a i {
+main .cover .wrapper > div.right .social-links li:hover a i {
   color: var(--color-primary-soft);
 }
 main .nav-info {
   background: var(--color-primary);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 40px;
-  padding: 0 2%;
-  grid-column: 1/13;
   width: 100%;
 }
 main .nav-info * {
-  color: #fff;
+  color: #ffffff;
 }
-main .nav-info > p {
+main .nav-info .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+}
+main .nav-info .wrapper > p {
   font-size: 0.8rem;
 }
-main .nav-info > p:hover {
+main .nav-info .wrapper > p:hover {
   color: white;
 }
-main .nav-info section {
+main .nav-info .wrapper section {
   display: flex;
 }
-main .nav-info section.contact {
+main .nav-info .wrapper section.contact {
   gap: 30px;
 }
-main .nav-info section.contact div {
+main .nav-info .wrapper section.contact div {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-main .nav-info section.contact div i {
+main .nav-info .wrapper section.contact div i {
   margin-right: 5px;
 }
-main .nav-info section.contact div span {
+main .nav-info .wrapper section.contact div span {
   font-size: 0.8rem;
 }
-main .nav-info section.contact div:hover i,
-main .nav-info section.contact div:hover span {
+main .nav-info .wrapper section.contact div:hover i,
+main .nav-info .wrapper section.contact div:hover span {
   color: white;
 }
-main .nav-info section.social-network {
+main .nav-info .wrapper section.social-network {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-main .nav-info section.social-network span {
+main .nav-info .wrapper section.social-network span {
   margin-right: 15px;
   font-size: 0.8rem;
 }
-main .nav-info section.social-network a {
+main .nav-info .wrapper section.social-network a {
   margin: 0 3px;
 }
-main .nav-info section.social-network a i {
+main .nav-info .wrapper section.social-network a i {
   font-size: 1.2rem;
 }
-main .nav-info section.social-network a:hover i {
+main .nav-info .wrapper section.social-network a:hover i {
   color: white;
   cursor: pointer;
 }
@@ -295,40 +292,36 @@ main .banner .pagination .dot.active {
   cursor: default;
 }
 main .plot {
-  align-items: center;
-  min-height: 100vh;
-  display: grid;
   height: auto;
-  grid-template-columns: repeat(12, 1fr);
 }
-main .plot .description {
+main .plot .wrapper .description {
   grid-column: 2/6;
 }
-main .plot .description h2 {
+main .plot .wrapper .description h2 {
   font-size: 2rem;
   color: var(--color-primary);
   font-family: Playpen Sans;
 }
-main .plot .description h1 {
+main .plot .wrapper .description h1 {
   margin-bottom: 20px;
   font-size: 2.5rem;
   color: var(--color-text);
 }
-main .plot .description p {
+main .plot .wrapper .description p {
   color: var(--color-text-soft);
   text-align: justify;
   margin-bottom: 10px;
 }
-main .plot .description span {
+main .plot .wrapper .description span {
   margin-top: 30px;
   margin-bottom: 30px;
   display: block;
   color: var(--color-text);
 }
-main .plot .description button {
+main .plot .wrapper .description button {
   display: block;
 }
-main .plot .disc-cover {
+main .plot .wrapper .disc-cover {
   grid-column: 7/12;
   display: flex;
   justify-content: center;
@@ -341,14 +334,14 @@ main .plot .disc-cover {
   margin: auto;
   border-radius: 6px;
 }
-main .plot .disc-cover img {
+main .plot .wrapper .disc-cover img {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   object-fit: cover;
 }
-main .plot .disc-cover .icons {
+main .plot .wrapper .disc-cover .icons {
   align-items: center;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 6px;
@@ -362,7 +355,7 @@ main .plot .disc-cover .icons {
   transition: 300ms;
   width: 100%;
 }
-main .plot .disc-cover .icons button {
+main .plot .wrapper .disc-cover .icons button {
   align-items: center;
   border-radius: 50%;
   border: 3px solid transparent;
@@ -374,25 +367,22 @@ main .plot .disc-cover .icons button {
   width: 80px;
   background: #000;
 }
-main .plot .disc-cover .icons button i {
+main .plot .wrapper .disc-cover .icons button i {
   color: white;
   font-size: 4rem;
 }
-main .plot .disc-cover .icons button#play-song {
-  padding-left: 8px;
+main .plot .wrapper .disc-cover .icons button i.bi-play {
+  margin-left: 8px;
 }
-main .plot .disc-cover .icons button#pause-song {
-  display: none;
-}
-main .plot .disc-cover .icons button:hover {
+main .plot .wrapper .disc-cover .icons button:hover {
   border: 3px solid white;
 }
-main .plot .disc-cover .icons .player-bars {
+main .plot .wrapper .disc-cover .icons .player-bars {
   display: flex;
   position: absolute;
   bottom: 0px;
 }
-main .plot .disc-cover .icons .player-bars .bar {
+main .plot .wrapper .disc-cover .icons .player-bars .bar {
   margin: 0 2px;
   background: #000;
   border-radius: 10px 10px 0px 0px;
@@ -410,8 +400,19 @@ main .plot .disc-cover .icons .player-bars .bar {
     transform: translateY(0px);
   }
 }
-main .plot .disc-cover:hover .icons {
+main .plot .wrapper .disc-cover:hover .icons {
   opacity: 1;
+}
+main .plot .wrapper .audio {
+  display: block;
+  grid-column: 7/12;
+  padding: 50px 0;
+}
+main .plot .wrapper .audio audio {
+  width: 100%;
+}
+main .plot .wrapper .audio audio::-webkit-media-controls-start-playback-button {
+  display: none !important;
 }
 main .sponsors {
   padding: 50px 0;
@@ -445,10 +446,13 @@ main .sponsors .swiper .swiper-pagination .swiper-pagination-bullet {
   background: var(--color-primary);
 }
 main .details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-bottom: 50px;
+}
+main .details h1 {
+  color: var(--color-primary);
+  text-align: center;
+  font-size: 2.3rem;
+  margin-bottom: 20px;
 }
 main .details ul {
   display: grid;
@@ -456,6 +460,7 @@ main .details ul {
   justify-content: center;
   align-items: center;
   gap: 50px 100px;
+  max-width: 2000px;
 }
 main .details ul li {
   grid-column: 1fr;
@@ -472,32 +477,22 @@ main .details ul li h3 {
   font-family: Playpen Sans;
 }
 main .about-school {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  min-height: 100vh;
-  align-items: center;
   padding: 50px 0 100px;
 }
-main .about-school .text-container {
+main .about-school .wrapper .text-container {
   grid-column: 2/7;
 }
-main .about-school .text-container h1 {
-  color: var(--color-primary);
-  text-align: center;
-  font-size: 2.3rem;
-  margin-bottom: 20px;
-}
-main .about-school .text-container .wiki {
+main .about-school .wrapper .text-container .wiki {
   position: relative;
 }
-main .about-school .text-container .wiki p {
+main .about-school .wrapper .text-container .wiki p {
   color: var(--color-text-soft);
   line-height: 1.5rem;
   text-indent: 1rem;
   text-align: justify;
   margin-bottom: 20px;
 }
-main .about-school .text-container .wiki .read-more {
+main .about-school .wrapper .text-container .wiki .read-more {
   display: flex;
   align-items: end;
   justify-content: center;
@@ -507,7 +502,7 @@ main .about-school .text-container .wiki .read-more {
   background: linear-gradient(0deg, #ffffff 15%, rgba(255, 255, 255, 0) 100%);
   height: 300px;
 }
-main .about-school .text-container .wiki .read-more a {
+main .about-school .wrapper .text-container .wiki .read-more a {
   background: var(--color-primary-soft);
   padding: 15px 30px;
   display: flex;
@@ -515,56 +510,57 @@ main .about-school .text-container .wiki .read-more a {
   justify-content: center;
   border-radius: 10px 0;
 }
-main .about-school .text-container .wiki .read-more a i {
+main .about-school .wrapper .text-container .wiki .read-more a i {
   color: var(--color-white);
   font-size: 1.2rem;
   padding: 0;
   margin-right: 10px;
 }
-main .about-school .text-container .wiki .read-more a span {
+main .about-school .wrapper .text-container .wiki .read-more a span {
   color: var(--color-white);
 }
-main .about-school .text-container .wiki .read-more a:hover {
+main .about-school .wrapper .text-container .wiki .read-more a:hover {
   border-radius: 0px 10px;
 }
-main .about-school .img-container {
+main .about-school .wrapper .img-container {
   grid-column: 8/12;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main .about-school .img-container .img {
+main .about-school .wrapper .img-container .img {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 580px;
-  width: 450px;
+  max-width: 450px;
+  width: 100%;
+  height: auto;
 }
-main .about-school .img-container .img img {
-  width: 90%;
+main .about-school .wrapper .img-container .img img {
+  width: 100%;
   object-fit: scale-down;
   border-radius: 0px 10px;
   border: 3px solid var(--color-gray);
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.431372549);
 }
-main .about-school .img-container .img img:hover {
+main .about-school .wrapper .img-container .img img:hover {
   border-radius: 10px 0;
 }
-main .about-school .img-container .img::before, main .about-school .img-container .img::after {
+main .about-school .wrapper .img-container .img::before, main .about-school .wrapper .img-container .img::after {
   content: "";
   width: 100px;
   height: 100px;
   position: absolute;
   border: 10px solid var(--color-primary);
 }
-main .about-school .img-container .img::before {
+main .about-school .wrapper .img-container .img::before {
   top: -30px;
   right: -30px;
   border-left: none;
   border-bottom: none;
 }
-main .about-school .img-container .img::after {
+main .about-school .wrapper .img-container .img::after {
   bottom: -30px;
   left: -30px;
   border-right: none;
@@ -576,60 +572,56 @@ main > .contact {
   min-height: 100vh;
   height: auto;
   padding: 70px 0 80px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: repeat(12, 1fr);
 }
 main > .contact * {
   color: #fff;
 }
-main > .contact > div {
+main > .contact .wrapper > div {
   display: flex;
   justify-content: center;
   max-width: 1000px;
 }
-main > .contact .text {
+main > .contact .wrapper .text {
   grid-column: 2/7;
   flex-direction: column;
 }
-main > .contact .text > h3 {
+main > .contact .wrapper .text > h3 {
   font-size: 1.2rem;
   color: var(--color-gray);
   font-family: Playpen Sans;
 }
-main > .contact .text h2 {
+main > .contact .wrapper .text h2 {
   margin-bottom: 20px;
   font-size: 2.5rem;
 }
-main > .contact .text > p {
+main > .contact .wrapper .text > p {
   margin-bottom: 50px;
 }
-main > .contact .text ul {
+main > .contact .wrapper .text ul {
   margin-bottom: 50px;
   border-left: 3px solid var(--color-white);
   padding-left: 20px;
 }
-main > .contact .text ul li {
+main > .contact .wrapper .text ul li {
   margin: 10px 0;
   display: flex;
 }
-main > .contact .text ul li span,
-main > .contact .text ul li address {
+main > .contact .wrapper .text ul li span,
+main > .contact .wrapper .text ul li address {
   margin-left: 10px;
   display: block;
 }
-main > .contact .text .map {
+main > .contact .wrapper .text .map {
   width: 100%;
   height: 400px;
   position: relative;
 }
-main > .contact .text .map iframe {
+main > .contact .wrapper .text .map iframe {
   width: 100%;
   height: 100%;
   border-radius: 10px 0px;
 }
-main > .contact .text .map::before, main > .contact .text .map::after {
+main > .contact .wrapper .text .map::before, main > .contact .wrapper .text .map::after {
   content: "";
   width: 100px;
   color: #fff;
@@ -637,37 +629,37 @@ main > .contact .text .map::before, main > .contact .text .map::after {
   position: absolute;
   border: 10px solid var(--color-primary);
 }
-main > .contact .text .map::before {
+main > .contact .wrapper .text .map::before {
   top: -30px;
   right: -30px;
   border-left: none;
   border-bottom: none;
 }
-main > .contact .text .map::after {
+main > .contact .wrapper .text .map::after {
   bottom: -30px;
   left: -30px;
   border-right: none;
   border-top: none;
 }
-main > .contact .form {
+main > .contact .wrapper .form {
   align-items: center;
   grid-column: 8/12;
 }
-main > .contact .form form {
+main > .contact .wrapper .form form {
   width: 100%;
 }
-main > .contact .form form div {
+main > .contact .wrapper .form form div {
   width: 100%;
   margin-bottom: 20px;
 }
-main > .contact .form form div label {
+main > .contact .wrapper .form form div label {
   display: block;
   margin-bottom: 10px;
   font-size: 1.2rem;
   font-weight: bold;
 }
-main > .contact .form form div input[type=text],
-main > .contact .form form div textarea {
+main > .contact .wrapper .form form div input[type=text],
+main > .contact .wrapper .form form div textarea {
   background: #fff;
   width: 100%;
   height: 50px;
@@ -677,23 +669,23 @@ main > .contact .form form div textarea {
   border: 3px solid var(--color-gray);
   border-radius: 10px 0;
 }
-main > .contact .form form div input[type=text]:focus,
-main > .contact .form form div textarea:focus {
+main > .contact .wrapper .form form div input[type=text]:focus,
+main > .contact .wrapper .form form div textarea:focus {
   border: 3px solid var(--color-primary);
   border-radius: 0px 10px;
 }
-main > .contact .form form div textarea {
+main > .contact .wrapper .form form div textarea {
   padding: 10px;
   height: 180px;
   resize: none;
 }
-main > .contact .form form div.agree-terms {
+main > .contact .wrapper .form form div.agree-terms {
   display: flex;
 }
-main > .contact .form form div.agree-terms input[type=checkbox] {
+main > .contact .wrapper .form form div.agree-terms input[type=checkbox] {
   display: none;
 }
-main > .contact .form form div.agree-terms input[type=checkbox] + label::before {
+main > .contact .wrapper .form form div.agree-terms input[type=checkbox] + label::before {
   content: "✔";
   display: inline-block;
   width: 20px;
@@ -707,12 +699,12 @@ main > .contact .form form div.agree-terms input[type=checkbox] + label::before 
   position: absolute;
   left: 0;
 }
-main > .contact .form form div.agree-terms input[type=checkbox]:checked + label::before {
+main > .contact .wrapper .form form div.agree-terms input[type=checkbox]:checked + label::before {
   background-color: var(--color-primary);
   color: #fff;
   border: 2px solid #fff;
 }
-main > .contact .form form div.agree-terms label {
+main > .contact .wrapper .form form div.agree-terms label {
   font-size: 0.8rem;
   text-align: justify;
   color: var(--color-gray-soft);
@@ -720,10 +712,10 @@ main > .contact .form form div.agree-terms label {
   position: relative;
   padding-left: 30px;
 }
-main > .contact .form form div.agree-terms label a {
+main > .contact .wrapper .form form div.agree-terms label a {
   text-decoration: underline;
 }
-main > .contact .form form button {
+main > .contact .wrapper .form form button {
   width: 100%;
   height: 50px;
   background: var(--color-primary);
@@ -733,63 +725,56 @@ main > .contact .form form button {
   font-size: 1.2rem;
   cursor: pointer;
 }
-main > .contact .form form button:hover {
+main > .contact .wrapper .form form button:hover {
   background: var(--color-primary-soft);
   border-radius: 0px 10px;
 }
 
 @media screen and (max-width: 1350px) {
-  main .cover > div.left .container h2 {
+  main .cover .wrapper > div.left .container h2 {
     font-size: 2rem;
   }
-  main .cover > div.left .container h1 {
+  main .cover .wrapper > div.left .container h1 {
     font-size: 3.5rem;
   }
-  main .cover > div.left .container p {
+  main .cover .wrapper > div.left .container p {
     font-size: 1rem;
   }
 }
 @media screen and (max-width: 1200px) {
-  main .cover > div.left {
+  main .cover .wrapper > div.left {
     grid-column: 2/8;
   }
-  main .cover > div.left .container p {
+  main .cover .wrapper > div.left .container p {
     width: 90%;
   }
-  main .cover > div.right {
+  main .cover .wrapper > div.right {
     grid-column: 9/12;
   }
-  main .cover > div.right .img {
+  main .cover .wrapper > div.right .img {
     width: 100%;
   }
-  main .cover > div.right .img img {
+  main .cover .wrapper > div.right .img img {
     width: 150%;
-  }
-  main .about-school .img-container .img {
-    width: 350px;
-    height: 480px;
-  }
-  main .about-school .img-container .img img {
-    width: 90%;
   }
 }
 @media screen and (max-width: 1000px) {
-  main .cover > div.left {
+  main .cover .wrapper > div.left {
     grid-column: 2/8;
   }
-  main .cover > div.left .container h2 {
+  main .cover .wrapper > div.left .container h2 {
     font-size: 2rem;
   }
-  main .cover > div.left .container h1 {
+  main .cover .wrapper > div.left .container h1 {
     font-size: 3rem;
   }
-  main .cover > div.right {
+  main .cover .wrapper > div.right {
     grid-column: 9/12;
   }
-  main .cover > div.right .img {
+  main .cover .wrapper > div.right .img {
     width: 100%;
   }
-  main .cover > div.right .img img {
+  main .cover .wrapper > div.right .img img {
     width: 150%;
   }
   main .details ul {
@@ -799,58 +784,54 @@ main > .contact .form form button:hover {
   main .banner {
     height: 600px;
   }
-  main .about-school .text-container {
+  main .about-school .wrapper .text-container {
     grid-column: 2/12;
     margin-bottom: 150px;
   }
-  main .about-school .img-container {
+  main .about-school .wrapper .img-container {
     grid-column: 2/12;
   }
-  main .about-school .img-container .img {
-    height: 580px;
-    width: 450px;
-  }
-  main > .contact > .text {
+  main > .contact .wrapper > .text {
     grid-column: 2/12;
     margin-bottom: 100px;
   }
-  main > .contact > .form {
+  main > .contact .wrapper > .form {
     grid-column: 2/12;
   }
 }
 @media screen and (max-width: 1100px) {
-  main .plot {
+  main .plot .wrapper {
     margin-bottom: 50px;
   }
-  main .plot .description {
+  main .plot .wrapper .description {
     grid-column: 2/12;
     margin-bottom: 70px;
   }
-  main .plot .disc-cover {
+  main .plot .wrapper .disc-cover, main .plot .wrapper .audio {
     grid-column: 2/12;
   }
 }
 @media screen and (max-width: 880px) {
-  main .cover > div.left {
+  main .cover .wrapper > div.left {
     grid-column: 2/12;
   }
-  main .cover > div.left .container h2 {
+  main .cover .wrapper > div.left .container h2 {
     font-size: 2rem;
   }
-  main .cover > div.left .container h1 {
+  main .cover .wrapper > div.left .container h1 {
     font-size: 2.8rem;
   }
-  main .cover > div.left .container p {
+  main .cover .wrapper > div.left .container p {
     width: 100%;
   }
-  main .cover > div.left .container > a {
+  main .cover .wrapper > div.left .container > a {
     padding: 15px 50px;
     font-size: 1.1rem;
   }
-  main .cover > div.left .container .social-links {
+  main .cover .wrapper > div.left .container .social-links {
     display: flex;
   }
-  main .cover > div.right {
+  main .cover .wrapper > div.right {
     display: none;
   }
   main .nav-info {
@@ -861,18 +842,11 @@ main > .contact .form form button:hover {
   }
 }
 @media screen and (max-width: 650px) {
-  main .nav-info section.contact {
+  main .nav-info .wrapper section.contact {
     width: 100%;
     justify-content: space-evenly;
   }
-  main .nav-info section.contact div span {
-    font-size: 1rem;
-  }
-  main .nav-info section.contact div i {
-    font-size: 1.3rem;
-    margin-right: 9px;
-  }
-  main .nav-info section.social-network {
+  main .nav-info .wrapper section.social-network {
     display: none;
   }
   main .banner {
@@ -885,6 +859,11 @@ main > .contact .form form button:hover {
   main .details ul {
     grid-template-columns: repeat(1, 1fr);
     gap: 100px 0;
+  }
+}
+@media screen and (max-width: 370px) {
+  main .nav-info .wrapper section.contact div:nth-child(2) {
+    display: none;
   }
 }
 

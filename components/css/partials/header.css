@@ -1,9 +1,6 @@
 @import url("./global.css");
 header {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  width: 100%;
-  overflow-x: hidden;
+  width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,45 +10,45 @@ header {
 header * {
   color: rgb(218, 218, 218);
 }
-header .nav-bar {
+header .wrapper .nav-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   grid-column: 2/12;
 }
-header .nav-bar section {
+header .wrapper .nav-bar section {
   height: 70px;
 }
-header .nav-bar section.logo {
+header .wrapper .nav-bar section.logo {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-header .nav-bar section.logo img {
+header .wrapper .nav-bar section.logo img {
   width: 60px;
   margin-right: 15px;
 }
-header .nav-bar section.logo span {
+header .wrapper .nav-bar section.logo span {
   font-size: 2rem;
   color: var(--color-text-soft);
   font-weight: bold;
 }
-header .nav-bar nav.menu-desk {
+header .wrapper .nav-bar nav.menu-desk {
   display: flex;
 }
-header .nav-bar nav.menu-desk ul {
+header .wrapper .nav-bar nav.menu-desk ul {
   display: flex;
 }
-header .nav-bar nav.menu-desk ul li {
+header .wrapper .nav-bar nav.menu-desk ul li {
   margin: 0 20px;
 }
-header .nav-bar nav.menu-desk ul li a {
+header .wrapper .nav-bar nav.menu-desk ul li a {
   color: var(--color-text-soft);
   font-weight: bold;
   position: relative;
   font-family: Playpen Sans;
 }
-header .nav-bar nav.menu-desk ul li a::after {
+header .wrapper .nav-bar nav.menu-desk ul li a::after {
   content: "";
   width: 0%;
   position: absolute;
@@ -62,21 +59,21 @@ header .nav-bar nav.menu-desk ul li a::after {
   transition: 300ms ease-in-out;
   transform-origin: right;
 }
-header .nav-bar nav.menu-desk ul li a:hover::after {
+header .wrapper .nav-bar nav.menu-desk ul li a:hover::after {
   width: 100%;
 }
-header .nav-bar button {
+header .wrapper .nav-bar button {
   cursor: pointer;
   font-weight: bold;
   z-index: 10;
   transition: 300ms;
   display: none;
 }
-header .nav-bar button i {
+header .wrapper .nav-bar button i {
   color: var(--color-primary);
   font-size: 2rem;
 }
-header .nav-bar nav.menu-mobile {
+header .wrapper .nav-bar nav.menu-mobile {
   position: fixed;
   left: 100%;
   top: 0;
@@ -88,21 +85,21 @@ header .nav-bar nav.menu-mobile {
   opacity: 0;
   box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.614);
 }
-header .nav-bar nav.menu-mobile.active {
+header .wrapper .nav-bar nav.menu-mobile.active {
   opacity: 1;
   transform: translateX(-100%);
 }
-header .nav-bar nav.menu-mobile ul {
+header .wrapper .nav-bar nav.menu-mobile ul {
   margin: 80px 0 0 0;
 }
-header .nav-bar nav.menu-mobile ul li {
+header .wrapper .nav-bar nav.menu-mobile ul li {
   display: flex;
   align-items: center;
   margin-left: 0;
   opacity: 1;
   border-bottom: 1px solic var(--color-primary-soft);
 }
-header .nav-bar nav.menu-mobile ul li a {
+header .wrapper .nav-bar nav.menu-mobile ul li a {
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -112,31 +109,31 @@ header .nav-bar nav.menu-mobile ul li a {
   letter-spacing: 2px;
   cursor: pointer;
 }
-header .nav-bar nav.menu-mobile ul li a:hover {
+header .wrapper .nav-bar nav.menu-mobile ul li a:hover {
   background: var(--color-primary-soft);
 }
-header .nav-bar nav.menu-mobile ul li a:hover * {
+header .wrapper .nav-bar nav.menu-mobile ul li a:hover * {
   color: #fff;
 }
-header .nav-bar nav.menu-mobile ul li a:last-child {
+header .wrapper .nav-bar nav.menu-mobile ul li a:last-child {
   border: none;
 }
-header .nav-bar nav.menu-mobile ul li a i {
+header .wrapper .nav-bar nav.menu-mobile ul li a i {
   cursor: pointer;
   transition: 300ms ease-in-out;
   color: var(--color-primary);
 }
-header .nav-bar nav.menu-mobile ul li a span {
+header .wrapper .nav-bar nav.menu-mobile ul li a span {
   margin-left: 10px;
   cursor: pointer;
   color: var(--color-primary);
 }
 
 @media screen and (max-width: 950px) {
-  header .nav-bar button {
+  header .wrapper .nav-bar button {
     display: block;
   }
-  header .nav-bar nav.menu-desk {
+  header .wrapper .nav-bar nav.menu-desk {
     display: none;
   }
 }

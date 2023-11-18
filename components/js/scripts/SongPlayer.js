@@ -1,8 +1,10 @@
-var playSong = document.getElementById( 'play-song' );
-var pauseSong = document.getElementById( 'pause-song' );
+var buttonPlayPause = document.querySelector( 'main .plot .wrapper .disc-cover .icons button' );
+var icon = buttonPlayPause.querySelector( 'i' );
 var barsContainer = document.querySelector( '.player-bars' );
 
-var audio = new Audio( './components/assets/audio/plot-song.mpeg' );
+var audio = document.querySelector( 'main .plot .wrapper .audio audio' );
+
+var audioIsPlaying = false;
 
 for ( var i = 0; i < 150; i++ ) {
 	var bar = document.createElement( 'div' );
@@ -17,20 +19,40 @@ bars.forEach( function ( bar, index ) {
 	bar.style.animationPlayState = 'paused';
 } );
 
-playSong.addEventListener( 'click', function () {
-	audio.play();
-	playSong.style.display = 'none';
-	pauseSong.style.display = 'block';
-	bars.forEach( function ( bar, index ) {
-		bar.style.animationPlayState = 'running';
-	} );
+buttonPlayPause.addEventListener( 'click', togglePlayPause );
+
+audio.addEventListener( 'play', () => {
+	if ( !audioIsPlaying ) { 
+		console.log( 'play' );
+		togglePlayPause; }
 } );
 
-pauseSong.addEventListener( 'click', function () {
+if ( !audioIsPlaying )
+	audio.addEventListener( 'pause', () => {
+if ( audioIsPlaying ) { 
+			console.log( 'pause' );
+			togglePlayPause; }
+	} );
+
+function togglePlayPause () {
+	audioIsPlaying ? pauseAudio() : playAudio();
+	audioIsPlaying = !audioIsPlaying;
+}
+
+function playAudio () {
+	audio.play();
+	icon.classList.remove( 'bi-play' );
+	icon.classList.add( 'bi-pause' );
+	bars.forEach( function ( bar ) {
+		bar.style.animationPlayState = 'running';
+	} );
+}
+
+function pauseAudio () {
 	audio.pause();
-	playSong.style.display = 'block';
-	pauseSong.style.display = 'none';
+	icon.classList.remove( 'bi-pause' );
+	icon.classList.add( 'bi-play' );
 	bars.forEach( function ( bar ) {
 		bar.style.animationPlayState = 'paused';
 	} );
-} );
+}
