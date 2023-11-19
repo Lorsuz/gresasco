@@ -9,7 +9,7 @@ fetch( "components/json/data.json" ).then( ( response ) => {
 				<div class="swiper-slide">
 				<img
 					src="${ obj.image }"
-					alt="${ obj.alt }">
+					alt="${ obj.image }">
 				</div>
 				`;
 		} );
