@@ -3,6 +3,7 @@ var icon = buttonPlayPause.querySelector( 'i' );
 var barsContainer = document.querySelector( '.player-bars' );
 
 var audio = document.querySelector( 'main .plot .wrapper .audio audio' );
+audio.volume = 0.2;
 
 var audioIsPlaying = false;
 
@@ -21,18 +22,9 @@ bars.forEach( function ( bar, index ) {
 
 buttonPlayPause.addEventListener( 'click', togglePlayPause );
 
-audio.addEventListener( 'play', () => {
-	if ( !audioIsPlaying ) { 
-		console.log( 'play' );
-		togglePlayPause; }
-} );
+audio.addEventListener( 'play', () => { if ( !audioIsPlaying ) togglePlayPause(); } );
 
-if ( !audioIsPlaying )
-	audio.addEventListener( 'pause', () => {
-if ( audioIsPlaying ) { 
-			console.log( 'pause' );
-			togglePlayPause; }
-	} );
+audio.addEventListener( 'pause', () => { if ( audioIsPlaying ) togglePlayPause(); } );
 
 function togglePlayPause () {
 	audioIsPlaying ? pauseAudio() : playAudio();
