@@ -550,23 +550,26 @@ main {
 
 	.sponsors {
 		padding: 50px 0;
-		height: 500px;
-		max-width: 1500px;
+		// height: 500px;
+		// max-width: 1500px;
 		margin: 0 auto;
-
+		
 		h1 {
 			font-size: 2rem;
 			text-align: center;
 			text-transform: uppercase;
 			font-family: Poppins, sans-serif;
 			color: var(--color-primary-soft);
-
+			
 		}
-
+		
 		.swiper {
+			display: block;
+			max-width: 1700px;
+			width: 100vw;
 			.swiper-wrapper {
 				height: 300px;
-
+				
 				.swiper-slide {
 					display: flex;
 					align-items: center;

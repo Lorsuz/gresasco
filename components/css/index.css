@@ -416,8 +416,6 @@ main .plot .wrapper .audio audio::-webkit-media-controls-start-playback-button {
 }
 main .sponsors {
   padding: 50px 0;
-  height: 500px;
-  max-width: 1500px;
   margin: 0 auto;
 }
 main .sponsors h1 {
@@ -426,6 +424,11 @@ main .sponsors h1 {
   text-transform: uppercase;
   font-family: Poppins, sans-serif;
   color: var(--color-primary-soft);
+}
+main .sponsors .swiper {
+  display: block;
+  max-width: 1700px;
+  width: 100vw;
 }
 main .sponsors .swiper .swiper-wrapper {
   height: 300px;

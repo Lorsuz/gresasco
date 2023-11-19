@@ -2,7 +2,7 @@
 	"sponsors": [
 		{
 			"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/2560px-Coca-Cola_logo.svg.png",
-			"alt": ""
+			"alt": "fsdfdsf"
 		},
 		{
 			"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Pepsi_logo_2008.svg/2560px-Pepsi_logo_2008.svg.png",
@@ -13,15 +13,15 @@
 			"alt": ""
 		},
 		{
-			"image": "https://responseservices.net/public/uploads/employer/JOBPORTAL-1639545744.png",
+			"image": "./components/assets/images/Sponsors/Drogamix.png",
 			"alt": ""
 		},
 		{
-			"image": "https://seeklogo.com/images/C/Corinthians_Bras_and__227_o-logo-E92E44B595-seeklogo.com.png",
+			"image": "./components/assets/images/Sponsors/Lfbets.png",
 			"alt": ""
 		},
 		{
-			"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/2054px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png",
+			"image": "./components/assets/images/Sponsors/Haras.png",
 			"alt": ""
 		},
 		{

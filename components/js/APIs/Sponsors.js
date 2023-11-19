@@ -1,5 +1,4 @@
 import sponsors from '../functions/Swiper.js';
-
 const container = document.querySelector( '.sponsors .swiper-wrapper' );
 
 fetch( "components/json/data.json" ).then( ( response ) => {
