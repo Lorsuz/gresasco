@@ -57,22 +57,25 @@ header {
 							font-weight: bold;
 							position: relative;
 							font-family: Playpen Sans;
-
-
+							
+							
 							&::after {
 								content: "";
-								width: 0%;
+								display: block;
+								transform-origin: right;
 								position: absolute;
 								height: 3px;
 								background: var(--color-primary-soft);
+								inset: 0;
 								top: 100%;
-								left: 0;
-								transition: 300ms ease-in-out;
-								transform-origin: right;
-							}
-
-							&:hover::after {
 								width: 100%;
+								transition: transform 300ms ease-in-out, transform-origin 0ms;
+								transform: scaleX(0);
+							}
+							
+							&:hover::after {
+								transform: scaleX(1);
+								transform-origin: left;
 							}
 						}
 					}

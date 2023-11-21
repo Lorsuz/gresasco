@@ -50,17 +50,20 @@ header .wrapper .nav-bar nav.menu-desk ul li a {
 }
 header .wrapper .nav-bar nav.menu-desk ul li a::after {
   content: "";
-  width: 0%;
+  display: block;
+  transform-origin: right;
   position: absolute;
   height: 3px;
   background: var(--color-primary-soft);
+  inset: 0;
   top: 100%;
-  left: 0;
-  transition: 300ms ease-in-out;
-  transform-origin: right;
+  width: 100%;
+  transition: transform 300ms ease-in-out, transform-origin 0ms;
+  transform: scaleX(0);
 }
 header .wrapper .nav-bar nav.menu-desk ul li a:hover::after {
-  width: 100%;
+  transform: scaleX(1);
+  transform-origin: left;
 }
 header .wrapper .nav-bar button {
   cursor: pointer;
