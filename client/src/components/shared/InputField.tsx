@@ -14,7 +14,7 @@ const InputField = ({
 	label = 'Label',
 	error = '',
 	name = 'name',
-	placeholder = 'Digite aqui seu dado',
+	placeholder = '',
 	type = 'text'
 }: Props): React.FunctionComponentElement<JSX.Element> => {
 	const [inputValue, setInputValue] = useState<string>('');
@@ -32,7 +32,7 @@ const InputField = ({
 			</label>
 			<input
 				type={type}
-				placeholder={placeholder}
+				placeholder={`Ex. ${placeholder}`}
 				name={name}
 				id={name}
 				onChange={e => handleInputChange(e)}
