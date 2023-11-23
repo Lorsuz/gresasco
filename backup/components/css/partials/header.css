@@ -1,0 +1,144 @@
+@import url("./global.css");
+header {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 100;
+}
+header * {
+  color: rgb(218, 218, 218);
+}
+header .wrapper .nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 2/12;
+}
+header .wrapper .nav-bar section {
+  height: 70px;
+}
+header .wrapper .nav-bar section.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .wrapper .nav-bar section.logo img {
+  width: 60px;
+  margin-right: 15px;
+}
+header .wrapper .nav-bar section.logo span {
+  font-size: 2rem;
+  color: var(--color-text-soft);
+  font-weight: bold;
+}
+header .wrapper .nav-bar nav.menu-desk {
+  display: flex;
+}
+header .wrapper .nav-bar nav.menu-desk ul {
+  display: flex;
+}
+header .wrapper .nav-bar nav.menu-desk ul li {
+  margin: 0 20px;
+}
+header .wrapper .nav-bar nav.menu-desk ul li a {
+  color: var(--color-text-soft);
+  font-weight: bold;
+  position: relative;
+  font-family: Playpen Sans;
+}
+header .wrapper .nav-bar nav.menu-desk ul li a::after {
+  content: "";
+  display: block;
+  transform-origin: right;
+  position: absolute;
+  height: 3px;
+  background: var(--color-primary-soft);
+  inset: 0;
+  top: 100%;
+  width: 100%;
+  transition: transform 300ms ease-in-out, transform-origin 0ms;
+  transform: scaleX(0);
+}
+header .wrapper .nav-bar nav.menu-desk ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+header .wrapper .nav-bar button {
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 10;
+  transition: 300ms;
+  display: none;
+}
+header .wrapper .nav-bar button i {
+  color: var(--color-primary);
+  font-size: 2rem;
+}
+header .wrapper .nav-bar nav.menu-mobile {
+  position: fixed;
+  left: 100%;
+  top: 0;
+  background: #fff;
+  width: 100%;
+  min-width: 300px;
+  max-width: 400px;
+  height: 100%;
+  opacity: 0;
+  box-shadow: 0 -5px 10px 0 rgba(0, 0, 0, 0.614);
+}
+header .wrapper .nav-bar nav.menu-mobile.active {
+  opacity: 1;
+  transform: translateX(-100%);
+}
+header .wrapper .nav-bar nav.menu-mobile ul {
+  margin: 80px 0 0 0;
+}
+header .wrapper .nav-bar nav.menu-mobile ul li {
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+  opacity: 1;
+  border-bottom: 1px solic var(--color-primary-soft);
+}
+header .wrapper .nav-bar nav.menu-mobile ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 15px 40px;
+  transition: 200ms;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+header .wrapper .nav-bar nav.menu-mobile ul li a:hover {
+  background: var(--color-primary-soft);
+}
+header .wrapper .nav-bar nav.menu-mobile ul li a:hover * {
+  color: #fff;
+}
+header .wrapper .nav-bar nav.menu-mobile ul li a:last-child {
+  border: none;
+}
+header .wrapper .nav-bar nav.menu-mobile ul li a i {
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+  color: var(--color-primary);
+}
+header .wrapper .nav-bar nav.menu-mobile ul li a span {
+  margin-left: 10px;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+@media screen and (max-width: 950px) {
+  header .wrapper .nav-bar button {
+    display: block;
+  }
+  header .wrapper .nav-bar nav.menu-desk {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

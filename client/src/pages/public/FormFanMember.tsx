@@ -1,0 +1,251 @@
+import React, { useEffect, useState } from 'react';
+import InputField from '../../components/shared/InputField';
+import InputSelectField from '../../components/shared/InputSelectField';
+import InputRadioField from '../../components/shared/InputRadioField';
+
+import styled from 'styled-components';
+
+const FormFanMember = (): React.FunctionComponentElement<JSX.Element> => {
+	const [currentPage, setCurrentPage] = useState(1);
+	const totalPages = 5;
+
+	useEffect(() => {
+		console.log('Rendering Page: ', currentPage);
+	}, [currentPage]);
+
+	const setPrevPage = (e: React.MouseEvent<HTMLButtonElement>): void => {
+		e.preventDefault();
+		setCurrentPage(prevPage => Math.max(prevPage - 1, 1));
+	};
+
+	const setNextPage = (e: React.MouseEvent<HTMLButtonElement>): void => {
+		e.preventDefault();
+		currentPage !== totalPages ? setCurrentPage(prevPage => Math.min(prevPage + 1, totalPages)) : console.log('next');
+	};
+
+	const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+		e.preventDefault();
+		console.log('Submit');
+	};
+
+
+
+	const renderFieldsByPage = () => {
+		switch (currentPage) {
+			case 1:
+				return (
+					<fieldset>
+						<legend>Dados Pessoais</legend>
+						<InputField name='name' label='Nome' placeholder='Carlos' />
+						<InputField name='birth' label='Data de Nascimento' type='date' />
+						<InputField name='cpf' label='CPF' placeholder='012.345.567-91' />
+					</fieldset>
+				);
+			case 2:
+				return (
+					<fieldset>
+						<legend>Dados de Contato</legend>
+						<InputField name='email' label='Email' placeholder='carlos@academicos.com.br' type='email' />
+						<InputField name='tell' label='Telefone' placeholder='+00 (00) 0 0000-0000' type='tell' />
+					</fieldset>
+				);
+			case 3:
+				return (
+					<fieldset>
+						<legend>Endereço</legend>
+						<InputField name='country' label='País' placeholder='Brasil' />
+						<InputSelectField
+							name='state'
+							label='Estado'
+							placeholder='Selecione seu estado'
+							options={[
+								'Acre',
+								'Alagoas',
+								'Amapá',
+								'Amazonas',
+								'Bahia',
+								'Ceará',
+								'Distrito Federal',
+								'Espírito Santo',
+								'Goiás',
+								'Maranhão',
+								'Mato Grosso',
+								'Mato Grosso do Sul',
+								'Minas Gerais',
+								'Pará',
+								'Paraíba',
+								'Paraná',
+								'Pernambuco',
+								'Piauí',
+								'Rio de Janeiro',
+								'Rio Grande do Norte',
+								'Rio Grande do Sul',
+								'Rondônia',
+								'Roraima',
+								'Santa Catarina',
+								'São Paulo',
+								'Sergipe',
+								'Tocantins'
+							]}
+						/>
+						<InputField name='city' label='Cidade' placeholder='Juatina' />
+						<InputField name='neighborhood' label='Bairro' placeholder='Centro' />
+						<InputField name='street' label='Logradouro' placeholder='Rua Soares' />
+						<InputField name='number' label='Número' placeholder='123' />
+						<InputField name='complement' label='Complemento' placeholder='Apt. 456' />
+						<InputField name='cep' label='CEP' placeholder='12345-678' />
+					</fieldset>
+				);
+			case 4:
+				return (
+					<fieldset>
+						<legend>Perfil</legend>
+						<InputField name='height' label='Altura' placeholder='1.75' />
+						<InputField name='weight' label='Peso' placeholder='65' />
+						<InputSelectField
+							name='mannequin'
+							label='Manequim'
+							placeholder='Selecione seu manequim'
+							options={['PP', 'P', 'M', 'G', 'GG', 'XXG']}
+						/>
+					</fieldset>
+				);
+			case 5:
+				return (
+					<fieldset>
+						<legend>Sobre Você</legend>
+						<InputRadioField
+							name='experience'
+							placeholder='Você possue experiência em desfiles?'
+							radios={[
+								{
+									value: 'yes',
+									label: 'Sim'
+								},
+								{
+									value: 'no',
+									label: 'Não'
+								}
+							]}
+						/>
+						<InputRadioField
+							name='fanMember'
+							placeholder='Você é sócio torcedor da escola?'
+							radios={[
+								{
+									value: 'yes',
+									label: 'Sim'
+								},
+								{
+									value: 'no',
+									label: 'Não'
+								}
+							]}
+						/>
+					</fieldset>
+				);
+			default:
+				return null;
+		}
+	};
+
+	return (
+		<StyledFormFanMember>
+			<form onSubmit={handleSubmit}>
+				{renderFieldsByPage()}
+				<div className='pagination'>
+					<button onClick={setPrevPage} disabled={currentPage === 1}>
+						Anterior
+					</button>
+					{/* ({currentPage} de {totalPages}) */}
+					{/* <span>{currentPage}</span> */}
+					<div className='dots'>
+						{[...Array(totalPages)].map((_, index) => (
+							<span key={index} className={currentPage === index + 1 ? 'active' : ''}></span>
+						))}
+					</div>
+
+					<button onClick={setNextPage} type={currentPage === totalPages ? 'submit' : 'button'}>
+						{currentPage === totalPages ? 'Finalizar' : 'Próximo'}
+					</button>
+				</div>
+			</form>
+		</StyledFormFanMember>
+	);
+};
+
+const StyledFormFanMember = styled.main`
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	* {
+		/* outline: 1px dotted; */
+	}
+
+	form {
+		width: 50%;
+		padding-bottom: 50px;
+		fieldset {
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			margin-bottom: 50px;
+
+			legend {
+				font-size: 30px;
+				font-weight: bold;
+				margin: 0 0 20px 25px;
+				padding: 0 10px;
+			}
+		}
+		.pagination {
+			margin-top: 20px;
+			display: flex;
+			justify-content: space-between;
+			align-content: center;
+		}
+		span {
+			font-size: 20px;
+			font-weight: bold;
+			color: var(--color-primary-soft);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.dots {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			span {
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background-color: #ccc;
+				margin: 0 5px;
+
+				&.active {
+					background-color: var(--color-primary-soft);
+				}
+			}
+		}
+
+		button {
+			padding: 10px;
+			cursor: pointer;
+			padding: 10px 20px;
+			background-color: var(--color-primary-soft);
+			color: var(--color-white);
+			border-radius: 5px;
+
+			&:disabled {
+				opacity: 0.5;
+				cursor: not-allowed;
+				background: #a5a5a5;
+			}
+		}
+	}
+`;
+
+export default FormFanMember;
