@@ -1,8 +1,8 @@
 import React from 'react';
 
 import styled from 'styled-components';
-const HomeNavInfo = (): JSX.Element => (
-	<StyledHomeNavInfo>
+const HomeNavInfo = (): React.FunctionComponentElement<JSX.Element> => (
+	<StyledComponent>
 		<div className='wrapper'>
 			<section className='contact'>
 				<div>
@@ -33,10 +33,10 @@ const HomeNavInfo = (): JSX.Element => (
 				</div>
 			</section>
 		</div>
-	</StyledHomeNavInfo>
+	</StyledComponent>
 );
 
-const StyledHomeNavInfo = styled.section`
+const StyledComponent = styled.section`
 	background: var(--color-primary);
 	height: 40px;
 	width: 100%;

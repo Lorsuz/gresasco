@@ -5,13 +5,21 @@ type RadiosProps = {
 	label: string;
 	value: string;
 };
+type AditionalInputProps = {
+	label?: string;
+	name?: string;
+	type?: string;
+	placeholder?: string;
+	onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void;
+};
 
 type Props = {
 	name?: string;
 	radios?: RadiosProps[];
 	placeholder?: string;
-	onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void;
 	error?: string;
+	onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void;
+	aditionalInput?: AditionalInputProps | boolean;
 };
 
 const InputField = ({
@@ -19,7 +27,8 @@ const InputField = ({
 	name = 'name',
 	placeholder = 'Selecione seu dado',
 	radios = [],
-	onChange
+	onChange,
+	aditionalInput = false
 }: Props): React.FunctionComponentElement<JSX.Element> => {
 	const [selectedValue, setSelectedValue] = useState<string>('');
 
@@ -48,6 +57,14 @@ const InputField = ({
 					</div>
 				))}
 			</div>
+			{aditionalInput && typeof aditionalInput === 'object' && (
+				<input
+					type={aditionalInput.type || 'text'}
+					name={aditionalInput.name || 'aditionalInput'}
+					placeholder={aditionalInput.placeholder || 'Digite seu dado'}
+					onChange={aditionalInput.onChange}
+				/>
+			)}
 			<span className='error-message'>{error}</span>
 		</StyledInputField>
 	);

@@ -1,7 +1,8 @@
 import React from 'react';
+
 import styled from 'styled-components';
-const HomeBanner = (): JSX.Element => (
-	<StyledHomeBanner>
+const HomeBanner = (): React.FunctionComponentElement<JSX.Element> => (
+	<StyledComponent>
 		<ul className='slides'></ul>
 		<button className='prev'>
 			<i className='fa-solid fa-chevron-left'></i>
@@ -10,10 +11,10 @@ const HomeBanner = (): JSX.Element => (
 			<i className='fa-solid fa-chevron-right'></i>
 		</button>
 		<ul className='pagination'></ul>
-	</StyledHomeBanner>
+	</StyledComponent>
 );
 
-const StyledHomeBanner = styled.section`
+const StyledComponent = styled.section`
 	position: relative;
 	height: 100vh;
 	min-height: 200px;

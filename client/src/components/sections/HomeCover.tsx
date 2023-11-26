@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const HomeCover = (): React.FunctionComponentElement<JSX.Element> => (
-	<StyledHomeCover>
+	<StyledComponent>
 		<div className='wrapper'>
 			<div className='left'>
 				<div className='container'>
@@ -12,7 +13,7 @@ const HomeCover = (): React.FunctionComponentElement<JSX.Element> => (
 						Bem-vindos! Aqui o samba é vida, a cultura é paixão e a alegria é eterna. No coração de Santa Cruz, encontre
 						a felicidade em cada batida de tambor. Feliz da vida é quem tem a Santa Cruz no coração.
 					</p>
-					<a href='./components/pages/not-found.html'>Ir para Loja</a>
+					<Link to='/not-found'><span>Ir para Loja</span></Link>
 					<ul className='social-links'>
 						<li>
 							<a target='_blank' href='https://www.instagram.com/academicosdesantacruzrj/'>
@@ -39,7 +40,7 @@ const HomeCover = (): React.FunctionComponentElement<JSX.Element> => (
 			</div>
 			<div className='right'>
 				<div className='img'>
-					<img src='../../assets/images/logo - gresasc.jpg' alt='Logo' />
+					<img src='src/assets/images/logo - gresasc.jpg' alt='Logo' />
 				</div>
 				<ul className='social-links'>
 					<li>
@@ -65,10 +66,10 @@ const HomeCover = (): React.FunctionComponentElement<JSX.Element> => (
 				</ul>
 			</div>
 		</div>
-	</StyledHomeCover>
+	</StyledComponent>
 );
 
-const StyledHomeCover = styled.section`
+const StyledComponent = styled.section`
 	height: 98dvh;
 	min-height: 700px;
 	max-height: 1200px;
@@ -100,7 +101,7 @@ const StyledHomeCover = styled.section`
 					margin-bottom: 50px;
 				}
 
-				> a {
+				span {
 					background: var(--color-primary-soft);
 					border-radius: 10px 0;
 					color: var(--color-white);

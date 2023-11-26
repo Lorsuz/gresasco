@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { BsCheck2 } from 'react-icons/bs';
 
 const HomeContact = (): React.FunctionComponentElement<JSX.Element> => (
-	<StyledHomeContact>
+	<StyledComponent>
 		<div className='wrapper'>
 			<div className='text'>
 				<h3>Formulário de contato</h3>
@@ -74,10 +74,10 @@ const HomeContact = (): React.FunctionComponentElement<JSX.Element> => (
 				</form>
 			</div>
 		</div>
-	</StyledHomeContact>
+	</StyledComponent>
 );
 
-const StyledHomeContact = styled.section`
+const StyledComponent = styled.section`
 	background: linear-gradient(0deg, #0b1127 0%, #1f2a4b 100%);
 	height: auto;
 	padding: 70px 0 80px;

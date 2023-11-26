@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HomeSponsors = (): JSX.Element => (
-	<StyledHomeSponsors>
+const HomeSponsors = (): React.FunctionComponentElement<JSX.Element> => (
+	<StyledComponent>
 		<h1>Patrocinadores e Apoiadores</h1>
 		<div className='swiper'>
 			<div className='swiper-wrapper'></div>
 			<div className='swiper-pagination'></div>
 		</div>
-	</StyledHomeSponsors>
+	</StyledComponent>
 );
-const StyledHomeSponsors = styled.section`
+
+const StyledComponent = styled.section`
 	padding: 50px 0;
 	// height: 500px;
 	// max-width: 1500px;

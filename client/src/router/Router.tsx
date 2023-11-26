@@ -3,6 +3,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 
 import HomePage from '../pages/public/HomePage';
 import FormFanMember from '../pages/public/FormFanMember';
+import NotFound from '../pages/public/NotFound';
 import FormRegister from '../pages/public/FormRegister';
 import FormLogin from '../pages/public/FormLogin';
 import Application from '../pages/private/Application';
@@ -20,6 +21,7 @@ const Router: React.FunctionComponent = () => (
 			<Route path='application' element={<Application />} />
 		</Route>
 		<Route index element={<Navigate to='/home' />} />
+		<Route path='/*' element={<NotFound />} />
 	</Routes>
 );
 

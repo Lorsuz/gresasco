@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header: React.FunctionComponent = () => (
@@ -12,9 +12,9 @@ const Header: React.FunctionComponent = () => (
 				<nav className='menu-desk'>
 					<ul>
 						<li>
-							<Link to='/home'>
+							<NavLink to='/home'>
 								<span>Página Inicial</span>
-							</Link>
+							</NavLink>
 						</li>
 						<li>
 							<a href='#'>A Escola</a>
@@ -23,9 +23,9 @@ const Header: React.FunctionComponent = () => (
 							<a href='#'>Nossa História</a>
 						</li>
 						<li>
-							<Link to='/form/fan-member'>
+							<NavLink to='/form/fan-member'>
 								<span>Sócio Torcedor</span>
-							</Link>
+							</NavLink>
 						</li>
 						<li>
 							<a href='#'>Créditos</a>
@@ -146,6 +146,12 @@ const HeaderFixed = styled.header`
 							}
 
 							&:hover::after {
+								transform: scaleX(1);
+								transform-origin: left;
+							}
+						}
+						.active {
+							& span::after {
 								transform: scaleX(1);
 								transform-origin: left;
 							}
