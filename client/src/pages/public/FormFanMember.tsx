@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import InputField from '../../components/shared/InputField';
-import InputSelectField from '../../components/shared/InputSelectField';
-import InputRadioField from '../../components/shared/InputRadioField';
+import InputField from '../../components/inputs/InputField';
+import InputSelectField from '../../components/inputs/InputSelectField';
+import InputRadioField from '../../components/inputs/InputRadioField';
 
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6';
 

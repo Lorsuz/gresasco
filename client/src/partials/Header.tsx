@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import LogoPng from '../assets/images/Logo/santa-cruz-logo-removebg-preview.png';
 import styled from 'styled-components';
 
 const Header: React.FunctionComponent = () => (
@@ -7,7 +8,7 @@ const Header: React.FunctionComponent = () => (
 		<div className='wrapper'>
 			<article className='nav-bar'>
 				<section className='logo'>
-					<img src='./components/assets/images/Logo/santa-cruz-logo-removebg-preview.png' alt='' />
+					<img src={LogoPng} alt='' />
 				</section>
 				<nav className='menu-desk'>
 					<ul>

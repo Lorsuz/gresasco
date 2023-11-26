@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SocialMedia from '../shared/SocialMedia';
+import LogoPng from '../../assets/images/Logo/santa-cruz-logo-removebg-preview.png';
+
 import styled from 'styled-components';
 
 const HomeCover = (): React.FunctionComponentElement<JSX.Element> => (
@@ -13,57 +16,21 @@ const HomeCover = (): React.FunctionComponentElement<JSX.Element> => (
 						Bem-vindos! Aqui o samba é vida, a cultura é paixão e a alegria é eterna. No coração de Santa Cruz, encontre
 						a felicidade em cada batida de tambor. Feliz da vida é quem tem a Santa Cruz no coração.
 					</p>
-					<Link to='/not-found'><span>Ir para Loja</span></Link>
-					<ul className='social-links'>
-						<li>
-							<a target='_blank' href='https://www.instagram.com/academicosdesantacruzrj/'>
-								<i className='fa-brands fa-instagram'></i>
-							</a>
-						</li>
-						<li>
-							<a target='_blank' href='https://www.facebook.com/acadsantacruz?mibextid=LQQJ4d'>
-								<i className='fa-brands fa-facebook'></i>
-							</a>
-						</li>
-						<li>
-							<a target='_blank' href='https://www.youtube.com/@academicosdesantacruz'>
-								<i className='fa-brands fa-youtube'></i>
-							</a>
-						</li>
-						<li>
-							<a target='_blank' href='https://x.com/acadsantacruz?s=11'>
-								<i className='fa-brands fa-x-twitter'></i>
-							</a>
-						</li>
-					</ul>
+					<Link to='/not-found'>
+						<span>Ir para Loja</span>
+					</Link>
+					<div className='social-midia'>
+						<SocialMedia />
+					</div>
 				</div>
 			</div>
 			<div className='right'>
 				<div className='img'>
-					<img src='src/assets/images/logo - gresasc.jpg' alt='Logo' />
+					<img src={LogoPng} alt='Logo' />
 				</div>
-				<ul className='social-links'>
-					<li>
-						<a target='_blank' href='https://www.instagram.com/academicosdesantacruzrj/'>
-							<i className='fa-brands fa-instagram'></i>
-						</a>
-					</li>
-					<li>
-						<a target='_blank' href='https://www.facebook.com/acadsantacruz?mibextid=LQQJ4d'>
-							<i className='fa-brands fa-facebook'></i>
-						</a>
-					</li>
-					<li>
-						<a target='_blank' href='https://www.youtube.com/@academicosdesantacruz'>
-							<i className='fa-brands fa-youtube'></i>
-						</a>
-					</li>
-					<li>
-						<a target='_blank' href='https://x.com/acadsantacruz?s=11'>
-							<i className='fa-brands fa-x-twitter'></i>
-						</a>
-					</li>
-				</ul>
+				<div className='social-midia'>
+					<SocialMedia />
+				</div>
 			</div>
 		</div>
 	</StyledComponent>
@@ -116,33 +83,8 @@ const StyledComponent = styled.section`
 					}
 				}
 
-				.social-links {
-					gap: 25px;
+				.social-midia {
 					display: none;
-
-					li {
-						a {
-							i {
-								font-size: 2rem;
-
-								&.fa-facebook {
-									color: #3b5998;
-								}
-
-								&.fa-instagram {
-									color: #e4405f;
-								}
-
-								&.fa-x-twitter {
-									color: #000000;
-								}
-
-								&.fa-youtube {
-									color: #cd201f;
-								}
-							}
-						}
-					}
 				}
 			}
 		}
@@ -160,49 +102,8 @@ const StyledComponent = styled.section`
 					width: 450px;
 				}
 			}
+			.social-midia{
 
-			.social-links {
-				display: flex;
-				justify-content: center;
-
-				li {
-					margin: 0 10px;
-					position: relative;
-					top: 0;
-
-					a {
-						i {
-							font-size: 2.4rem;
-							color: var(--color-text-soft);
-
-							&.fa-facebook {
-								color: #3b5998;
-							}
-
-							&.fa-instagram {
-								color: #e4405f;
-							}
-
-							&.fa-x-twitter {
-								color: #000000;
-							}
-
-							&.fa-youtube {
-								color: #cd201f;
-							}
-						}
-					}
-
-					&:hover {
-						top: -5px;
-
-						a {
-							i {
-								color: var(--color-primary-soft);
-							}
-						}
-					}
-				}
 			}
 		}
 	}

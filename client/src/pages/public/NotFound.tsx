@@ -1,4 +1,5 @@
 import React from 'react';
+import gifNotFound from '../../assets/videos/funny-404-error-page-design.gif';
 
 import styled from 'styled-components';
 const NotFound = (): React.FunctionComponentElement<JSX.Element> => (
@@ -16,7 +17,7 @@ const StyledComponent = styled.section`
 	justify-content: center;
 	flex-direction: column;
 	min-height: 100vh;
-	background-image: url('src/assets/videos/funny-404-error-page-design.gif');
+	background-image: url(${gifNotFound});
 	background-repeat: no-repeat;
 	background-position: center 50%;
 

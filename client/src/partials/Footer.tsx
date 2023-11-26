@@ -1,9 +1,11 @@
 import React from 'react';
 
+import SocialMedia from '../components/shared/SocialMedia';
+
 import styled from 'styled-components';
 
-const Footer = (): JSX.Element => (
-	<FooterFixed>
+const Footer = (): React.FunctionComponentElement<JSX.Element> => (
+	<StyledComponent>
 		<div className='wrapper'>
 			<section className='structure'>
 				<div className=''>
@@ -99,19 +101,8 @@ const Footer = (): JSX.Element => (
 						<i className='fa-solid fa-envelope'></i>
 					</button>
 				</form>
-				<div className='social-links'>
-					<a target='_blank' href='https://www.instagram.com/academicosdesantacruzrj/'>
-						<i className='fa-brands fa-instagram'></i>
-					</a>
-					<a target='_blank' href='https://www.facebook.com/acadsantacruz?mibextid=LQQJ4d'>
-						<i className='fa-brands fa-facebook'></i>
-					</a>
-					<a target='_blank' href='https://www.youtube.com/@academicosdesantacruz'>
-						<i className='fa-brands fa-youtube'></i>
-					</a>
-					<a target='_blank' href='https://x.com/acadsantacruz?s=11'>
-						<i className='fa-brands fa-x-twitter'></i>
-					</a>
+				<div className='social-media'>
+					<SocialMedia customStyled={true}/>
 				</div>
 			</section>
 			<section className='copyriht'>
@@ -123,10 +114,10 @@ const Footer = (): JSX.Element => (
 				<a href=''>Não Venda Minhas Informações</a>
 			</section>
 		</div>
-	</FooterFixed>
+	</StyledComponent>
 );
 
-const FooterFixed = styled.footer`
+const StyledComponent = styled.footer`
 	background: rgb(28, 59, 53);
 	padding: 60px 0px 70px;
 	width: 100%;

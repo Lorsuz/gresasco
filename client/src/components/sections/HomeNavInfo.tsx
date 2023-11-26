@@ -16,21 +16,7 @@ const HomeNavInfo = (): React.FunctionComponentElement<JSX.Element> => (
 			</section>
 			<p>Siga-nos para ficar por dentro das novidades!</p>
 			<section className='social-network'>
-				<span>Redes Sociais:</span>
-				<div>
-					<a target='_blank' href='https://www.instagram.com/academicosdesantacruzrj/'>
-						<i className='fa-brands fa-instagram'></i>
-					</a>
-					<a target='_blank' href='https://www.facebook.com/acadsantacruz?mibextid=LQQJ4d'>
-						<i className='fa-brands fa-facebook'></i>
-					</a>
-					<a target='_blank' href='https://www.youtube.com/@academicosdesantacruz'>
-						<i className='fa-brands fa-youtube'></i>
-					</a>
-					<a target='_blank' href='https://x.com/acadsantacruz?s=11'>
-						<i className='fa-brands fa-x-twitter'></i>
-					</a>
-				</div>
+				<span>As Bruxas Estão Soltas!</span>
 			</section>
 		</div>
 	</StyledComponent>

@@ -138,10 +138,6 @@ const PlotSongLogic = (): React.FunctionComponentElement<JSX.Element> => {
 const StyledComponent = styled.section`
 	grid-column: 7/12;
 
-	*{
-		/* outline: 1px dotted; */
-	}
-
 	.disc-cover {
 		display: flex;
 		justify-content: center;
@@ -235,12 +231,15 @@ const StyledComponent = styled.section`
 		}
 	}
 	.audio {
-		display: block;
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
 		padding: 50px 0;
+		gap: 25px;
+
 		> div {
 			display: flex;
 			width: 100%;
-			gap: 20px;
+			gap: 10px;
 
 			.button {
 				button {
@@ -250,12 +249,14 @@ const StyledComponent = styled.section`
 					}
 				}
 			}
-			
+
 			.range {
+				width: 100%;
 				input[type='range'] {
 					-webkit-appearance: none;
 					height: 3px;
 					background: #00dc42;
+					width: 100%;
 				}
 
 				input[type='range']::-webkit-slider-thumb {
@@ -278,8 +279,10 @@ const StyledComponent = styled.section`
 				}
 			}
 			&.progress {
+				grid-column: 1/9;
 			}
 			&.volume {
+				grid-column: 9/13;
 			}
 		}
 	}
