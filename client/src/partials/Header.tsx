@@ -25,7 +25,7 @@ const Header: React.FunctionComponent = () => (
 						</li>
 						<li>
 							<NavLink to='/form/fan-member'>
-								<span>Sócio Torcedor</span>
+								<span>Desfile Conosco</span>
 							</NavLink>
 						</li>
 						<li>
