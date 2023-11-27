@@ -39,7 +39,6 @@ const PlotSongLogic = (): React.FunctionComponentElement<JSX.Element> => {
 			})
 		);
 	};
-	const a:number
 
 	const updateAudioProgress = (): void => {
 		setAudioProgress((audio.currentTime / audio.duration) * 100);
