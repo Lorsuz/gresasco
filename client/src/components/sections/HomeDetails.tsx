@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HomeDetails = (): JSX.Element => (
-	<StyledHomeDetails>
+const HomeDetails = (): React.FunctionComponentElement<JSX.Element> => (
+	<StyledComponent>
 		<h1>Sobre a Escola</h1>
 		<ul>
 			<li>
@@ -22,10 +22,10 @@ const HomeDetails = (): JSX.Element => (
 				<h3>Patrocínios</h3>
 			</li>
 		</ul>
-	</StyledHomeDetails>
+	</StyledComponent>
 );
 
-const StyledHomeDetails = styled.section`
+const StyledComponent = styled.section`
 	margin-bottom: 50px;
 
 	h1 {

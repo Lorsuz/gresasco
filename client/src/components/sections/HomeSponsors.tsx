@@ -1,19 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import dataAPI from '../../json/data.json';
 
-const HomeSponsors = (): JSX.Element => (
-	<StyledHomeSponsors>
-		<h1>Patrocinadores e Apoiadores</h1>
-		<div className='swiper'>
-			<div className='swiper-wrapper'></div>
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+const HomeSponsors = (): React.FunctionComponentElement<JSX.Element> => {
+	const [sponsorsPathImg] = useState(dataAPI.sponsors);
+
+	return (
+		<StyledComponent>
+			<h1>Patrocinadores e Apoiadores</h1>
+			<Swiper
+				modules={[Navigation, Pagination, Scrollbar, A11y]}
+				spaceBetween={50}
+				slidesPerView={3}
+				pagination={{ clickable: true }}
+				onSwiper={swiper => console.log(swiper)}
+				onSlideChange={() => console.log('slide change')}
+			>
+				{sponsorsPathImg.map((sponsorPathImg, index: number) => (
+					<SwiperSlide key={index}>
+						<img src={`src/assets/images/Sponsors/${sponsorPathImg.image}`} alt={sponsorPathImg.image} />
+					</SwiperSlide>
+				))}
+			</Swiper>
 			<div className='swiper-pagination'></div>
-		</div>
-	</StyledHomeSponsors>
-);
-const StyledHomeSponsors = styled.section`
+		</StyledComponent>
+	);
+};
+
+const StyledComponent = styled.section`
 	padding: 50px 0;
-	// height: 500px;
-	// max-width: 1500px;
 	margin: 0 auto;
 
 	h1 {

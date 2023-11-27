@@ -1,8 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import SocialMedia from '../shared/SocialMedia';
+import LogoPng from '../../assets/images/Logo/santa-cruz-logo-removebg-preview.png';
+
 import styled from 'styled-components';
 
 const HomeCover = (): React.FunctionComponentElement<JSX.Element> => (
-	<StyledHomeCover>
+	<StyledComponent>
 		<div className='wrapper'>
 			<div className='left'>
 				<div className='container'>
@@ -12,63 +16,27 @@ const HomeCover = (): React.FunctionComponentElement<JSX.Element> => (
 						Bem-vindos! Aqui o samba é vida, a cultura é paixão e a alegria é eterna. No coração de Santa Cruz, encontre
 						a felicidade em cada batida de tambor. Feliz da vida é quem tem a Santa Cruz no coração.
 					</p>
-					<a href='./components/pages/not-found.html'>Ir para Loja</a>
-					<ul className='social-links'>
-						<li>
-							<a target='_blank' href='https://www.instagram.com/academicosdesantacruzrj/'>
-								<i className='fa-brands fa-instagram'></i>
-							</a>
-						</li>
-						<li>
-							<a target='_blank' href='https://www.facebook.com/acadsantacruz?mibextid=LQQJ4d'>
-								<i className='fa-brands fa-facebook'></i>
-							</a>
-						</li>
-						<li>
-							<a target='_blank' href='https://www.youtube.com/@academicosdesantacruz'>
-								<i className='fa-brands fa-youtube'></i>
-							</a>
-						</li>
-						<li>
-							<a target='_blank' href='https://x.com/acadsantacruz?s=11'>
-								<i className='fa-brands fa-x-twitter'></i>
-							</a>
-						</li>
-					</ul>
+					<Link to='/not-found'>
+						<span>Ir para Loja</span>
+					</Link>
+					<div className='social-media'>
+						<SocialMedia />
+					</div>
 				</div>
 			</div>
 			<div className='right'>
 				<div className='img'>
-					<img src='../../assets/images/logo - gresasc.jpg' alt='Logo' />
+					<img src={LogoPng} alt='Logo' />
 				</div>
-				<ul className='social-links'>
-					<li>
-						<a target='_blank' href='https://www.instagram.com/academicosdesantacruzrj/'>
-							<i className='fa-brands fa-instagram'></i>
-						</a>
-					</li>
-					<li>
-						<a target='_blank' href='https://www.facebook.com/acadsantacruz?mibextid=LQQJ4d'>
-							<i className='fa-brands fa-facebook'></i>
-						</a>
-					</li>
-					<li>
-						<a target='_blank' href='https://www.youtube.com/@academicosdesantacruz'>
-							<i className='fa-brands fa-youtube'></i>
-						</a>
-					</li>
-					<li>
-						<a target='_blank' href='https://x.com/acadsantacruz?s=11'>
-							<i className='fa-brands fa-x-twitter'></i>
-						</a>
-					</li>
-				</ul>
+				<div className='social-media'>
+					<SocialMedia />
+				</div>
 			</div>
 		</div>
-	</StyledHomeCover>
+	</StyledComponent>
 );
 
-const StyledHomeCover = styled.section`
+const StyledComponent = styled.section`
 	height: 98dvh;
 	min-height: 700px;
 	max-height: 1200px;
@@ -100,7 +68,7 @@ const StyledHomeCover = styled.section`
 					margin-bottom: 50px;
 				}
 
-				> a {
+				span {
 					background: var(--color-primary-soft);
 					border-radius: 10px 0;
 					color: var(--color-white);
@@ -115,33 +83,8 @@ const StyledHomeCover = styled.section`
 					}
 				}
 
-				.social-links {
-					gap: 25px;
+				.social-media {
 					display: none;
-
-					li {
-						a {
-							i {
-								font-size: 2rem;
-
-								&.fa-facebook {
-									color: #3b5998;
-								}
-
-								&.fa-instagram {
-									color: #e4405f;
-								}
-
-								&.fa-x-twitter {
-									color: #000000;
-								}
-
-								&.fa-youtube {
-									color: #cd201f;
-								}
-							}
-						}
-					}
 				}
 			}
 		}
@@ -159,45 +102,134 @@ const StyledHomeCover = styled.section`
 					width: 450px;
 				}
 			}
+			.social-media {
+			}
+		}
+	}
 
-			.social-links {
-				display: flex;
-				justify-content: center;
+	@media screen {
+		@media (max-width: 1350px) {
+			.wrapper > div {
+				&.left {
+					.container {
+						h2 {
+							font-size: 2rem;
+						}
 
-				li {
-					margin: 0 10px;
-					position: relative;
-					top: 0;
+						h1 {
+							font-size: 3.5rem;
+						}
 
-					a {
-						i {
-							font-size: 2.4rem;
-							color: var(--color-text-soft);
+						p {
+							font-size: 1rem;
+						}
+					}
+				}
+			}
+		}
 
-							&.fa-facebook {
-								color: #3b5998;
+		@media (max-width: 1200px) {
+			.wrapper > div {
+				&.left {
+					grid-column: 2/8;
+
+					.container {
+						p {
+							width: 90%;
+						}
+					}
+				}
+
+				&.right {
+					grid-column: 9/12;
+
+					.img {
+						width: 100%;
+
+						img {
+							width: 150%;
+						}
+					}
+				}
+			}
+		}
+
+		@media (max-width: 1000px) {
+			.wrapper {
+				> div {
+					&.left {
+						grid-column: 2/8;
+
+						.container {
+							h2 {
+								font-size: 2rem;
 							}
 
-							&.fa-instagram {
-								color: #e4405f;
-							}
-
-							&.fa-x-twitter {
-								color: #000000;
-							}
-
-							&.fa-youtube {
-								color: #cd201f;
+							h1 {
+								font-size: 3rem;
 							}
 						}
 					}
 
-					&:hover {
-						top: -5px;
+					&.right {
+						grid-column: 9/12;
 
-						a {
-							i {
-								color: var(--color-primary-soft);
+						.img {
+							width: 100%;
+
+							img {
+								width: 150%;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@media (max-width: 880px) {
+			.wrapper {
+				> div {
+					&.left {
+						grid-column: 2/12;
+
+						.container {
+							h2 {
+								font-size: 2rem;
+							}
+
+							h1 {
+								font-size: 2.8rem;
+							}
+
+							p {
+								width: 100%;
+							}
+
+							span {
+								padding: 15px 50px;
+								font-size: 1.1rem;
+							}
+
+							.social-media {
+								display: flex;
+							}
+						}
+					}
+
+					&.right {
+						display: none;
+					}
+				}
+			}
+		}
+
+		@media (max-width: 370px) {
+			main {
+				.nav-info .wrapper {
+					section {
+						&.contact {
+							div:nth-child(2) {
+								display: none;
 							}
 						}
 					}

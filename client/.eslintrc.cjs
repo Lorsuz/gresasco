@@ -11,7 +11,6 @@ module.exports = {
 		'react/prop-types': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'react-hooks/rules-of-hooks': 'warn',
-		'react-hooks/exhaustive-deps': 'warn',
 		'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 
 		'@typescript-eslint/no-explicit-any': 'warn',

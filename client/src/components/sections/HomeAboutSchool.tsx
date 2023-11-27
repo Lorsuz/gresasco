@@ -2,11 +2,13 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-const HomeAboutSchool = (): JSX.Element => {
-	console.log('HomeAboutSchool.tsx: HomeAboutSchool');
+const HomeAboutSchool = (): React.FunctionComponentElement<JSX.Element> => {
+
+	console.log('HomeAboutSchool');
+	
 
 	return (
-		<StyledHomeAboutSchool>
+		<StyledComponent>
 			<div className='wrapper'>
 				<div className='text-container'>
 					<div className='wiki'>
@@ -41,14 +43,14 @@ const HomeAboutSchool = (): JSX.Element => {
 				</div>
 				<div className='img-container'>
 					<div className='img'>
-						<img src='./components/assets/images/pavillion.jpeg' alt='Pavilhão' />
+						<img src='src/assets/images/pavillion.jpeg' alt='Pavilhão' />
 					</div>
 				</div>
 			</div>
-		</StyledHomeAboutSchool>
+		</StyledComponent>
 	);
 };
-const StyledHomeAboutSchool = styled.section`
+const StyledComponent = styled.section`
 	padding: 50px 0 100px;
 
 	.wrapper {

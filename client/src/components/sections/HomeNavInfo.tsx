@@ -1,42 +1,29 @@
 import React from 'react';
-
+import { FaPhone } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa";
 import styled from 'styled-components';
-const HomeNavInfo = (): JSX.Element => (
-	<StyledHomeNavInfo>
+const HomeNavInfo = (): React.FunctionComponentElement<JSX.Element> => (
+	<StyledComponent>
 		<div className='wrapper'>
 			<section className='contact'>
 				<div>
-					<i className='fa-solid fa-phone'></i>
+				<FaPhone/>
 					<span>+55 (43) 9 3421-7348</span>
 				</div>
 				<div>
-					<i className='fa-solid fa-envelope'></i>
+				<FaEnvelope/>
 					<span>gresasc@academicos.com</span>
 				</div>
 			</section>
 			<p>Siga-nos para ficar por dentro das novidades!</p>
 			<section className='social-network'>
-				<span>Redes Sociais:</span>
-				<div>
-					<a target='_blank' href='https://www.instagram.com/academicosdesantacruzrj/'>
-						<i className='fa-brands fa-instagram'></i>
-					</a>
-					<a target='_blank' href='https://www.facebook.com/acadsantacruz?mibextid=LQQJ4d'>
-						<i className='fa-brands fa-facebook'></i>
-					</a>
-					<a target='_blank' href='https://www.youtube.com/@academicosdesantacruz'>
-						<i className='fa-brands fa-youtube'></i>
-					</a>
-					<a target='_blank' href='https://x.com/acadsantacruz?s=11'>
-						<i className='fa-brands fa-x-twitter'></i>
-					</a>
-				</div>
+				<span>As Bruxas Estão Soltas!</span>
 			</section>
 		</div>
-	</StyledHomeNavInfo>
+	</StyledComponent>
 );
 
-const StyledHomeNavInfo = styled.section`
+const StyledComponent = styled.section`
 	background: var(--color-primary);
 	height: 40px;
 	width: 100%;
@@ -70,7 +57,7 @@ const StyledHomeNavInfo = styled.section`
 					align-items: center;
 					cursor: pointer;
 
-					i {
+					svg {
 						margin-right: 5px;
 					}
 
@@ -86,7 +73,7 @@ const StyledHomeNavInfo = styled.section`
 					}
 				}
 			}
-
+			
 			&.social-network {
 				display: flex;
 				align-items: center;
@@ -108,6 +95,41 @@ const StyledHomeNavInfo = styled.section`
 						i {
 							color: white;
 							cursor: pointer;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media screen {
+		@media (max-width: 880px) {
+			p {
+				display: none;
+			}
+		}
+
+		@media (max-width: 650px) {
+			.wrapper {
+				section {
+					&.contact {
+						width: 100%;
+						justify-content: space-evenly;
+					}
+
+					&.social-network {
+						display: none;
+					}
+				}
+			}
+		}
+
+		@media (max-width: 370px) {
+			.wrapper {
+				section {
+					&.contact {
+						div:nth-child(2) {
+							display: none;
 						}
 					}
 				}
