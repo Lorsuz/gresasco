@@ -1,16 +1,9 @@
-import { NextFunction, Request, Response } from "express";
-
-var express = require( 'express' );
-var router = express.Router();
+import { Router, Request, Response } from 'express';
+const router: Router = Router();
 
 /* GET home page. */
-router.get( '/', function ( req: Request, res: Response, next: NextFunction )
-{
-	res.json(
-		{
-			title: 'Express'
-		}
-	);
-} );
+router.get('/', (req: Request, res: Response) => {
+	res.json({ title: 'Express' });
+});
 
 export default router;

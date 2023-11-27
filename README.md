@@ -1,3 +1,19 @@
+```
+cd client
+npm i
+npm run dev
+
+cd server
+npm run server
+npm i
+npm run prisma
+npm run migrate
+npm run tsc
+
+cd server
+npm run dev
+```
+
 Create a local and remote repository and first commit{
 
 	git init => initialize the repository;
