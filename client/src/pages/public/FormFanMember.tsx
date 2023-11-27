@@ -137,7 +137,6 @@ const FormFanMember = (): React.FunctionComponentElement<JSX.Element> => {
 						<span>Anterior</span>
 					</button>
 					{/* ({currentPage} de {totalPages}) */}
-					{/* <span>{currentPage}</span> */}
 					<div className='dots'>
 						{[...Array(totalPages)].map((_, index) => (
 							<span key={index} className={currentPage === index + 1 ? 'active' : ''}></span>
@@ -155,7 +154,7 @@ const FormFanMember = (): React.FunctionComponentElement<JSX.Element> => {
 };
 
 const StyledFormFanMember = styled.main`
-	margin-top: 100px;
+	margin: 150px 0 100px;
 	display: flex;
 	justify-content: center;
 
@@ -225,7 +224,7 @@ const StyledFormFanMember = styled.main`
 
 			* {
 				font-size: 20px;
-				font-weight: bold;
+				font-weight: normal;
 				color: var(--color-white);
 			}
 

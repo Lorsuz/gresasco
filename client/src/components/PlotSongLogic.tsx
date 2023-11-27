@@ -149,7 +149,7 @@ const StyledComponent = styled.section`
 			10px 10px 10px 0 rgba(0, 0, 0, 0.6);
 		height: auto;
 		overflow: hidden;
-		margin: auto;
+		margin: 0 auto 50px;
 		border-radius: 6px;
 
 		img {
@@ -230,11 +230,20 @@ const StyledComponent = styled.section`
 			opacity: 1;
 		}
 	}
+	* {
+		/* outline: 1px dotted; */
+	}
 	.audio {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
-		padding: 50px 0;
+		padding: 0px 20px;
+		height: 50px;
 		gap: 25px;
+		background: #ffffff;
+		box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+		border-radius: 60px;
+		justify-content: center;
+		align-items: center;
 
 		> div {
 			display: flex;
@@ -242,7 +251,13 @@ const StyledComponent = styled.section`
 			gap: 10px;
 
 			.button {
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				button {
+					display: flex;
+					justify-content: center;
+					align-items: center;
 					* {
 						color: #000000;
 						font-size: 1.5rem;
@@ -255,8 +270,9 @@ const StyledComponent = styled.section`
 				input[type='range'] {
 					-webkit-appearance: none;
 					height: 3px;
-					background: #00dc42;
+					background: #000000;
 					width: 100%;
+					border-radius: 50px;
 				}
 
 				input[type='range']::-webkit-slider-thumb {

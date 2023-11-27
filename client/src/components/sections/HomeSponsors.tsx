@@ -13,8 +13,6 @@ const HomeSponsors = (): React.FunctionComponentElement<JSX.Element> => (
 
 const StyledComponent = styled.section`
 	padding: 50px 0;
-	// height: 500px;
-	// max-width: 1500px;
 	margin: 0 auto;
 
 	h1 {
