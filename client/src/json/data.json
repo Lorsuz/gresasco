@@ -38,5 +38,12 @@
 			"image": "image-3.jpg",
 			"alt": ""
 		}
+	],
+	"diretoria":[
+		{
+			"cargo": "Presidente",
+			"nome": "Ricardo",
+			"imagem": "diretoria-1.jpg"
+		}
 	]
 }

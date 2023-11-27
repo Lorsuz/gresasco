@@ -17,7 +17,7 @@ const HomeSponsors = (): React.FunctionComponentElement<JSX.Element> => {
 
 	return (
 		<StyledComponent>
-			<h1>Patrocinadores e Apoiadores</h1>
+			<h1>Apoios</h1>
 			<Swiper
 				modules={[Navigation, Pagination, Scrollbar, A11y]}
 				spaceBetween={50}

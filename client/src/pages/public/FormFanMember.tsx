@@ -80,7 +80,21 @@ const FormFanMember = (): React.FunctionComponentElement<JSX.Element> => {
 			<legend>Sobre Você</legend>
 			<InputRadioField
 				name='experience'
-				placeholder='Ex. Você possui experiência em desfiles?'
+				placeholder='Você possui experiência em desfiles?'
+				radios={[
+					{
+						value: 'yes',
+						label: 'Sim'
+					},
+					{
+						value: 'no',
+						label: 'Não'
+					}
+				]}
+			/>
+			<InputRadioField
+				name='fanMember'
+				placeholder='Você é sócio torcedor da escola?'
 				radios={[
 					{
 						value: 'yes',
@@ -94,29 +108,8 @@ const FormFanMember = (): React.FunctionComponentElement<JSX.Element> => {
 				additionalInput={{
 					condition: 'yes',
 					name: 'experienceTime',
-					label: 'Quantos anos?',
-					placeholder: '5 anos',
-					type: 'text'
-				}}
-			/>
-			<InputRadioField
-				name='fanMember'
-				placeholder='Ex. Você é sócio torcedor da escola?'
-				radios={[
-					{
-						value: 'yes',
-						label: 'Sim'
-					},
-					{
-						value: 'no',
-						label: 'Não'
-					}
-				]}
-				additionalInput={{
-					condition: 'no',
-					name: 'experienceTime',
-					label: 'Por que?',
-					placeholder: 'Descreva aqui',
+					label: 'Número de Inscrição:',
+					placeholder: 'Ex. 123456789',
 					type: 'text'
 				}}
 			/>
@@ -157,8 +150,14 @@ const FormFanMember = (): React.FunctionComponentElement<JSX.Element> => {
 					</div>
 
 					<button onClick={setNextPage} type={currentPage === totalPages ? 'submit' : 'button'}>
-						<span>{currentPage === totalPages ? 'Finalizar' : 'Próximo'}</span>
-						<FaAngleRight />
+						{currentPage === totalPages ? (
+							<span>Finalizar</span>
+						) : (
+							<>
+								<span>Próximo</span>
+								<FaAngleRight />
+							</>
+						)}
 					</button>
 				</div>
 			</form>
