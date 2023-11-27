@@ -19,7 +19,7 @@ const HomeCover = (): React.FunctionComponentElement<JSX.Element> => (
 					<Link to='/not-found'>
 						<span>Ir para Loja</span>
 					</Link>
-					<div className='social-midia'>
+					<div className='social-media'>
 						<SocialMedia />
 					</div>
 				</div>
@@ -28,7 +28,7 @@ const HomeCover = (): React.FunctionComponentElement<JSX.Element> => (
 				<div className='img'>
 					<img src={LogoPng} alt='Logo' />
 				</div>
-				<div className='social-midia'>
+				<div className='social-media'>
 					<SocialMedia />
 				</div>
 			</div>
@@ -83,7 +83,7 @@ const StyledComponent = styled.section`
 					}
 				}
 
-				.social-midia {
+				.social-media {
 					display: none;
 				}
 			}
@@ -102,8 +102,138 @@ const StyledComponent = styled.section`
 					width: 450px;
 				}
 			}
-			.social-midia{
+			.social-media {
+			}
+		}
+	}
 
+	@media screen {
+		@media (max-width: 1350px) {
+			.wrapper > div {
+				&.left {
+					.container {
+						h2 {
+							font-size: 2rem;
+						}
+
+						h1 {
+							font-size: 3.5rem;
+						}
+
+						p {
+							font-size: 1rem;
+						}
+					}
+				}
+			}
+		}
+
+		@media (max-width: 1200px) {
+			.wrapper > div {
+				&.left {
+					grid-column: 2/8;
+
+					.container {
+						p {
+							width: 90%;
+						}
+					}
+				}
+
+				&.right {
+					grid-column: 9/12;
+
+					.img {
+						width: 100%;
+
+						img {
+							width: 150%;
+						}
+					}
+				}
+			}
+		}
+
+		@media (max-width: 1000px) {
+			.wrapper {
+				> div {
+					&.left {
+						grid-column: 2/8;
+
+						.container {
+							h2 {
+								font-size: 2rem;
+							}
+
+							h1 {
+								font-size: 3rem;
+							}
+						}
+					}
+
+					&.right {
+						grid-column: 9/12;
+
+						.img {
+							width: 100%;
+
+							img {
+								width: 150%;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@media (max-width: 880px) {
+			.wrapper {
+				> div {
+					&.left {
+						grid-column: 2/12;
+
+						.container {
+							h2 {
+								font-size: 2rem;
+							}
+
+							h1 {
+								font-size: 2.8rem;
+							}
+
+							p {
+								width: 100%;
+							}
+
+							span {
+								padding: 15px 50px;
+								font-size: 1.1rem;
+							}
+
+							.social-media {
+								display: flex;
+							}
+						}
+					}
+
+					&.right {
+						display: none;
+					}
+				}
+			}
+		}
+
+		@media (max-width: 370px) {
+			main {
+				.nav-info .wrapper {
+					section {
+						&.contact {
+							div:nth-child(2) {
+								display: none;
+							}
+						}
+					}
+				}
 			}
 		}
 	}

@@ -30,7 +30,7 @@ const InputField = ({
 	return (
 		<StyledInputField>
 			<label className='label' htmlFor={name}>
-				{label}:
+				{label}
 			</label>
 			<select name={name} id={name} value={selectedValue} onChange={handleInputChange}>
 				<option value='' disabled>
@@ -62,7 +62,7 @@ const StyledInputField = styled.div`
 		border-radius: 5px;
 		padding: 0 10px;
 		font-size: 1.2rem;
-		
+
 		cursor: pointer;
 		option {
 			cursor: pointer;

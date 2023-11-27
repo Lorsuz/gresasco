@@ -1,19 +1,19 @@
 {
 	"sponsors": [
 		{
-			"image": "./components/assets/images/Sponsors/Drogamix.png",
+			"image": "Drogamix.png",
 			"alt": ""
 		},
 		{
-			"image": "./components/assets/images/Sponsors/Lfbets.png",
+			"image": "Lfbets.png",
 			"alt": ""
 		},
 		{
-			"image": "./components/assets/images/Sponsors/Haras.png",
+			"image": "Haras.png",
 			"alt": ""
 		},
 		{
-			"image": "./components/assets/images/Sponsors/La-Dame-Femme.png",
+			"image": "La-Dame-Femme.png",
 			"alt": ""
 		}
 	],

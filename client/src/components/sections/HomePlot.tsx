@@ -65,5 +65,22 @@ const StyledComponent = styled.section`
 			}
 		}
 	}
+	@media screen {
+		@media (max-width: 1100px) {
+			.wrapper {
+				margin-bottom: 50px;
+
+				.description {
+					grid-column: 2/12;
+					margin-bottom: 70px;
+				}
+
+				.disc-cover,
+				.audio {
+					grid-column: 2/12;
+				}
+			}
+		}
+	}
 `;
 export default HomePlot;

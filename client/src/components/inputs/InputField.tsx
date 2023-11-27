@@ -28,11 +28,11 @@ const InputField = ({
 	return (
 		<StyledInputField>
 			<label className='label' htmlFor={name}>
-				{label}:
+				{label}
 			</label>
 			<input
 				type={type}
-				placeholder={`Ex. ${placeholder}`}
+				placeholder={`${placeholder}`}
 				name={name}
 				id={name}
 				onChange={e => handleInputChange(e)}

@@ -94,7 +94,6 @@ const PlotSongLogic = (): React.FunctionComponentElement<JSX.Element> => {
 							onChange={e => {
 								const value = parseFloat(e.target.value);
 								audio.currentTime = (value / 100) * audio.duration;
-
 								updateAudioProgress();
 							}}
 						/>
@@ -270,7 +269,8 @@ const StyledComponent = styled.section`
 				input[type='range'] {
 					-webkit-appearance: none;
 					height: 3px;
-					background: #000000;
+					background: var(--color-primary);
+
 					width: 100%;
 					border-radius: 50px;
 				}
@@ -280,7 +280,7 @@ const StyledComponent = styled.section`
 					width: 10px;
 					height: 10px;
 					border-radius: 50%;
-					background: #000000;
+					background: var(--color-primary);
 					cursor: pointer;
 				}
 

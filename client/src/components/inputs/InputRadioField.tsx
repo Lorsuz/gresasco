@@ -1,34 +1,37 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import InputField from './InputField';
+
 type RadiosProps = {
 	label: string;
 	value: string;
 };
-type AditionalInputProps = {
-	label?: string;
-	name?: string;
-	type?: string;
-	placeholder?: string;
-	onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void;
+
+type AdditionalInputProps = {
+	condition: string;
+	label: string;
+	name: string;
+	type: string;
+	placeholder: string;
 };
 
 type Props = {
-	name?: string;
-	radios?: RadiosProps[];
-	placeholder?: string;
+	name: string;
+	radios: RadiosProps[];
+	placeholder: string;
 	error?: string;
-	onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void;
-	aditionalInput?: AditionalInputProps | boolean;
+	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	additionalInput?: AdditionalInputProps;
 };
 
-const InputField = ({
+const InputRadioField = ({
 	error = '',
 	name = 'name',
 	placeholder = 'Selecione seu dado',
 	radios = [],
 	onChange,
-	aditionalInput = false
+	additionalInput: additionalInput
 }: Props): React.FunctionComponentElement<JSX.Element> => {
 	const [selectedValue, setSelectedValue] = useState<string>('');
 
@@ -40,7 +43,7 @@ const InputField = ({
 	};
 
 	return (
-		<StyledInputField>
+		<StyledComponent>
 			<span className='label'>{placeholder}</span>
 			<div className='radios'>
 				{radios.map((radio: RadiosProps, index: number) => (
@@ -57,22 +60,24 @@ const InputField = ({
 					</div>
 				))}
 			</div>
-			{aditionalInput && typeof aditionalInput === 'object' && (
-				<input
-					type={aditionalInput.type || 'text'}
-					name={aditionalInput.name || 'aditionalInput'}
-					placeholder={aditionalInput.placeholder || 'Digite seu dado'}
-					onChange={aditionalInput.onChange}
-				/>
-			)}
+			<div className='input'>
+				{additionalInput && typeof additionalInput === 'object' && selectedValue === additionalInput.condition && (
+					<InputField
+						name={additionalInput.name}
+						label={additionalInput.label}
+						placeholder={additionalInput.placeholder}
+						type={additionalInput.type}
+					/>
+				)}
+			</div>
 			<span className='error-message'>{error}</span>
-		</StyledInputField>
+		</StyledComponent>
 	);
 };
 
-const StyledInputField = styled.div`
+const StyledComponent = styled.div`
 	width: 90%;
-	margin: 0 auto 30px;
+	margin: 0 auto 0px;
 	.label {
 		margin-bottom: 10px;
 		display: block;
@@ -81,6 +86,7 @@ const StyledInputField = styled.div`
 	.radios {
 		display: block;
 		padding: 0 10px;
+		margin-bottom: 20px;
 
 		.radio {
 			display: inline-block;
@@ -103,4 +109,4 @@ const StyledInputField = styled.div`
 	}
 `;
 
-export default InputField;
+export default InputRadioField;
