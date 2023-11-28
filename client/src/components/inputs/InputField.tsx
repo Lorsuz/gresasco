@@ -30,14 +30,27 @@ const InputField = ({
 			<label className='label' htmlFor={name}>
 				{label}
 			</label>
-			<input
-				type={type}
-				placeholder={`${placeholder}`}
-				name={name}
-				id={name}
-				onChange={e => handleInputChange(e)}
-				value={inputValue}
-			/>
+
+			{type === 'date' ? (
+				<input
+					type={type}
+					placeholder={`${placeholder}`}
+					name={name}
+					id={name}
+					onChange={e => handleInputChange(e)}
+					value={inputValue}
+					pattern='\d{2}/\d{2}/\d{4}'
+				/>
+			) : (
+				<input
+					type={type}
+					placeholder={`${placeholder}`}
+					name={name}
+					id={name}
+					onChange={e => handleInputChange(e)}
+					value={inputValue}
+				/>
+			)}
 			<span className='error-message'>{error}</span>
 		</StyledInputField>
 	);
