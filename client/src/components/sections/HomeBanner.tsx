@@ -1,18 +1,60 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import dataJson from '../../json/data.json';
+import { GoTriangleLeft, GoTriangleRight } from 'react-icons/go';
 
 import styled from 'styled-components';
-const HomeBanner = (): React.FunctionComponentElement<JSX.Element> => (
-	<StyledComponent>
-		<ul className='slides'></ul>
-		<button className='prev'>
-			<i className='fa-solid fa-chevron-left'></i>
-		</button>
-		<button className='next'>
-			<i className='fa-solid fa-chevron-right'></i>
-		</button>
-		<ul className='pagination'></ul>
-	</StyledComponent>
-);
+const HomeBanner = (): React.FunctionComponentElement<JSX.Element> => {
+	const [banners] = useState(dataJson.banner);
+	const [current, setCurrent] = useState(0);
+	const length = banners.length;
+	const initAutoPlayInterval = useRef<number>();
+
+	const changeSlide = (newSlide: number): void => {
+		setCurrent(prev => (prev + newSlide < 0 ? length - 1 : (prev + newSlide) % length));
+		resetInterval();
+	};
+
+	const initAutoPlay = (): void => {
+		initAutoPlayInterval.current = setInterval(() => {
+			setCurrent(prev => (prev === length - 1 ? 0 : prev + 1));
+		}, 2000);
+	};
+
+	const resetInterval = (): void => {
+		clearInterval(initAutoPlayInterval.current);
+		initAutoPlay();
+	};
+
+	useEffect(() => {
+		initAutoPlay();
+		return () => {
+			clearInterval(initAutoPlayInterval.current);
+		};
+	}, [current, length]);
+
+	return (
+		<StyledComponent>
+			<ul className='slides'>
+				<li className='slide'>
+					<div className='img'>
+						<img src={`src/assets/images/banner/${banners[current].image}`} alt={banners[current].image} />
+					</div>
+				</li>
+			</ul>
+			<button className='prev' onClick={() => changeSlide(-1)}>
+				<GoTriangleLeft />
+			</button>
+			<button className='next' onClick={() => changeSlide(1)}>
+				<GoTriangleRight />
+			</button>
+			<ul className='pagination'>
+				{Array.from({ length: banners.length }).map((item, index) => (
+					<li key={index} className={index === current ? 'dot active' : 'dot'} onClick={() => setCurrent(index)}></li>
+				))}
+			</ul>
+		</StyledComponent>
+	);
+};
 
 const StyledComponent = styled.section`
 	position: relative;
@@ -21,73 +63,25 @@ const StyledComponent = styled.section`
 	width: 100%;
 	overflow: hidden;
 	margin-bottom: 100px;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0.6)),
+		url('https://static.vecteezy.com/ti/vetor-gratis/p3/21369766-abstrato-simples-forma-com-verde-branco-e-preto-cor-fundo-com-papercut-estilo-para-papel-de-parede-vetor.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 
 	.slides {
-		width: 100%;
-		height: 100%;
-		position: relative;
-
 		li {
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 100%;
-			position: absolute;
-
 			.img {
-				width: 100%;
-				height: 100%;
+				overflow: hidden;
+				border-radius: 10px;
+				box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+				display: flex;
+				justify-content: center;
+				align-items: center;
 
 				img {
-					width: 100%;
-					height: 100%;
-					object-fit: cover;
-				}
-			}
-
-			.text {
-				position: absolute;
-				top: 0;
-				left: 0;
-				text-align: center;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				background: hsla(0, 0%, 0%, 0.2);
-				height: 100%;
-				width: 100%;
-
-				* {
-					color: var(--color-white);
-				}
-
-				h2 {
-					font-size: 3rem;
-					margin-bottom: 20px;
-				}
-
-				p {
-					font-size: 1.5rem;
-					margin-bottom: 30px;
-					width: 50%;
-				}
-
-				a {
-					background: var(--color-primary);
-					border-radius: 10px 0;
-					color: var(--color-white);
-					display: inline-block;
-					font-weight: bold;
-					padding: 15px 50px;
-					border: 3px solid var(--color-white);
-					font-size: 1.5rem;
-					text-transform: uppercase;
-
-					&:hover {
-						background: var(--color-primary-soft);
-						border-radius: 0px 10px;
-					}
+					object-fit: scale-down;
 				}
 			}
 
@@ -119,7 +113,7 @@ const StyledComponent = styled.section`
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
-		padding: 15px 15px;
+		padding: 5px;
 		border-radius: 10px;
 
 		&.prev {
@@ -130,9 +124,15 @@ const StyledComponent = styled.section`
 			right: 30px;
 		}
 
-		i {
+		* {
 			font-size: 3.5rem;
 			color: var(--color-primary-soft);
+		}
+		:hover {
+			* {
+				color: var(--color-primary);
+				font-size: 4rem;
+			}
 		}
 	}
 
