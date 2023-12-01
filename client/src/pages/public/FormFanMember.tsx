@@ -12,21 +12,27 @@ const FormFanMember = (): React.FunctionComponentElement<JSX.Element> => {
 	const [fildsetPages] = useState<Array<JSX.Element>>([
 		<fieldset>
 			<legend>Dados Pessoais</legend>
-			<InputField name='name' label='Nome' placeholder='Carlos' />
-			<InputField name='birth' label='Data de Nascimento' type='date' />
-			<InputField name='cpf' label='CPF' placeholder='012.345.567-91' />
+			<InputField name='name' label='Nome:' placeholder='Ex.: João Silva' />
+			<InputField name='birth' label='Data de Nascimento:' type='date' />
+			<InputField name='cpf' label='CPF:' placeholder='Ex.: 123.456.789-00' />
 		</fieldset>,
 		<fieldset>
 			<legend>Dados de Contato</legend>
-			<InputField name='email' label='Email' placeholder='carlos@academicos.com.br' type='email' />
-			<InputField name='tell' label='Telefone' placeholder='+00 (00) 0 0000-0000' type='tell' />
+			<InputField name='email' label='Email:' placeholder='Ex.: joao.silva@xpto.com.br' type='email' />
+			<InputField name='tell' label='Telefone:' placeholder='Ex.: (XX) X.XXX-XXXX' type='tell' />
 		</fieldset>,
 		<fieldset>
 			<legend>Endereço</legend>
-			<InputField name='country' label='País' placeholder='Brasil' />
+			<InputField name='street' label='Logradouro:' placeholder='Ex.: Rua Soares' />
+			<InputField name='number' label='Número:' placeholder='Ex.: 123' />
+			<InputField name='cep' label='CEP:' placeholder='Ex.: 12345-678' />
+			<InputField name='complement' label='Complemento:' placeholder='Ex.: Apt. 456' />
+			<InputField name='neighborhood' label='Bairro:' placeholder='Ex.: Centro' />
+			<InputField name='city' label='Cidade:' placeholder='Ex.: Juatina' />
+
 			<InputSelectField
 				name='state'
-				label='Estado'
+				label='Estado:'
 				placeholder='Selecione seu estado'
 				options={[
 					'Acre',
@@ -58,20 +64,15 @@ const FormFanMember = (): React.FunctionComponentElement<JSX.Element> => {
 					'Tocantins'
 				]}
 			/>
-			<InputField name='city' label='Cidade' placeholder='Juatina' />
-			<InputField name='neighborhood' label='Bairro' placeholder='Centro' />
-			<InputField name='street' label='Logradouro' placeholder='Rua Soares' />
-			<InputField name='number' label='Número' placeholder='123' />
-			<InputField name='complement' label='Complemento' placeholder='Apt. 456' />
-			<InputField name='cep' label='CEP' placeholder='12345-678' />
+			<InputField name='country' label='País:' placeholder='Ex.: Brasil' />
 		</fieldset>,
 		<fieldset>
 			<legend>Perfil</legend>
-			<InputField name='height' label='Altura' placeholder='1.75m' />
-			<InputField name='weight' label='Peso' placeholder='65Kg' />
+			<InputField name='height' label='Altura:' placeholder='Ex.: 1.75m' />
+			<InputField name='weight' label='Peso:' placeholder='Ex.: 65Kg' />
 			<InputSelectField
 				name='mannequin'
-				label='Manequim'
+				label='Manequim:'
 				placeholder='Selecione seu manequim'
 				options={['PP', 'P', 'M', 'G', 'GG', 'XXG']}
 			/>
@@ -80,8 +81,7 @@ const FormFanMember = (): React.FunctionComponentElement<JSX.Element> => {
 			<legend>Sobre Você</legend>
 			<InputRadioField
 				name='experience'
-				placeholder='Você possue experiência em desfiles?'
-				// showAdditionalInput={false}
+				placeholder='Você possui experiência em desfiles?'
 				radios={[
 					{
 						value: 'yes',
@@ -106,6 +106,13 @@ const FormFanMember = (): React.FunctionComponentElement<JSX.Element> => {
 						label: 'Não'
 					}
 				]}
+				additionalInput={{
+					condition: 'yes',
+					name: 'experienceTime',
+					label: 'N° da inscrição:',
+					placeholder: 'Ex.: 123456789',
+					type: 'text'
+				}}
 			/>
 		</fieldset>
 	]);
@@ -132,7 +139,7 @@ const FormFanMember = (): React.FunctionComponentElement<JSX.Element> => {
 			<form onSubmit={handleSubmit}>
 				{fildsetPages[currentPage - 1]}
 				<div className='pagination'>
-					<button onClick={setPrevPage} disabled={currentPage === 1}>
+					<button onClick={setPrevPage} disabled={currentPage === 1} className='button-prev'>
 						<FaAngleLeft />
 						<span>Anterior</span>
 					</button>
@@ -144,8 +151,14 @@ const FormFanMember = (): React.FunctionComponentElement<JSX.Element> => {
 					</div>
 
 					<button onClick={setNextPage} type={currentPage === totalPages ? 'submit' : 'button'}>
-						<span>{currentPage === totalPages ? 'Finalizar' : 'Próximo'}</span>
-						<FaAngleRight />
+						{currentPage === totalPages ? (
+							<span>Finalizar</span>
+						) : (
+							<>
+								<span>Próximo</span>
+								<FaAngleRight />
+							</>
+						)}
 					</button>
 				</div>
 			</form>
@@ -163,12 +176,16 @@ const StyledFormFanMember = styled.main`
 	}
 
 	form {
-		width: 50%;
+		width: 80%;
+		min-width: 300px;
+		max-width: 800px;
 		padding-bottom: 50px;
+
 		fieldset {
 			border: 1px solid #ccc;
 			border-radius: 10px;
 			margin-bottom: 50px;
+			padding: 20px 0;
 
 			legend {
 				font-size: 30px;
@@ -234,6 +251,26 @@ const StyledFormFanMember = styled.main`
 				opacity: 0.5;
 				cursor: not-allowed;
 				background: #a5a5a5;
+			}
+		}
+	}
+	@media screen {
+		@media (max-width: 768px) {
+			form {
+				button {
+					* {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+		@media (max-width: 500px) {
+			form {
+				button.button-prev {
+					span {
+						display: none;
+					}
+				}
 			}
 		}
 	}

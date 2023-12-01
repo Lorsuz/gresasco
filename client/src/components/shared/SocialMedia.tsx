@@ -40,8 +40,8 @@ const StyledComponent = styled.ul<{ $footer?: boolean }>`
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 50px;
-		height: 50px;
+		width: 70px;
+		height: 70px;
 		border-radius: 50%;
 		cursor: pointer;
 
@@ -52,35 +52,43 @@ const StyledComponent = styled.ul<{ $footer?: boolean }>`
 			justify-content: center;
 		}
 
-		${props =>
-			!props.$footer
-				? `&:nth-child(1) {
-						* {
-							color: #e4405f;
-						}
-					}
-					&:nth-child(2) {
-						* {
-							color: #3b5998;
-						}
-					}
-					&:nth-child(3) {
-						* {
-							color: #cd201f;
-						}
-					}
-					&:nth-child(4) {
-						* {
-							color: #000000;
-						}
-					}`
-				: ''}
-
-		&:hover {
-		background: #ffffff;
+		a {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 90%;
+			height: 90%;
+			border-radius: 50%;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 
 			* {
-				color: ${props => (props.$footer ? 'rgb(28, 59, 53)' : 'var(--color-primary-soft)')};
+				${props => (props.$footer ? 'color: #ffffff;' : 'color: var(--color-primary-soft);')}
+			}
+		}
+
+		&:hover {
+			background: #000000;
+			a {
+				border: 3px solid #ffffff;
+				width: 95%;
+				height: 95%;
+
+				* {
+					color: #ffffff;
+				}
+			}
+
+			&:nth-child(1) {
+				background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+			}
+			&:nth-child(2) {
+				background: #3b5998;
+			}
+			&:nth-child(3) {
+				background: #cd201f;
+			}
+			&:nth-child(4) {
+				background: #000000;
 			}
 		}
 	}

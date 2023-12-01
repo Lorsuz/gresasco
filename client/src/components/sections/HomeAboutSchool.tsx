@@ -3,7 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const HomeAboutSchool = (): React.FunctionComponentElement<JSX.Element> => {
-	console.log('HomeAboutSchool.tsx: HomeAboutSchool');
+
+	console.log('HomeAboutSchool');
+	
 
 	return (
 		<StyledComponent>

@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import PlotSongLogic from '../PlotSongLogic';
+
+import ButtonForPdfDownload from '../shared/ButtonForPdfDownload';
 const HomePlot = (): React.FunctionComponentElement<JSX.Element> => (
 	<StyledComponent>
 		<div className='wrapper'>
@@ -22,7 +24,7 @@ const HomePlot = (): React.FunctionComponentElement<JSX.Element> => (
 					brilhantes no céu.
 				</p>
 				<span>Iae, gostou? Para ter acesso a nossa sinopse completa basta baixar o PDF a baixo:</span>
-				<button className='custom-button'>Baixar Sinopse</button>
+				<ButtonForPdfDownload content='Baixar Sinopse' filePath='../../assets/PDF/sinopse-2024.pdf' />
 			</div>
 			<PlotSongLogic />
 		</div>
@@ -62,6 +64,23 @@ const StyledComponent = styled.section`
 
 			button {
 				display: block;
+			}
+		}
+	}
+	@media screen {
+		@media (max-width: 1100px) {
+			.wrapper {
+				margin-bottom: 50px;
+
+				.description {
+					grid-column: 2/12;
+					margin-bottom: 70px;
+				}
+
+				.disc-cover,
+				.audio {
+					grid-column: 2/12;
+				}
 			}
 		}
 	}

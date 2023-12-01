@@ -1,15 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import dataAPI from '../../json/data.json';
 
-const HomeSponsors = (): React.FunctionComponentElement<JSX.Element> => (
-	<StyledComponent>
-		<h1>Patrocinadores e Apoiadores</h1>
-		<div className='swiper'>
-			<div className='swiper-wrapper'></div>
-			<div className='swiper-pagination'></div>
-		</div>
-	</StyledComponent>
-);
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/autoplay';
+import 'swiper/css/mousewheel';
+
+const HomeSponsors = (): React.FunctionComponentElement<JSX.Element> => {
+	const [sponsorsPathImg] = useState(dataAPI.sponsors);
+
+	return (
+		<StyledComponent>
+			<h1>Apoios</h1>
+			<Swiper
+				modules={[Navigation, Pagination, Scrollbar, A11y]}
+				spaceBetween={50}
+				autoplay={{ delay: 1000, disableOnInteraction: false }}
+				mousewheel={true}
+				loop={true}
+				slidesPerView={3}
+				pagination={{ clickable: true }}
+			>
+				{sponsorsPathImg.map((sponsorPathImg, index: number) => (
+					<SwiperSlide key={index}>
+						<img src={`src/assets/images/Sponsors/${sponsorPathImg.image}`} alt={sponsorPathImg.image} />
+					</SwiperSlide>
+				))}
+			</Swiper>
+		</StyledComponent>
+	);
+};
 
 const StyledComponent = styled.section`
 	padding: 50px 0;

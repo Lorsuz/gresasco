@@ -1,16 +1,17 @@
 import React from 'react';
-
+import { FaPhone } from "react-icons/fa6";
+import { FaEnvelope } from "react-icons/fa";
 import styled from 'styled-components';
 const HomeNavInfo = (): React.FunctionComponentElement<JSX.Element> => (
 	<StyledComponent>
 		<div className='wrapper'>
 			<section className='contact'>
 				<div>
-					<i className='fa-solid fa-phone'></i>
+				<FaPhone/>
 					<span>+55 (43) 9 3421-7348</span>
 				</div>
 				<div>
-					<i className='fa-solid fa-envelope'></i>
+				<FaEnvelope/>
 					<span>gresasc@academicos.com</span>
 				</div>
 			</section>
@@ -56,7 +57,7 @@ const StyledComponent = styled.section`
 					align-items: center;
 					cursor: pointer;
 
-					i {
+					svg {
 						margin-right: 5px;
 					}
 
@@ -72,7 +73,7 @@ const StyledComponent = styled.section`
 					}
 				}
 			}
-
+			
 			&.social-network {
 				display: flex;
 				align-items: center;
@@ -94,6 +95,41 @@ const StyledComponent = styled.section`
 						i {
 							color: white;
 							cursor: pointer;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media screen {
+		@media (max-width: 880px) {
+			p {
+				display: none;
+			}
+		}
+
+		@media (max-width: 650px) {
+			.wrapper {
+				section {
+					&.contact {
+						width: 100%;
+						justify-content: space-evenly;
+					}
+
+					&.social-network {
+						display: none;
+					}
+				}
+			}
+		}
+
+		@media (max-width: 370px) {
+			.wrapper {
+				section {
+					&.contact {
+						div:nth-child(2) {
+							display: none;
 						}
 					}
 				}
