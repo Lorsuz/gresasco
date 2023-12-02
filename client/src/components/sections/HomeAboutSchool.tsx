@@ -110,6 +110,8 @@ const StyledComponent = styled.section`
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			height: auto;
+
 
 			.img {
 				position: relative;
@@ -157,5 +159,19 @@ const StyledComponent = styled.section`
 			}
 		}
 	}
+
+	@media screen {
+
+		@media (max-width: 880px) {
+			.wrapper {
+				.text-container {
+			grid-column: 2/12;
+			margin-bottom: 100px;
+				}.img-container {
+			grid-column: 2/12;
+				}
+			
+		}
+	} 
 `;
 export default HomeAboutSchool;

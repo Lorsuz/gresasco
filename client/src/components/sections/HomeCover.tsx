@@ -40,7 +40,9 @@ const StyledComponent = styled.section`
 	height: 98dvh;
 	min-height: 700px;
 	max-height: 1200px;
-
+	
+	.wrapper {
+	}
 	.wrapper > div {
 		&.left {
 			grid-column: 2/7;
@@ -191,7 +193,6 @@ const StyledComponent = styled.section`
 				> div {
 					&.left {
 						grid-column: 2/12;
-
 						.container {
 							h2 {
 								font-size: 2rem;

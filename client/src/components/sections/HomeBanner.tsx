@@ -17,7 +17,7 @@ const HomeBanner = (): React.FunctionComponentElement<JSX.Element> => {
 	const initAutoPlay = (): void => {
 		initAutoPlayInterval.current = setInterval(() => {
 			setCurrent(prev => (prev === length - 1 ? 0 : prev + 1));
-		}, 2000);
+		}, 5000);
 	};
 
 	const resetInterval = (): void => {
@@ -59,7 +59,6 @@ const HomeBanner = (): React.FunctionComponentElement<JSX.Element> => {
 const StyledComponent = styled.section`
 	position: relative;
 	height: 100vh;
-	min-height: 200px;
 	width: 100%;
 	overflow: hidden;
 	margin-bottom: 100px;
@@ -71,8 +70,14 @@ const StyledComponent = styled.section`
 	background-attachment: fixed;
 
 	.slides {
+		width: 90%;
 		li {
+			width: 100%;
+			max-width: 800px;
+			margin: 0 auto;
+
 			.img {
+				width: 100%;
 				overflow: hidden;
 				border-radius: 10px;
 				box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
@@ -81,6 +86,7 @@ const StyledComponent = styled.section`
 				align-items: center;
 
 				img {
+					width: 100%;
 					object-fit: scale-down;
 				}
 			}

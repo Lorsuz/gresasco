@@ -2,6 +2,7 @@ import React from 'react';
 
 import SocialMedia from '../components/shared/SocialMedia';
 
+import { IoSend } from 'react-icons/io5';
 import styled from 'styled-components';
 
 const Footer = (): React.FunctionComponentElement<JSX.Element> => (
@@ -90,19 +91,18 @@ const Footer = (): React.FunctionComponentElement<JSX.Element> => (
 				</div>
 			</section>
 			<section className='newsletter'>
-				<p>
-					Desenvolvido e realizado por <a href='#'>@WebPulse</a>
-				</p>
 				<h3>Inscreva-se para receber nossas novidades!</h3>
 				<form action=''>
 					<input type='text' name='' id='' placeholder='Digite seu e-mail' />
 					<button type='submit'>
 						<span>Inscrever-se</span>
-						<i className='fa-solid fa-envelope'></i>
+						<div className='icon'>
+							<IoSend />
+						</div>
 					</button>
 				</form>
 				<div className='social-media'>
-					<SocialMedia customStyled={true}/>
+					<SocialMedia customStyled={true} />
 				</div>
 			</section>
 			<section className='copyriht'>
@@ -113,6 +113,9 @@ const Footer = (): React.FunctionComponentElement<JSX.Element> => (
 				<a href=''>Politica de Privacidade</a>
 				<a href=''>Não Venda Minhas Informações</a>
 			</section>
+			<section className='dev-by'><p>
+					Desenvolvido e realizado por <a href='#'>@WebPulse</a>
+				</p></section>
 		</div>
 	</StyledComponent>
 );
@@ -127,6 +130,7 @@ const StyledComponent = styled.footer`
 		font-family: Playpen Sans;
 		font-size: 1rem;
 		font-weight: normal;
+		/* outline: 1px dotted; */
 	}
 
 	.wrapper {
@@ -176,23 +180,6 @@ const StyledComponent = styled.footer`
 				flex-direction: column;
 				align-items: flex-end;
 
-				p {
-					font-size: 0.9rem;
-					margin-bottom: 10px;
-					color: var(--color-gray);
-
-					a {
-						color: var(--color-gray);
-						transition: 0;
-						font-size: 0.8rem;
-
-						&:hover {
-							color: white;
-							text-decoration: underline;
-						}
-					}
-				}
-
 				h3 {
 					margin-bottom: 20px;
 					font-size: 1.1rem;
@@ -227,9 +214,14 @@ const StyledComponent = styled.footer`
 							color: #1c3b35;
 						}
 
-						i {
-							color: #1c3b35;
+						.icon {
 							display: none;
+							align-items: center;
+							justify-content: center;
+							* {
+								color: #ffffff;
+								font-size: 1.4rem;
+							}
 						}
 					}
 				}
@@ -320,6 +312,28 @@ const StyledComponent = styled.footer`
 					}
 				}
 			}
+			&.dev-by{
+				grid-column: 2/12;
+				grid-row: 3/4;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				p{
+					font-size: 1rem;
+					color: var(--color-gray);
+
+					a{
+						color: var(--color-gray);
+						transition: 0;
+
+						&:hover {
+							color: white;
+							text-decoration: underline;
+						}
+					}
+				}
+			}
 		}
 	}
 
@@ -352,6 +366,10 @@ const StyledComponent = styled.footer`
 							text-align: center;
 						}
 					}
+					&.dev-by{
+						grid-row: 4/5;
+
+					}
 				}
 			}
 		}
@@ -371,6 +389,7 @@ const StyledComponent = styled.footer`
 					&.newsletter {
 						grid-row: 1/2;
 						grid-column: 2/12;
+						align-items: center;
 					}
 
 					&.copyriht {
@@ -379,6 +398,10 @@ const StyledComponent = styled.footer`
 
 					&.terms {
 						grid-row: 3/4;
+					}
+					&.dev-by{
+						grid-row: 5/6;
+
 					}
 				}
 			}
@@ -412,8 +435,8 @@ const StyledComponent = styled.footer`
 									display: none;
 								}
 
-								i {
-									display: block;
+								.icon {
+									display: flex;
 								}
 							}
 						}

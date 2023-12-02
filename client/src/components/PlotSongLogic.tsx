@@ -302,6 +302,11 @@ const StyledComponent = styled.section`
 			}
 		}
 	}
+	@media screen {
+		@media (max-width: 1100px) {
+			grid-column: 2/12;
+		}
+	}
 `;
 
 export default PlotSongLogic;

@@ -68,6 +68,7 @@ const StyledComponent = styled.ul<{ $footer?: boolean }>`
 
 		&:hover {
 			background: #000000;
+
 			a {
 				border: 3px solid #ffffff;
 				width: 95%;

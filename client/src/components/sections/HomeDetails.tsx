@@ -60,6 +60,22 @@ const StyledComponent = styled.section`
 			}
 		}
 	}
+
+	@media screen {
+		@media (max-width: 1000px) {
+			ul {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 100px 150px;
+			}
+		}
+
+		@media (max-width: 650px) {
+			ul {
+				grid-template-columns: repeat(1, 1fr);
+				gap: 100px 0;
+			}
+		}
+	}
 `;
 
 export default HomeDetails;
