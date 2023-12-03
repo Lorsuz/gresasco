@@ -11,6 +11,7 @@ import HomeSponsors from '../../components/sections/HomeSponsors';
 import HomeContact from '../../components/sections/HomeContact';
 import HomeNavInfo from '../../components/sections/HomeNavInfo';
 
+
 const HomePage: React.FunctionComponent = () => (
 	<Layout title='Home Page'>
 		<StyledHomePage>
