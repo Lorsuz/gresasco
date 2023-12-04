@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react-swc';
 // https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react()],
+	assetsInclude: ['**/*.mp3', '**/*.wav', '**/*.ogg'],
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, 'src'),
@@ -31,6 +32,5 @@ export default defineConfig({
 			'@typings': path.resolve(__dirname, 'src/typings'),
 			'@views': path.resolve(__dirname, 'src/views')
 		}
-	},
-	assetsInclude: ['assets']
+	}
 });

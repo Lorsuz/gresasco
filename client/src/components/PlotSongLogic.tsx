@@ -1,73 +1,91 @@
-import React, { useEffect, useState } from 'react';
-import Wavesurfer from './shared/Wavesurfer';
+import React, { useEffect, useRef, useState } from 'react';
 import { BsFillPlayFill, BsFillPauseFill } from 'react-icons/bs';
 import { FaVolumeHigh, FaVolumeLow, FaVolumeOff, FaVolumeXmark } from 'react-icons/fa6';
-
-import plotImage from '../assets/images/Plot/plot-2024.jpeg';
-
 import styled from 'styled-components';
+import WaveSurfer from 'wavesurfer.js';
+import plotImage from '../assets/images/Plot/plot-2024.jpeg';
+import audioSong from '../assets/audios/plot-song.mp3';
+import { formatTime } from '../utils/FormatTime';
 
-const PlotSongLogic = (): React.FunctionComponentElement<JSX.Element> => {
-	const [audio] = useState(new Audio('src/assets/audios/plot-song.mpeg'));
+const PlotSongLogic: React.FC = () => {
 	const [audioIsPlaying, setAudioIsPlaying] = useState(false);
-	const [audioProgress, setAudioProgress] = useState(0);
 	const [audioVolume, setAudioVolume] = useState(1);
-	const [audioVolumeSaved, setAudioVolumeSaved] = useState(audioVolume);
-	const [bars, setBars] = useState<Array<JSX.Element>>(
-		Array.from({ length: 150 }).map((_, index) => (
-			<div
-				className='bar'
-				key={index}
-				style={{
-					animation: `ocilation 1s infinite alternate ${index * (Math.random() * 0.05)}s`,
-					animationPlayState: 'paused'
-				}}
-			></div>
-		))
-	);
+	const [audioCurrentTime, setAudioCurrentTime] = useState('00:00');
+	const [audioTotalTime, setAudioTotalTime] = useState('00:00');
 
 	const toggleAudioIsPlaying = (): void => {
-		audioIsPlaying ? audio?.pause() : audio?.play();
 		setAudioIsPlaying(prev => !prev);
 	};
 
-	const updateBarsAnimationState = (): void => {
-		setBars(prevBars =>
-			prevBars.map(bar => {
-				const animationPlayState = audioIsPlaying ? 'running' : 'paused';
-				return React.cloneElement(bar, { style: { ...bar.props.style, animationPlayState } });
-			})
-		);
-	};
-
-	const updateAudioProgress = (): void => {
-		setAudioProgress((audio.currentTime / audio.duration) * 100);
-	};
-
 	const updateAudioVolume = (newVolume: number): void => {
-		audio.volume = newVolume;
 		setAudioVolume(newVolume);
 	};
+
 	const toggleMuteVolume = (): void => {
-		setAudioVolumeSaved(audioVolume);
-		if (audioVolume === 0) {
-			updateAudioVolume(audioVolumeSaved);
-		} else {
-			updateAudioVolume(0);
-		}
+		updateAudioVolume(audioVolume === 0 ? 1 : 0);
 	};
 
+	const waveformRef = useRef<HTMLDivElement>();
+	const wavesurferRef = useRef<WaveSurfer>();
+
 	useEffect(() => {
-		audio.loop = true;
-		audio.addEventListener('timeupdate', updateAudioProgress);
+		if (!waveformRef.current) return;
+
+		wavesurferRef.current = WaveSurfer.create({
+			container: waveformRef.current,
+			waveColor: '#3498db',
+			progressColor: '#e74c3c',
+			cursorColor: '#3ce753',
+			barWidth: 2,
+			barRadius: 5,
+			height: 25,
+			normalize: true,
+			backend: 'MediaElement',
+			cursorWidth: 3
+		});
+
+		wavesurferRef.current.load(audioSong);
+
+		wavesurferRef.current.on('ready', () => {
+			if (wavesurferRef.current) {
+				const durationInSeconds = Math.floor(wavesurferRef.current.getDuration());
+				setAudioTotalTime(formatTime(durationInSeconds));
+			}
+		});
+
+		const handleChangeProgress = (): void => {
+			if (wavesurferRef.current) {
+				const currentTimeInSeconds = Math.floor(wavesurferRef.current.getCurrentTime());
+				setAudioCurrentTime(formatTime(currentTimeInSeconds));
+			}
+		};
+
+		wavesurferRef.current.on('audioprocess', handleChangeProgress);
+
+		wavesurferRef.current.on('interaction', handleChangeProgress);
+
 		return () => {
-			audio.removeEventListener('timeupdate', updateAudioProgress);
+			if (wavesurferRef.current) {
+				wavesurferRef.current.destroy();
+			}
 		};
 	}, []);
 
 	useEffect(() => {
-		updateBarsAnimationState();
+		if (wavesurferRef.current) {
+			if (audioIsPlaying) {
+				wavesurferRef.current.play();
+			} else {
+				wavesurferRef.current.pause();
+			}
+		}
 	}, [audioIsPlaying]);
+
+	useEffect(() => {
+		if (wavesurferRef.current) {
+			wavesurferRef.current.setVolume(audioVolume);
+		}
+	}, [audioVolume]);
 
 	return (
 		<StyledComponent>
@@ -79,7 +97,6 @@ const PlotSongLogic = (): React.FunctionComponentElement<JSX.Element> => {
 							{audioIsPlaying ? <BsFillPauseFill /> : <BsFillPlayFill />}
 						</button>
 					</div>
-					{/* <div className='player-bars'>{bars}</div> */}
 					<div className='song-player'>
 						<div className='progress'>
 							<div className='button'>
@@ -88,24 +105,12 @@ const PlotSongLogic = (): React.FunctionComponentElement<JSX.Element> => {
 								</button>
 							</div>
 							<div className='range'>
-								<div className='time-current'>
-									<span></span>
+								<div className='time current'>
+									<span>{audioCurrentTime}</span>
 								</div>
-								<input
-									type='range'
-									className='audio-progress'
-									min='0'
-									max='100'
-									step='0.01'
-									value={audioProgress}
-									onChange={e => {
-										const value = parseFloat(e.target.value);
-										audio.currentTime = (value / 100) * audio.duration;
-										updateAudioProgress();
-									}}
-								/>
-								<div className='time-total'>
-									<span></span>
+								<div ref={waveformRef} className='bar'></div>
+								<div className='time total'>
+									<span>{audioTotalTime}</span>
 								</div>
 							</div>
 						</div>
@@ -141,7 +146,6 @@ const PlotSongLogic = (): React.FunctionComponentElement<JSX.Element> => {
 					</div>
 				</div>
 			</div>
-			
 		</StyledComponent>
 	);
 };
@@ -221,32 +225,6 @@ const StyledComponent = styled.section`
 				}
 			}
 
-			.player-bars {
-				display: flex;
-				position: absolute;
-				bottom: 0px;
-
-				.bar {
-					margin: 0 2px;
-					background: #000;
-					border-radius: 10px 10px 0px 0px;
-					width: 1px;
-					height: 50px;
-					border: 2px solid #fff;
-					border-bottom: none;
-					transform: translateY(45px);
-				}
-
-				@keyframes ocilation {
-					from {
-						transform: translateY(45px);
-					}
-
-					to {
-						transform: translateY(0px);
-					}
-				}
-			}
 			.song-player {
 				display: flex;
 				grid-template-columns: repeat(12, 1fr);
@@ -281,48 +259,66 @@ const StyledComponent = styled.section`
 						}
 					}
 
-					.range {
-						width: 100%;
-						input[type='range'] {
-							-webkit-appearance: none;
-							height: 3px;
-							background: var(--color-primary);
-
-							width: 100%;
-							border-radius: 50px;
-						}
-
-						input[type='range']::-webkit-slider-thumb {
-							-webkit-appearance: none;
-							width: 10px;
-							height: 10px;
-							border-radius: 50%;
-							background: var(--color-primary);
-							cursor: pointer;
-						}
-
-						input[type='range']::-webkit-slider-runnable-track {
-							/* -webkit-appearance: none; */
-							/* width: 100%; */
-							/* height: 10px; */
-							/* cursor: pointer; */
-							/* background: #912c2c;  */
-							/* border-radius: 5px; */
-							/* position: relative; */
-						}
-					}
-
 					&.progress {
 						width: 90%;
+						* {
+							/* outline: 1px dotted; */
+						}
+						.range {
+							width: 100%;
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							gap: 10px;
+							.time {
+								span {
+									font-size: 0.8rem;
+									font-family: monospace;
+								}
+								&.current {
+								}
+								&.total {
+								}
+							}
+							.bar {
+								width: 100%;
+							}
+						}
 					}
 					&.volume {
 						width: 5%;
-
 						position: relative;
 						.button {
 						}
 						.range {
+							width: 100%;
 							overflow: hidden;
+							input[type='range'] {
+								-webkit-appearance: none;
+								height: 3px;
+								background: var(--color-primary);
+								width: 100%;
+								border-radius: 50px;
+							}
+
+							input[type='range']::-webkit-slider-thumb {
+								-webkit-appearance: none;
+								width: 10px;
+								height: 10px;
+								border-radius: 50%;
+								background: var(--color-primary);
+								cursor: pointer;
+							}
+
+							input[type='range']::-webkit-slider-runnable-track {
+								/* -webkit-appearance: none; */
+								/* width: 100%; */
+								/* height: 10px; */
+								/* cursor: pointer; */
+								/* background: #912c2c;  */
+								/* border-radius: 5px; */
+								/* position: relative; */
+							}
 						}
 						&:hover {
 							width: 25%;

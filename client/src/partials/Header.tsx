@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoPng from '../assets/images/Logo/santa-cruz-logo-removebg-preview.png';
 import styled from 'styled-components';
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Header: React.FunctionComponent = () => (
 	<HeaderFixed>
@@ -34,7 +35,7 @@ const Header: React.FunctionComponent = () => (
 					</ul>
 				</nav>
 				<button id='menu-drop'>
-					<i className='fa-solid fa-bars'></i>
+				<RxHamburgerMenu></RxHamburgerMenu>
 				</button>
 				<nav className='menu-mobile'>
 					<ul>
@@ -168,7 +169,7 @@ const HeaderFixed = styled.header`
 				transition: 300ms;
 				display: none;
 
-				i {
+				* {
 					color: var(--color-primary);
 					font-size: 2rem;
 				}
