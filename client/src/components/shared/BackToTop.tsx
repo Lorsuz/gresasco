@@ -49,6 +49,24 @@ const StyledBackToTop = styled.button`
   box-shadow: 0 0 6px 0 #00000088;
   border-radius: 50%;
   cursor: pointer;
+
+  * {
+		font-size: 1.5rem;
+		font-weight: bold;
+		color: var(--color-primary);
+	}
+
+  &:hover {
+		* {
+			animation: BackToTopAnimationIcon 500ms ease-out infinite alternate;
+		}
+	}
+
+	@keyframes BackToTopAnimationIcon {
+		to {
+			transform: translateY(-3px);
+		}
+	}
 `;
 
 export default BackToTop;
