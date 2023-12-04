@@ -4,6 +4,7 @@ import AuthContext from './context/AuthContext';
 import Layout from './layouts/MainLayout';
 
 import Router from './router/Router';
+import ButtonBackToTop from './components/shared/ButtonBackToTop';
 
 function App(): React.FunctionComponentElement<JSX.Element> {
 	const [token, setToken] = React.useState<string>('');
@@ -23,6 +24,7 @@ function App(): React.FunctionComponentElement<JSX.Element> {
 			<Layout title='index'>
 				<Router />
 			</Layout>
+			<ButtonBackToTop></ButtonBackToTop>
 		</AuthContext.Provider>
 	);
 }

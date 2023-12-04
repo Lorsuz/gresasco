@@ -7,7 +7,7 @@ const HomeBanner = (): React.FunctionComponentElement<JSX.Element> => {
 	const [banners] = useState(dataJson.banner);
 	const [current, setCurrent] = useState(0);
 	const length = banners.length;
-	const initAutoPlayInterval = useRef<number>();
+	const initAutoPlayInterval = useRef<NodeJS.Timeout>();
 
 	const changeSlide = (newSlide: number): void => {
 		setCurrent(prev => (prev + newSlide < 0 ? length - 1 : (prev + newSlide) % length));

@@ -60,10 +60,6 @@ body {
 	width: 100vw;
 	min-width: 320px;
 	overflow-x: hidden;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 
 	&::-webkit-scrollbar {
 		width: 5px;
@@ -83,7 +79,7 @@ main {
 	width: 100%;
 	overflow: hidden;
 
-	section {
+	> section {
 		display: flex;
 		align-items: center;
 		justify-content: center;

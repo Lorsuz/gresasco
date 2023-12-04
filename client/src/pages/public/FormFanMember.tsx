@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import InputField from '../../components/inputs/InputField';
 import InputSelectField from '../../components/inputs/InputSelectField';
 import InputRadioField from '../../components/inputs/InputRadioField';
+import Layout from '../../layouts/PagesLayout';
 
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6';
 
@@ -135,34 +136,36 @@ const FormFanMember = (): React.FunctionComponentElement<JSX.Element> => {
 	};
 
 	return (
-		<StyledFormFanMember>
-			<form onSubmit={handleSubmit}>
-				{fildsetPages[currentPage - 1]}
-				<div className='pagination'>
-					<button onClick={setPrevPage} disabled={currentPage === 1} className='button-prev'>
-						<FaAngleLeft />
-						<span>Anterior</span>
-					</button>
-					{/* ({currentPage} de {totalPages}) */}
-					<div className='dots'>
-						{[...Array(totalPages)].map((_, index) => (
-							<span key={index} className={currentPage === index + 1 ? 'active' : ''}></span>
-						))}
-					</div>
+		<Layout title='Home Page'>
+			<StyledFormFanMember>
+				<form onSubmit={handleSubmit}>
+					{fildsetPages[currentPage - 1]}
+					<div className='pagination'>
+						<button onClick={setPrevPage} disabled={currentPage === 1} className='button-prev'>
+							<FaAngleLeft />
+							<span>Anterior</span>
+						</button>
+						{/* ({currentPage} de {totalPages}) */}
+						<div className='dots'>
+							{[...Array(totalPages)].map((_, index) => (
+								<span key={index} className={currentPage === index + 1 ? 'active' : ''}></span>
+							))}
+						</div>
 
-					<button onClick={setNextPage} type={currentPage === totalPages ? 'submit' : 'button'}>
-						{currentPage === totalPages ? (
-							<span>Finalizar</span>
-						) : (
-							<>
-								<span>Próximo</span>
-								<FaAngleRight />
-							</>
-						)}
-					</button>
-				</div>
-			</form>
-		</StyledFormFanMember>
+						<button onClick={setNextPage} type={currentPage === totalPages ? 'submit' : 'button'}>
+							{currentPage === totalPages ? (
+								<span>Finalizar</span>
+							) : (
+								<>
+									<span>Próximo</span>
+									<FaAngleRight />
+								</>
+							)}
+						</button>
+					</div>
+				</form>
+			</StyledFormFanMember>
+		</Layout>
 	);
 };
 

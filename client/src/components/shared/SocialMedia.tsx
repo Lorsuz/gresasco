@@ -93,6 +93,21 @@ const StyledComponent = styled.ul<{ $footer?: boolean }>`
 			}
 		}
 	}
+	@media screen {
+		@media (max-width: 600px) {
+			gap: 15px;
+			li {
+				width: 50px;
+				height: 50px;
+
+				a {
+					* {
+						font-size: 1.5rem;
+					}
+				}
+			}
+		}
+	}
 `;
 
 export default SocialMedia;

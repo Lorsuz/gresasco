@@ -122,7 +122,7 @@ const Footer = (): React.FunctionComponentElement<JSX.Element> => (
 
 const StyledComponent = styled.footer`
 	background: rgb(28, 59, 53);
-	padding: 60px 0px 70px;
+	padding: 160px 0px 70px;
 	width: 100%;
 
 	* {
