@@ -76,11 +76,6 @@ const StyledComponent = styled.section`
 					grid-column: 2/12;
 					margin-bottom: 70px;
 				}
-
-				.disc-cover,
-				.audio {
-					grid-column: 2/12;
-				}
 			}
 		}
 	}

@@ -3,9 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const HomeAboutSchool = (): React.FunctionComponentElement<JSX.Element> => {
-
 	console.log('HomeAboutSchool');
-	
 
 	return (
 		<StyledComponent>
@@ -110,6 +108,7 @@ const StyledComponent = styled.section`
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			height: auto;
 
 			.img {
 				position: relative;
@@ -153,6 +152,20 @@ const StyledComponent = styled.section`
 					left: -30px;
 					border-right: none;
 					border-top: none;
+				}
+			}
+		}
+	}
+
+	@media screen {
+		@media (max-width: 880px) {
+			.wrapper {
+				.text-container {
+					grid-column: 2/12;
+					margin-bottom: 100px;
+				}
+				.img-container {
+					grid-column: 2/12;
 				}
 			}
 		}

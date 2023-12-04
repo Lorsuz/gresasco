@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import Wavesurfer from './shared/Wavesurfer';
 import { BsFillPlayFill, BsFillPauseFill } from 'react-icons/bs';
 import { FaVolumeHigh, FaVolumeLow, FaVolumeOff, FaVolumeXmark } from 'react-icons/fa6';
 
@@ -8,7 +8,7 @@ import plotImage from '../assets/images/Plot/plot-2024.jpeg';
 import styled from 'styled-components';
 
 const PlotSongLogic = (): React.FunctionComponentElement<JSX.Element> => {
-	const [audio] = useState(new Audio('src/assets/audio/plot-song.mpeg'));
+	const [audio] = useState(new Audio('src/assets/audios/plot-song.mpeg'));
 	const [audioIsPlaying, setAudioIsPlaying] = useState(false);
 	const [audioProgress, setAudioProgress] = useState(0);
 	const [audioVolume, setAudioVolume] = useState(1);
@@ -74,62 +74,74 @@ const PlotSongLogic = (): React.FunctionComponentElement<JSX.Element> => {
 			<div className='disc-cover'>
 				<img src={plotImage} alt='Logo Enredo-2024' />
 				<div className='icons'>
-					<button onClick={toggleAudioIsPlaying}>{audioIsPlaying ? <BsFillPauseFill /> : <BsFillPlayFill />}</button>
-					<div className='player-bars'>{bars}</div>
-				</div>
-			</div>
-			<div className='audio'>
-				<div className='progress'>
-					<div className='button'>
-						<button onClick={toggleAudioIsPlaying}>{audioIsPlaying ? <BsFillPauseFill /> : <BsFillPlayFill />}</button>
-					</div>
-					<div className='range'>
-						<input
-							type='range'
-							className='audio-progress'
-							min='0'
-							max='100'
-							step='0.01'
-							value={audioProgress}
-							onChange={e => {
-								const value = parseFloat(e.target.value);
-								audio.currentTime = (value / 100) * audio.duration;
-								updateAudioProgress();
-							}}
-						/>
-					</div>
-				</div>
-
-				<div className='volume'>
-					<div className='button'>
-						<button onClick={toggleMuteVolume}>
-							{audioVolume === 0 ? (
-								<FaVolumeXmark />
-							) : audioVolume < 0.25 ? (
-								<FaVolumeOff />
-							) : audioVolume < 1 ? (
-								<FaVolumeLow />
-							) : (
-								<FaVolumeHigh />
-							)}
+					<div className='play-pause'>
+						<button className='play-pause' onClick={toggleAudioIsPlaying}>
+							{audioIsPlaying ? <BsFillPauseFill /> : <BsFillPlayFill />}
 						</button>
 					</div>
-					<div className='range'>
-						<input
-							type='range'
-							className='audio-volume'
-							min='0'
-							max='1'
-							step='0.01'
-							value={audioVolume}
-							onChange={e => {
-								const value = parseFloat(e.target.value);
-								updateAudioVolume(value);
-							}}
-						/>
+					{/* <div className='player-bars'>{bars}</div> */}
+					<div className='song-player'>
+						<div className='progress'>
+							<div className='button'>
+								<button onClick={toggleAudioIsPlaying}>
+									{audioIsPlaying ? <BsFillPauseFill /> : <BsFillPlayFill />}
+								</button>
+							</div>
+							<div className='range'>
+								<div className='time-current'>
+									<span></span>
+								</div>
+								<input
+									type='range'
+									className='audio-progress'
+									min='0'
+									max='100'
+									step='0.01'
+									value={audioProgress}
+									onChange={e => {
+										const value = parseFloat(e.target.value);
+										audio.currentTime = (value / 100) * audio.duration;
+										updateAudioProgress();
+									}}
+								/>
+								<div className='time-total'>
+									<span></span>
+								</div>
+							</div>
+						</div>
+						<div className='volume'>
+							<div className='button'>
+								<button onClick={toggleMuteVolume}>
+									{audioVolume === 0 ? (
+										<FaVolumeXmark />
+									) : audioVolume < 0.25 ? (
+										<FaVolumeOff />
+									) : audioVolume < 1 ? (
+										<FaVolumeLow />
+									) : (
+										<FaVolumeHigh />
+									)}
+								</button>
+							</div>
+							<div className='range'>
+								<input
+									type='range'
+									className='audio-volume'
+									min='0'
+									max='1'
+									step='0.01'
+									value={audioVolume}
+									onChange={e => {
+										const value = parseFloat(e.target.value);
+										updateAudioVolume(value);
+									}}
+								/>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
+			
 		</StyledComponent>
 	);
 };
@@ -160,12 +172,12 @@ const StyledComponent = styled.section`
 		}
 
 		.icons {
-			align-items: center;
 			background: rgba(0, 0, 0, 0.6);
 			border-radius: 6px;
-			display: flex;
+			display: grid;
+			grid-template-columns: repeat(11, 1fr);
+			grid-template-rows: repeat(11, 1fr);
 			height: 100%;
-			justify-content: center;
 			left: 0;
 			opacity: 0.7;
 			position: absolute;
@@ -173,27 +185,39 @@ const StyledComponent = styled.section`
 			transition: 300ms;
 			width: 100%;
 
-			button {
+			.play-pause {
+				grid-column: 6/7;
+				grid-row: 6/7;
 				align-items: center;
-				border-radius: 50%;
-				border: 3px solid transparent;
-				cursor: pointer;
-				display: flex;
-				height: 80px;
 				justify-content: center;
-				transition: 300ms;
-				width: 80px;
-				background: #000;
+				display: flex;
+				align-self: center;
+				justify-self: center;
+				justify-items: center;
+				width: 100%;
+				button {
+					align-items: center;
+					border-radius: 50%;
+					border: 3px solid transparent;
+					cursor: pointer;
+					display: flex;
+					height: 80px;
+					justify-content: center;
+					transition: 300ms;
+					width: 80px;
 
-				* {
-					color: #ffffff;
-				}
+					background: #000;
 
-				font-size: 4rem;
-				margin-right: 8px;
+					* {
+						color: #ffffff;
+					}
 
-				&:hover {
-					border: 3px solid white;
+					font-size: 4rem;
+					margin-right: 8px;
+
+					&:hover {
+						border: 3px solid white;
+					}
 				}
 			}
 
@@ -223,6 +247,92 @@ const StyledComponent = styled.section`
 					}
 				}
 			}
+			.song-player {
+				display: flex;
+				grid-template-columns: repeat(12, 1fr);
+				padding: 0px 20px;
+				height: 50px;
+				gap: 25px;
+				background: #ffffff;
+				box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+				border-radius: 60px;
+				justify-content: center;
+				align-items: center;
+				grid-column: 2/11;
+				grid-row: 10/11;
+
+				> div {
+					display: flex;
+					width: 100%;
+					gap: 10px;
+
+					.button {
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						button {
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							* {
+								color: #000000;
+								font-size: 1.5rem;
+							}
+						}
+					}
+
+					.range {
+						width: 100%;
+						input[type='range'] {
+							-webkit-appearance: none;
+							height: 3px;
+							background: var(--color-primary);
+
+							width: 100%;
+							border-radius: 50px;
+						}
+
+						input[type='range']::-webkit-slider-thumb {
+							-webkit-appearance: none;
+							width: 10px;
+							height: 10px;
+							border-radius: 50%;
+							background: var(--color-primary);
+							cursor: pointer;
+						}
+
+						input[type='range']::-webkit-slider-runnable-track {
+							/* -webkit-appearance: none; */
+							/* width: 100%; */
+							/* height: 10px; */
+							/* cursor: pointer; */
+							/* background: #912c2c;  */
+							/* border-radius: 5px; */
+							/* position: relative; */
+						}
+					}
+
+					&.progress {
+						width: 90%;
+					}
+					&.volume {
+						width: 5%;
+
+						position: relative;
+						.button {
+						}
+						.range {
+							overflow: hidden;
+						}
+						&:hover {
+							width: 25%;
+							~ .progress {
+								width: 65%;
+							}
+						}
+					}
+				}
+			}
 		}
 
 		&:hover .icons {
@@ -232,74 +342,10 @@ const StyledComponent = styled.section`
 	* {
 		/* outline: 1px dotted; */
 	}
-	.audio {
-		display: grid;
-		grid-template-columns: repeat(12, 1fr);
-		padding: 0px 20px;
-		height: 50px;
-		gap: 25px;
-		background: #ffffff;
-		box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-		border-radius: 60px;
-		justify-content: center;
-		align-items: center;
 
-		> div {
-			display: flex;
-			width: 100%;
-			gap: 10px;
-
-			.button {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				button {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					* {
-						color: #000000;
-						font-size: 1.5rem;
-					}
-				}
-			}
-
-			.range {
-				width: 100%;
-				input[type='range'] {
-					-webkit-appearance: none;
-					height: 3px;
-					background: var(--color-primary);
-
-					width: 100%;
-					border-radius: 50px;
-				}
-
-				input[type='range']::-webkit-slider-thumb {
-					-webkit-appearance: none;
-					width: 10px;
-					height: 10px;
-					border-radius: 50%;
-					background: var(--color-primary);
-					cursor: pointer;
-				}
-
-				input[type='range']::-webkit-slider-runnable-track {
-					/* -webkit-appearance: none; */
-					/* width: 100%; */
-					/* height: 10px; */
-					/* cursor: pointer; */
-					/* background: #912c2c;  */
-					/* border-radius: 5px; */
-					/* position: relative; */
-				}
-			}
-			&.progress {
-				grid-column: 1/9;
-			}
-			&.volume {
-				grid-column: 9/13;
-			}
+	@media screen {
+		@media (max-width: 1100px) {
+			grid-column: 2/12;
 		}
 	}
 `;

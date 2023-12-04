@@ -41,6 +41,8 @@ const StyledComponent = styled.section`
 	min-height: 700px;
 	max-height: 1200px;
 
+	.wrapper {
+	}
 	.wrapper > div {
 		&.left {
 			grid-column: 2/7;
@@ -91,6 +93,10 @@ const StyledComponent = styled.section`
 
 		&.right {
 			grid-column: 8/12;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
 
 			.img {
 				align-items: center;
@@ -191,7 +197,6 @@ const StyledComponent = styled.section`
 				> div {
 					&.left {
 						grid-column: 2/12;
-
 						.container {
 							h2 {
 								font-size: 2rem;
@@ -223,13 +228,31 @@ const StyledComponent = styled.section`
 			}
 		}
 
-		@media (max-width: 370px) {
-			main {
-				.nav-info .wrapper {
-					section {
-						&.contact {
-							div:nth-child(2) {
-								display: none;
+		@media (max-width: 500px) {
+			.wrapper {
+				> div {
+					&.left {
+						grid-column: 2/12;
+						.container {
+							h2 {
+								font-size: 1.5rem;
+							}
+
+							h1 {
+								font-size: 2.1rem;
+							}
+
+							p {
+								width: 100%;
+							}
+
+							span {
+								padding: 15px 50px;
+								font-size: 1.1rem;
+							}
+
+							.social-media {
+								display: flex;
 							}
 						}
 					}

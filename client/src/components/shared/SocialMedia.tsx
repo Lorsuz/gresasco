@@ -68,6 +68,7 @@ const StyledComponent = styled.ul<{ $footer?: boolean }>`
 
 		&:hover {
 			background: #000000;
+
 			a {
 				border: 3px solid #ffffff;
 				width: 95%;
@@ -89,6 +90,21 @@ const StyledComponent = styled.ul<{ $footer?: boolean }>`
 			}
 			&:nth-child(4) {
 				background: #000000;
+			}
+		}
+	}
+	@media screen {
+		@media (max-width: 600px) {
+			gap: 15px;
+			li {
+				width: 50px;
+				height: 50px;
+
+				a {
+					* {
+						font-size: 1.5rem;
+					}
+				}
 			}
 		}
 	}

@@ -60,10 +60,6 @@ body {
 	width: 100vw;
 	min-width: 320px;
 	overflow-x: hidden;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 
 	&::-webkit-scrollbar {
 		width: 5px;
@@ -80,17 +76,25 @@ body {
 }
 
 main {
-	min-height: 100%;
+	width: 100%;
+	overflow: hidden;
 
-
-	> section,
-	> article {
+	> section {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-		width: 100vw;
 	}
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 1700px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	justify-content: center;
+	align-items: center;
 }
 
 .custom-button {
@@ -106,16 +110,6 @@ main {
 		background: var(--color-primary);
 		border-radius: 0px 10px;
 	}
-}
-
-.wrapper {
-	width: 100vw;
-	max-width: 1700px;
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: repeat(12, minmax(0, 1fr));
-	justify-content: center;
-	align-items: center;
 }
 
 #back-to-top {
