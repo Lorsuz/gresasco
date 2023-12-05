@@ -27,7 +27,11 @@ const ButtonBackToTop = (): React.FunctionComponentElement<JSX.Element> => {
 
 			if (currentPosition > 0) {
 				window.requestAnimationFrame(scrollToTop);
-				window.scrollTo(0, currentPosition - currentPosition / 8);
+				if (currentPosition - currentPosition / 8 < 700) {
+					window.scrollTo(0, currentPosition - currentPosition / 4);
+				} else {
+					window.scrollTo(0, currentPosition - currentPosition / 8);
+				}
 			}
 		};
 

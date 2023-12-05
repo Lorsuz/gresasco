@@ -36,7 +36,7 @@ const PlotSongLogic: React.FC = () => {
 			waveColor: '#3498db',
 			progressColor: '#e74c3c',
 			cursorColor: '#3ce753',
-			barWidth: 2,
+			barWidth: 3,
 			barRadius: 5,
 			height: 25,
 			normalize: true,
