@@ -4,7 +4,6 @@ npm i
 npm run dev
 
 cd server
-npm run server
 npm i
 npm run prisma
 npm run migrate

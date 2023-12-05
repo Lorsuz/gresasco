@@ -12,7 +12,6 @@ import HomeContact from '../../components/sections/HomeContact';
 import HomeNavInfo from '../../components/sections/HomeNavInfo';
 
 
-
 const HomePage: React.FunctionComponent = () => (
 	<Layout title='Home Page' backgroundColor='#0B1127'>
 		<StyledHomePage>

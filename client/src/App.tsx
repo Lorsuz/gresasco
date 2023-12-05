@@ -1,7 +1,7 @@
 import React from 'react';
 import AuthContext from './context/AuthContext';
-
 import Layout from './layouts/MainLayout';
+import BackToTop from './components/shared/BackToTop';
 
 import Router from './router/Router';
 import ButtonBackToTop from './components/shared/ButtonBackToTop';
@@ -23,6 +23,7 @@ function App(): React.FunctionComponentElement<JSX.Element> {
 		<AuthContext.Provider value={authContext}>
 			<Layout title='index'>
 				<Router />
+				<BackToTop />
 			</Layout>
 			<ButtonBackToTop></ButtonBackToTop>
 		</AuthContext.Provider>

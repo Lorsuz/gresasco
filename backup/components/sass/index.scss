@@ -165,7 +165,20 @@ main {
 		}
 
 
+<<<<<<< HEAD:components/sass/index.scss
+		> p {
+			// cursor: pointer;
+			font-size: 0.8rem;
+
+			&:hover {
+				color: white;
+			}
+		}
+
+		section {
+=======
 		.wrapper {
+>>>>>>> origin/Lorsuz:backup/components/sass/index.scss
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
@@ -174,6 +187,13 @@ main {
 			> p {
 				font-size: 0.8rem;
 
+<<<<<<< HEAD:components/sass/index.scss
+				div {
+					display: flex;
+					align-items: center;
+					// cursor: pointer;
+=======
+>>>>>>> origin/Lorsuz:backup/components/sass/index.scss
 
 				&:hover {
 					color: white;
