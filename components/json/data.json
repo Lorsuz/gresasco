@@ -1,0 +1,46 @@
+{
+	"sponsors": [
+		{
+			"image": "components/assets/images/Sponsors/La-Dame-Femme.png",
+			"alt": ""
+		},
+		{
+			"image": "components/assets/images/Sponsors/Drogamix.png",
+			"alt": ""
+		},
+		{
+			"image": "components/assets/images/Sponsors/Haras.png",
+			"alt": ""
+		},
+		{
+			"image": "components/assets/images/Sponsors/LFBETSRJ-2023 copiar_page-0001.png",
+			"alt": ""
+		},
+		{
+			"image": "components/assets/images/Sponsors/Blue Gray Modern Technology Logo.png",
+			"alt": ""
+		}
+	],
+	"banner": [
+		{
+			"image": "image-1.jpg",
+			"alt": ""
+		},
+		{
+			"image": "image-2.jpg",
+			"alt": ""
+		},
+		{
+			"image": "image-5.jpg",
+			"alt": ""
+		},
+		{
+			"image": "image-4.jpg",
+			"alt": ""
+		},
+		{
+			"image": "image-3.jpg",
+			"alt": ""
+		}
+	]
+}

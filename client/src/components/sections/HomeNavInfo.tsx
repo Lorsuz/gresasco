@@ -16,7 +16,7 @@ const HomeNavInfo = (): React.FunctionComponentElement<JSX.Element> => (
 				</div>
 			</section>
 			<p>Siga-nos para ficar por dentro das novidades!</p>
-			<section className='social-network'>
+			<section className='slogan'>
 				<span>As Bruxas Estão Soltas!</span>
 			</section>
 		</div>
@@ -51,6 +51,7 @@ const StyledComponent = styled.section`
 
 			&.contact {
 				gap: 30px;
+				flex-direction: row;
 
 				div {
 					display: flex;
@@ -74,13 +75,12 @@ const StyledComponent = styled.section`
 				}
 			}
 			
-			&.social-network {
+			&.slogan {
 				display: flex;
 				align-items: center;
 				justify-content: center;
 
 				span {
-					margin-right: 15px;
 					font-size: 0.8rem;
 				}
 
@@ -117,7 +117,7 @@ const StyledComponent = styled.section`
 						justify-content: space-evenly;
 					}
 
-					&.social-network {
+					&.slogan {
 						display: none;
 					}
 				}

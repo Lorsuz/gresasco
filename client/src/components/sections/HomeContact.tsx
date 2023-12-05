@@ -282,6 +282,48 @@ const StyledComponent = styled.section`
 			}
 		}
 	}
+	@media screen {
+		@media (max-width: 1200px) {
+			main {
+				.cover {
+					.wrapper > div {
+						&.left {
+							grid-column: 2/8;
+
+							.container {
+								p {
+									width: 90%;
+								}
+							}
+						}
+
+						&.right {
+							grid-column: 9/12;
+
+							.img {
+								width: 100%;
+
+								img {
+									width: 150%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@media (max-width: 1000px) {
+			.wrapper > .text {
+				grid-column: 2/12;
+				margin-bottom: 100px;
+			}
+
+			.wrapper > .form {
+				grid-column: 2/12;
+			}
+		}
+	}
 `;
 
 export default HomeContact;

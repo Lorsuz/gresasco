@@ -1,14 +1,18 @@
 import React from 'react';
 import gifNotFound from '../../assets/videos/funny-404-error-page-design.gif';
+import Layout from '../../layouts/PagesLayout';
 
 import styled from 'styled-components';
 const NotFound = (): React.FunctionComponentElement<JSX.Element> => (
+	<Layout title='Home Page'>
+
 	<StyledComponent>
 		<h1>404</h1>
 		<h2>Ops! Parece que você está perdido!</h2>
 		<h3>Esta página não esta disponível...</h3>
 		<a href='/'>Voltar ao Inicio</a>
 	</StyledComponent>
+	</Layout>
 );
 
 const StyledComponent = styled.section`
