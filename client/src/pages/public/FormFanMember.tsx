@@ -196,6 +196,13 @@ const StyledFormFanMember = styled.main`
 				margin: 0 0 20px 25px;
 				padding: 0 10px;
 			}
+
+			/* label {
+				position: absolute;
+				font-weight: bolder;
+				margin-left: 12px;
+				margin-top: -10px;
+			} */
 		}
 		.pagination {
 			margin-top: 20px;
